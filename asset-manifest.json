@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/final-project-start/static/css/main.92931bbc.css",
-    "main.js": "/final-project-start/static/js/main.6321c6aa.js",
-    "static/js/787.4ef7427d.chunk.js": "/final-project-start/static/js/787.4ef7427d.chunk.js",
-    "static/media/worldmap2.png": "/final-project-start/static/media/worldmap2.f4bcaac4685af0173335.png",
-    "static/media/bosun_tally.jpg": "/final-project-start/static/media/bosun_tally.efd13eb681079a6cc65d.jpg",
-    "index.html": "/final-project-start/index.html",
-    "main.92931bbc.css.map": "/final-project-start/static/css/main.92931bbc.css.map",
-    "main.6321c6aa.js.map": "/final-project-start/static/js/main.6321c6aa.js.map",
-    "787.4ef7427d.chunk.js.map": "/final-project-start/static/js/787.4ef7427d.chunk.js.map"
+    "main.css": "/homepage/static/css/main.92931bbc.css",
+    "main.js": "/homepage/static/js/main.a8602d09.js",
+    "static/js/787.4ef7427d.chunk.js": "/homepage/static/js/787.4ef7427d.chunk.js",
+    "static/media/worldmap2.png": "/homepage/static/media/worldmap2.f4bcaac4685af0173335.png",
+    "static/media/bosun_tally.jpg": "/homepage/static/media/bosun_tally.efd13eb681079a6cc65d.jpg",
+    "index.html": "/homepage/index.html",
+    "main.92931bbc.css.map": "/homepage/static/css/main.92931bbc.css.map",
+    "main.a8602d09.js.map": "/homepage/static/js/main.a8602d09.js.map",
+    "787.4ef7427d.chunk.js.map": "/homepage/static/js/787.4ef7427d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.92931bbc.css",
-    "static/js/main.6321c6aa.js"
+    "static/js/main.a8602d09.js"
   ]
 }
