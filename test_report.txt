@@ -6,23 +6,23 @@ Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
 PASS src/App.test.tsx
-  ✓ renders the course name somewhere (33 ms)
+  ✓ renders the course name somewhere (47 ms)
 
 --------------------|---------|----------|---------|---------|-------------------
 File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------|---------|----------|---------|---------|-------------------
-All files           |    1.26 |        0 |    3.57 |    1.31 |                   
+All files           |    1.21 |        0 |    3.57 |    1.26 |                   
  App.tsx            |     100 |      100 |     100 |     100 |                   
- Board.tsx          |       0 |        0 |       0 |       0 | 7-36              
+ Board.tsx          |       0 |        0 |       0 |       0 | 7-39              
  BoardSquare.tsx    |       0 |        0 |       0 |       0 | 13-26             
  Containers.tsx     |       0 |      100 |       0 |       0 | 13-24             
- DraggableLayer.tsx |       0 |      100 |       0 |       0 | 9-22              
+ DraggableLayer.tsx |       0 |      100 |       0 |       0 | 14-28             
  MapBox.ts          |       0 |        0 |       0 |       0 |                   
  NumberBox.ts       |       0 |        0 |       0 |       0 |                   
  Overlay.tsx        |       0 |      100 |       0 |       0 | 7-8               
  Pic.tsx            |       0 |        0 |       0 |       0 | 5-13              
  Place.ts           |       0 |        0 |       0 |       0 |                   
- PlacePic.tsx       |       0 |        0 |       0 |       0 | 13-41             
+ PlacePic.tsx       |       0 |        0 |       0 |       0 | 13-44             
  Square.tsx         |       0 |        0 |       0 |       0 | 7-11              
  constants.ts       |       0 |      100 |     100 |       0 | 1                 
  custom.d.ts        |       0 |        0 |       0 |       0 |                   
@@ -31,5 +31,5 @@ All files           |    1.26 |        0 |    3.57 |    1.31 |
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        2.056 s
+Time:        2.985 s
 Ran all test suites.
