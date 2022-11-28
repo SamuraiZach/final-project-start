@@ -24,7 +24,14 @@ function App() {
                 >
                     <span>Zachariah Barraza, Tavon Gage, Michael King</span>
                 </div>
-                <div style={{ position: "absolute", left: "23%", top: "50px" }}>
+                <div
+                    style={{
+                        position: "absolute",
+                        left: "23%",
+                        top: "50px",
+                        border: "1px solid black"
+                    }}
+                >
                     <img
                         src={require("./worldmap2.png")}
                         alt="oops mad no load teehee"
@@ -47,6 +54,7 @@ function App() {
         </div>
     );
 }
+//change the posiiton of Example so it can be whole screen and change it that it can only be dropped within two boxes
 
 const rootElement = document.getElementById("root");
 render(<App />, rootElement);

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
 import update from "immutability-helper";
 import type { CSSProperties, FC } from "react";
@@ -14,7 +13,6 @@ import { ItemTypes } from "./ItemTypes";
 const styles: CSSProperties = {
     width: 1200,
     height: 750,
-    border: "1px solid black",
     position: "relative"
 };
 
@@ -28,6 +26,7 @@ export interface ContainerState {
 }
 
 export const Container: FC<ContainerProps> = ({ hideSourceOnDrag, places }) => {
+    const [prebox] = useState<boolean>(true);
     const [boxes, setBoxes] = useState<{
         [key: string]: {
             top: number;
@@ -35,7 +34,7 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag, places }) => {
             title: string;
         };
     }>({
-        a: {
+        test: {
             top: 23,
             left: 80,
             title: "https://www.rainforest-alliance.org/wp-content/uploads/2021/06/capybara-square-1.jpg.optimal.jpg"
