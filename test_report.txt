@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 PASS src/App.test.tsx
-  ✓ renders the course name somewhere (31 ms)
+  ✓ renders the course name somewhere (41 ms)
 
 --------------------|---------|----------|---------|---------|-------------------
 File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
@@ -13,7 +13,7 @@ All files           |    0.75 |        0 |    2.32 |    0.77 |
  Board.tsx          |       0 |        0 |       0 |       0 | 8-38              
  BoardSquare.tsx    |       0 |        0 |       0 |       0 | 13-26             
  Box.tsx            |       0 |        0 |       0 |       0 | 7-44              
- Container.tsx      |       0 |      100 |       0 |       0 | 14-166            
+ Container.tsx      |       0 |      100 |       0 |       0 | 14-165            
  DraggableLayer.tsx |       0 |      100 |       0 |       0 | 16-32             
  Example.tsx        |       0 |      100 |       0 |       0 | 8-16              
  ItemTypes.ts       |       0 |      100 |     100 |       0 | 1                 
@@ -28,12 +28,12 @@ All files           |    0.75 |        0 |    2.32 |    0.77 |
  Square.tsx         |       0 |        0 |       0 |       0 | 7-11              
  constants.ts       |       0 |      100 |     100 |       0 | 1                 
  game.ts            |       0 |        0 |       0 |       0 | 4-35              
- index.tsx          |       0 |      100 |       0 |       0 | 7-52              
+ index.tsx          |       0 |      100 |       0 |       0 | 7-59              
  interfaces.ts      |       0 |        0 |       0 |       0 |                   
  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-11              
 --------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        2.351 s
+Time:        2.909 s
 Ran all test suites.
