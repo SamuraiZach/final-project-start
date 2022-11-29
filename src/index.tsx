@@ -42,7 +42,7 @@ function App() {
                 <div
                     style={{
                         position: "absolute",
-                        left: "23%",
+                        left: "15%",
                         top: "50px",
                         height: "750px",
                         width: "1200px"
