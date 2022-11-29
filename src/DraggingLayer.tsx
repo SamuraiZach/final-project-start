@@ -6,7 +6,7 @@ import sample from "./Places.json";
 import { Form, Button } from "react-bootstrap";
 import { Container } from "./Container";
 
-export const Example: FC = () => {
+export const Interactables: FC = () => {
     const [hideSourceOnDrag, setHideSourceOnDrag] = useState(true);
     const [formAdd, setFormAdd] = useState(false);
     const PLACES = sample.map((place): Place => ({ ...place }));
@@ -38,7 +38,7 @@ export const Example: FC = () => {
                 }}
             >
                 <Button onClick={toggleAdd}>Add Place</Button>
-                {formAdd === false ? null : <Form.Group></Form.Group>}
+                {formAdd === false ? null : <Form.Check></Form.Check>}
             </div>
             <div
                 style={{
