@@ -45,7 +45,7 @@ function App() {
                         left: "15%",
                         top: "50px",
                         height: "750px",
-                        width: "1200px"
+                        width: "1350"
                     }}
                 >
                     <Example />
