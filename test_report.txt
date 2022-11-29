@@ -3,38 +3,40 @@
 > react-scripts test --coverage
 
 PASS src/App.test.tsx
-  ✓ renders the course name somewhere (32 ms)
+  ✓ renders the course name somewhere (31 ms)
 
---------------------|---------|----------|---------|---------|-------------------
-File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
---------------------|---------|----------|---------|---------|-------------------
-All files           |    0.59 |        0 |       2 |    0.61 |                   
- App.tsx            |     100 |      100 |     100 |     100 |                   
- Basket.tsx         |       0 |        0 |       0 |       0 | 12-117            
- Board.tsx          |       0 |        0 |       0 |       0 | 8-38              
- BoardSquare.tsx    |       0 |        0 |       0 |       0 | 13-26             
- Box.tsx            |       0 |        0 |       0 |       0 | 7-45              
- Container.tsx      |       0 |        0 |       0 |       0 | 15-218            
- DraggableLayer.tsx |       0 |      100 |       0 |       0 | 16-32             
- Example.tsx        |       0 |        0 |       0 |       0 | 9-25              
- ItemTypes.ts       |       0 |      100 |     100 |       0 | 1                 
- MapBox.ts          |       0 |        0 |       0 |       0 |                   
- NumberBox.ts       |       0 |        0 |       0 |       0 |                   
- ObjectPlaces.tsx   |       0 |        0 |       0 |       0 |                   
- Overlay.tsx        |       0 |      100 |       0 |       0 | 7-8               
- Pic.tsx            |       0 |      100 |       0 |       0 | 6-7               
- PicSquare.tsx      |       0 |      100 |       0 |       0 | 14-27             
- Place.ts           |       0 |        0 |       0 |       0 |                   
- PlacePic.tsx       |       0 |      100 |       0 |       0 | 17-61             
- Square.tsx         |       0 |        0 |       0 |       0 | 7-11              
- constants.ts       |       0 |      100 |     100 |       0 | 1                 
- game.ts            |       0 |        0 |       0 |       0 | 4-35              
- index.tsx          |       0 |      100 |       0 |       0 | 7-59              
- interfaces.ts      |       0 |        0 |       0 |       0 |                   
- reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-11              
---------------------|---------|----------|---------|---------|-------------------
+---------------------|---------|----------|---------|---------|-------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------|---------|----------|---------|---------|-------------------
+All files            |    0.59 |        0 |       2 |    0.61 |                   
+ src                 |    0.72 |        0 |     2.5 |    0.74 |                   
+  App.tsx            |     100 |      100 |     100 |     100 |                   
+  Basket.tsx         |       0 |        0 |       0 |       0 | 12-117            
+  Box.tsx            |       0 |        0 |       0 |       0 | 7-45              
+  Container.tsx      |       0 |        0 |       0 |       0 | 15-218            
+  DraggableLayer.tsx |       0 |      100 |       0 |       0 | 16-32             
+  DraggingLayer.tsx  |       0 |        0 |       0 |       0 | 9-25              
+  ItemTypes.ts       |       0 |      100 |     100 |       0 | 1                 
+  MapBox.ts          |       0 |        0 |       0 |       0 |                   
+  NumberBox.ts       |       0 |        0 |       0 |       0 |                   
+  ObjectPlaces.tsx   |       0 |        0 |       0 |       0 |                   
+  PicSquare.tsx      |       0 |      100 |       0 |       0 | 14-27             
+  Place.ts           |       0 |        0 |       0 |       0 |                   
+  PlacePic.tsx       |       0 |      100 |       0 |       0 | 17-61             
+  constants.ts       |       0 |      100 |     100 |       0 | 1                 
+  game.ts            |       0 |        0 |       0 |       0 | 4-35              
+  index.tsx          |       0 |      100 |       0 |       0 | 7-59              
+  interfaces.ts      |       0 |        0 |       0 |       0 |                   
+  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-11              
+ src/InitCommit      |       0 |        0 |       0 |       0 |                   
+  Board.tsx          |       0 |        0 |       0 |       0 | 8-38              
+  BoardSquare.tsx    |       0 |        0 |       0 |       0 | 13-26             
+  Overlay.tsx        |       0 |      100 |       0 |       0 | 7-8               
+  Pic.tsx            |       0 |      100 |       0 |       0 | 6-7               
+  Square.tsx         |       0 |        0 |       0 |       0 | 7-11              
+---------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        2.378 s
+Time:        2.385 s
 Ran all test suites.
