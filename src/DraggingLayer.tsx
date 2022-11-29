@@ -38,7 +38,7 @@ export const Example: FC = () => {
                 }}
             >
                 <Button onClick={toggleAdd}>Add Place</Button>
-                {formAdd === false ? null : <Form.Check></Form.Check>}
+                {formAdd === false ? null : <Form.Group></Form.Group>}
             </div>
             <div
                 style={{

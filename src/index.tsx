@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
-import { Example } from "./Example";
+import { Interactables } from "./DraggingLayer";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 function App() {
@@ -48,7 +48,7 @@ function App() {
                         width: "1350px"
                     }}
                 >
-                    <Example />
+                    <Interactables />
                 </div>
             </DndProvider>
         </div>
