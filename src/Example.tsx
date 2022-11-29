@@ -24,7 +24,8 @@ export const Example: FC = () => {
             <div
                 style={{
                     position: "absolute",
-                    top: 750
+                    top: 750,
+                    left: 154
                 }}
             >
                 <p>
