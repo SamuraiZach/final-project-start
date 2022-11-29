@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 PASS src/App.test.tsx
-  ✓ renders the course name somewhere (30 ms)
+  ✓ renders the course name somewhere (31 ms)
 
 --------------------|---------|----------|---------|---------|-------------------
 File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
@@ -14,7 +14,7 @@ All files           |    0.59 |        0 |       2 |    0.61 |
  Board.tsx          |       0 |        0 |       0 |       0 | 8-38              
  BoardSquare.tsx    |       0 |        0 |       0 |       0 | 13-26             
  Box.tsx            |       0 |        0 |       0 |       0 | 7-45              
- Container.tsx      |       0 |        0 |       0 |       0 | 15-222            
+ Container.tsx      |       0 |        0 |       0 |       0 | 15-218            
  DraggableLayer.tsx |       0 |      100 |       0 |       0 | 16-32             
  Example.tsx        |       0 |        0 |       0 |       0 | 9-25              
  ItemTypes.ts       |       0 |      100 |     100 |       0 | 1                 
@@ -36,5 +36,5 @@ All files           |    0.59 |        0 |       2 |    0.61 |
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        2.261 s
+Time:        2.245 s
 Ran all test suites.
