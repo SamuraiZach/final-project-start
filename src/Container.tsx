@@ -11,6 +11,7 @@ import { Dustbin } from "./Basket";
 import { Box } from "./Box";
 import type { DragItem } from "./interfaces";
 import { ItemTypes } from "./ItemTypes";
+import { Button } from "react-bootstrap";
 
 const styles: CSSProperties = {
     width: 1350,
@@ -179,6 +180,18 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag, places }) => {
             display: "inline"
         }
     });
+    const addatEnd = () => {
+        setBoxes({
+            ...boxes,
+            dd: {
+                top: 300,
+                left: 840,
+                title: "https://cdn.britannica.com/86/170586-050-AB7FEFAE/Taj-Mahal-Agra-India.jpg",
+                display: "inline"
+            }
+        });
+    };
+    console.log(boxes);
     const moveBox = (id: string, left: number, top: number) => {
         setBoxes(
             update(boxes, {
@@ -245,6 +258,9 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag, places }) => {
                 }}
             >
                 <Dustbin boxes={boxes} setBoxes={setBoxes}></Dustbin>
+            </div>
+            <div>
+                <Button onClick={addatEnd}>Test Button</Button>
             </div>
         </div>
     );
