@@ -13,7 +13,7 @@ import type { DragItem } from "./interfaces";
 import { ItemTypes } from "./ItemTypes";
 
 const styles: CSSProperties = {
-    width: 1200,
+    width: 1350,
     height: 750,
     position: "relative"
 };
@@ -179,19 +179,15 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag, places }) => {
             display: "inline"
         }
     });
-
-    const moveBox = useCallback(
-        (id: string, left: number, top: number) => {
-            setBoxes(
-                update(boxes, {
-                    [id]: {
-                        $merge: { left, top }
-                    }
-                })
-            );
-        },
-        [boxes, setBoxes]
-    );
+    const moveBox = (id: string, left: number, top: number) => {
+        setBoxes(
+            update(boxes, {
+                [id]: {
+                    $merge: { left, top }
+                }
+            })
+        );
+    };
     const [, drop] = useDrop(
         () => ({
             accept: ItemTypes.BOX,
