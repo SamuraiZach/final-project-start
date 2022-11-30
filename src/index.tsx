@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { render } from "react-dom";
 import { Interactables } from "./DraggingLayer";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import { Form } from "react-bootstrap";
 function App() {
+    const [sortValue, setValue] = useState<string>("All");
+    function updateValue(event: React.ChangeEvent<HTMLSelectElement>) {
+        setValue(event.target.value);
+    }
     return (
         <div className="App">
             <DndProvider backend={HTML5Backend}>
@@ -42,13 +47,29 @@ function App() {
                 <div
                     style={{
                         position: "absolute",
+                        right: "2%",
+                        top: "40px"
+                    }}
+                >
+                    <Form.Label>Show Hemisphere Specific Places</Form.Label>
+                    <Form.Select value={sortValue} onChange={updateValue}>
+                        <option value="All">All</option>
+                        <option value="West Side">Western Hemisphere</option>
+                        <option value="East Side">Eastern Hemisphere</option>
+                        <option value="North Side">Northern Hemisphere</option>
+                        <option value="South Side">Southern Hemisphere</option>
+                    </Form.Select>
+                </div>
+                <div
+                    style={{
+                        position: "absolute",
                         left: "15%",
                         top: "50px",
                         height: "750px",
                         width: "1350px"
                     }}
                 >
-                    <Interactables />
+                    <Interactables sortValue={sortValue} />
                 </div>
             </DndProvider>
         </div>
