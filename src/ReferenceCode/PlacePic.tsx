@@ -5,8 +5,8 @@ import React, { CSSProperties, Fragment, useCallback } from "react";
 import { useDrag, useDrop } from "react-dnd";
 import { ItemTypes } from "./constants";
 import { canMovePlace, movePic } from "./game";
-import { Place } from "./Place";
-import { ObjectPlaces } from "./ObjectPlaces";
+import { Place } from "../Place";
+import { ObjectPlaces } from "../ObjectPlaces";
 
 //change position to ABSOLUTE to then set the specific values of left and top WITHIN CSS PROPERTIES STYLE
 //////////////////////////////////////////////////////////////////////////////////

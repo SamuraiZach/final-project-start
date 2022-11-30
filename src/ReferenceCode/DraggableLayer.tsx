@@ -2,10 +2,10 @@
 import React, { useState } from "react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import { Place } from "./Place";
-import sample from "./Places.json";
+import { Place } from "../Place";
+import sample from "../Places.json";
 import { PlacePic } from "./PlacePic";
-import { ObjectPlaces } from "./ObjectPlaces";
+import { ObjectPlaces } from "../ObjectPlaces";
 //import { Containers } from "./Containers";
 //RENDER ALL BUT IF PIC POSIION IS EQUAL TO THE VALUE OF LEFT AND TOP THEN UPDATE THE POSITION?
 //Pic position will be used for reassignment when dropping the object and then rewrite that object in the array to the pic position
