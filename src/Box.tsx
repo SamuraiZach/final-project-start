@@ -20,16 +20,13 @@ export interface BoxProps {
 }
 
 export const Box: FC<BoxProps> = ({ id, left, top, display, children }) => {
-    const [{ isDragging }, drag] = useDrag(
-        () => ({
-            type: ItemTypes.BOX,
-            item: { id, left, top, display },
-            collect: (monitor) => ({
-                isDragging: monitor.isDragging()
-            })
-        }),
-        [id, left, top, display]
-    );
+    const [{ isDragging }, drag] = useDrag({
+        type: ItemTypes.BOX,
+        item: { id, left, top, display },
+        collect: (monitor) => ({
+            isDragging: monitor.isDragging()
+        })
+    });
 
     if (isDragging) {
         return <div ref={drag} />;

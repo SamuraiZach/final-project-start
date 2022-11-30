@@ -5,8 +5,16 @@ import { Place } from "./Place";
 import sample from "./Places.json";
 //import { Form, Button } from "react-bootstrap";
 import { Container } from "./Container";
+import { ContainerWest } from "./ContainerWest";
+import { ContainerNorth } from "./ContainerNorth";
+import { ContainerSouth } from "./ContainerSouth";
+import { ContainerEast } from "./ContainerEast";
 
-export const Interactables: FC = () => {
+export interface InteractablesProp {
+    sortValue: string;
+}
+
+export const Interactables: FC<InteractablesProp> = ({ sortValue }) => {
     //const [formAdd, setFormAdd] = useState(false);
     const PLACES = sample.map((place): Place => ({ ...place }));
     /*
@@ -47,13 +55,24 @@ export const Interactables: FC = () => {
         }
         return null;
     };
+    West Side">West Side</option>
+                        <option value="East Side">East Side</option>
+                        <option value="North Side">North Side</option>
+                        <option value="South Side">South Side</option>
     */
-
+    if (sortValue === "All") {
+        return <Container places={PLACES} />;
+    } else if (sortValue === "West Side") {
+        return <ContainerWest places={PLACES} />;
+    } else if (sortValue === "North Side") {
+        return <ContainerNorth places={PLACES} />;
+    } else if (sortValue === "South Side") {
+        return <ContainerSouth places={PLACES} />;
+    } else if (sortValue === "East Side") {
+        return <ContainerEast places={PLACES} />;
+    }
     return (
         <div>
-            <div>
-                <Container places={PLACES} />
-            </div>
             <div
                 style={{
                     position: "absolute",
