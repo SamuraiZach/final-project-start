@@ -16,18 +16,10 @@ export interface BoxProps {
     left: number;
     top: number;
     display: string;
-    hideSourceOnDrag?: boolean;
     children?: ReactNode;
 }
 
-export const Box: FC<BoxProps> = ({
-    id,
-    left,
-    top,
-    display,
-    hideSourceOnDrag,
-    children
-}) => {
+export const Box: FC<BoxProps> = ({ id, left, top, display, children }) => {
     const [{ isDragging }, drag] = useDrag(
         () => ({
             type: ItemTypes.BOX,
@@ -39,7 +31,7 @@ export const Box: FC<BoxProps> = ({
         [id, left, top, display]
     );
 
-    if (isDragging && hideSourceOnDrag) {
+    if (isDragging) {
         return <div ref={drag} />;
     }
     return (
