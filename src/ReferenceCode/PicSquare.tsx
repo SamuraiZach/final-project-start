@@ -3,8 +3,8 @@ import React from "react";
 import { useDrop } from "react-dnd";
 import { ItemTypes } from "./constants";
 import { canMovePic, movePic } from "./game";
-import Overlay from "./InitCommit/Overlay";
-import Square from "./InitCommit/Square";
+import Overlay from "./Overlay";
+import Square from "./Square";
 
 type BoardSquareProps = {
     x: number;

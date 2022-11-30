@@ -5,3 +5,5 @@ Hello! This repository has been pre-configured with eslint and gh-pages to autom
 Fork, and execute necessary setup steps.
 
 Watch this space for additional project requirements.
+
+If running on new console/build run "npm install"
