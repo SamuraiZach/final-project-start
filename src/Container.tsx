@@ -20,7 +20,6 @@ const styles: CSSProperties = {
 };
 
 export interface ContainerProps {
-    hideSourceOnDrag: boolean;
     places: Place[];
 }
 
@@ -36,7 +35,7 @@ export interface ContainerState {
     test: { [key: string]: { top: number; left: number; title: string } };
 }
 
-export const Container: FC<ContainerProps> = ({ hideSourceOnDrag, places }) => {
+export const Container: FC<ContainerProps> = ({ places }) => {
     const [test, testSet] = useState<{
         [key: string]: {
             top: number;
@@ -183,13 +182,14 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag, places }) => {
     const addatEnd = () => {
         setBoxes({
             ...boxes,
-            dd: {
-                top: 300,
-                left: 840,
-                title: "https://cdn.britannica.com/86/170586-050-AB7FEFAE/Taj-Mahal-Agra-India.jpg",
+            "The Nile River Africa": {
+                top: 350,
+                left: 720,
+                title: "https://upload.wikimedia.org/wikipedia/commons/a/a1/Evening%2C_Nile_River%2C_Uganda.jpg",
                 display: "inline"
             }
         });
+        //EXAMPLE OF PUSHING NEW KEY AT THE END
     };
     console.log(boxes);
     const moveBox = (id: string, left: number, top: number) => {
@@ -201,22 +201,18 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag, places }) => {
             })
         );
     };
-    const [, drop] = useDrop(
-        () => ({
-            accept: ItemTypes.BOX,
-            drop(item: DragItem, monitor) {
-                const delta =
-                    monitor.getDifferenceFromInitialOffset() as XYCoord;
-                const left = Math.round(item.left + delta.x);
-                const top = Math.round(item.top + delta.y);
-                if (left > 120) {
-                    moveBox(item.id, left, top);
-                }
-                return undefined;
+    const [, drop] = useDrop({
+        accept: ItemTypes.BOX,
+        drop(item: DragItem, monitor) {
+            const delta = monitor.getDifferenceFromInitialOffset() as XYCoord;
+            const left = Math.round(item.left + delta.x);
+            const top = Math.round(item.top + delta.y);
+            if (left > 120) {
+                moveBox(item.id, left, top);
             }
-        }),
-        [moveBox]
-    );
+            return undefined;
+        }
+    });
 
     return (
         <div>
@@ -235,7 +231,6 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag, places }) => {
                             left={left}
                             top={top}
                             display={display}
-                            hideSourceOnDrag={hideSourceOnDrag}
                         >
                             <img
                                 src={title}
@@ -259,11 +254,17 @@ export const Container: FC<ContainerProps> = ({ hideSourceOnDrag, places }) => {
             >
                 <Dustbin boxes={boxes} setBoxes={setBoxes}></Dustbin>
             </div>
-            <div>
+            <div
+                style={{
+                    position: "absolute",
+                    top: 713,
+                    left: 30
+                }}
+            >
                 <Button onClick={addatEnd}>Test Button</Button>
             </div>
         </div>
     );
 };
-
+//<Button onClick={addatEnd}>Test Button</Button> PUT IN EMPTY DIV
 //<img src={title} width="60" height="60" alt={title} />

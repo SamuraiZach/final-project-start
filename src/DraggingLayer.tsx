@@ -1,19 +1,44 @@
 import type { FC } from "react";
 import React from "react";
-import { useCallback, useState } from "react";
+//import { useState } from "react";
 import { Place } from "./Place";
 import sample from "./Places.json";
-import { Form, Button } from "react-bootstrap";
+//import { Form, Button } from "react-bootstrap";
 import { Container } from "./Container";
 
 export const Interactables: FC = () => {
-    const [hideSourceOnDrag, setHideSourceOnDrag] = useState(true);
-    const [formAdd, setFormAdd] = useState(false);
+    //const [formAdd, setFormAdd] = useState(false);
     const PLACES = sample.map((place): Place => ({ ...place }));
-    const toggle = useCallback(
-        () => setHideSourceOnDrag(!hideSourceOnDrag),
-        [hideSourceOnDrag]
-    );
+    /*
+    const temp = new Map([["k", ["d", "d"]]]);
+    console.log(temp);
+    const [test, testSet] = useState<{
+        [key: string]: {
+            top: number;
+            left: number;
+            title: string;
+        };
+    }>({});
+    const initBoxes = (
+        places: Place[],
+        test: {
+            [key: string]: {
+                top: number;
+                left: number;
+                title: string;
+            };
+        }
+    ) => {
+        //test["a"]({ top: 2, left: 2, title: "tt" });
+        for (let i = 0; i < 2; i++) {
+            const name = places[i].Name;
+            test.push;
+        }
+    };
+    initBoxes(PLACES, test);
+    */
+
+    /*
     const toggleAdd = () => {
         if (formAdd) {
             setFormAdd(false);
@@ -22,13 +47,12 @@ export const Interactables: FC = () => {
         }
         return null;
     };
+    */
+
     return (
         <div>
             <div>
-                <Container
-                    hideSourceOnDrag={hideSourceOnDrag}
-                    places={PLACES}
-                />
+                <Container places={PLACES} />
             </div>
             <div
                 style={{
@@ -36,30 +60,11 @@ export const Interactables: FC = () => {
                     top: 713,
                     left: 30
                 }}
-            >
-                <Button onClick={toggleAdd}>Add Place</Button>
-                {formAdd === false ? null : <Form.Check></Form.Check>}
-            </div>
-            <div
-                style={{
-                    position: "absolute",
-                    top: 750,
-                    left: 154
-                }}
-            >
-                <p>
-                    <label htmlFor="hideSourceOnDrag">
-                        <input
-                            id="hideSourceOnDrag"
-                            type="checkbox"
-                            role="checkbox"
-                            checked={hideSourceOnDrag}
-                            onChange={toggle}
-                        />
-                        <small>Hide the source item while dragging</small>
-                    </label>
-                </p>
-            </div>
+            ></div>
         </div>
     );
 };
+
+//<Button onClick={toggleAdd}>Add Place</Button>
+// {formAdd === false ? null : <Form.Check></Form.Check>}
+//toggleAdd which is for the forms or whatever
