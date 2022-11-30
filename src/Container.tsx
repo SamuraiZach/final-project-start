@@ -70,31 +70,31 @@ export const Container: FC<ContainerProps> = ({ places }) => {
             display: string;
         };
     }>({
-        "Eiffel Tower France": {
+        "Eiffel Tower, France": {
             top: 151,
             left: 589,
             title: "https://lh3.googleusercontent.com/p/AF1QipMVXIU7C3h4NRLgIXA8u9eS1dqgzvTHGBusFkFG=s1360-w1360-h1020",
             display: "inline"
         },
-        "Niagra Falls Canada": {
+        "Niagra Falls, Canada": {
             top: 90,
             left: 365,
             title: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/3Falls_Niagara.jpg/1280px-3Falls_Niagara.jpg",
             display: "inline"
         },
-        "Lincoln Memorial USA": {
+        "Lincoln Memorial, USA": {
             top: 210,
             left: 365,
             title: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Aerial_view_of_Lincoln_Memorial_-_east_side_EDIT.jpeg/375px-Aerial_view_of_Lincoln_Memorial_-_east_side_EDIT.jpeg",
             display: "inline"
         },
-        "Machu Picchu Peru": {
+        "Machu Picchu, Peru": {
             top: 450,
             left: 350,
             title: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Before_Machu_Picchu.jpg/450px-Before_Machu_Picchu.jpg",
             display: "inline"
         },
-        "British Museum Britain": {
+        "British Museum, Britain": {
             top: 90,
             left: 590,
             title: "https://lp-cms-production.imgix.net/2019-06/46e3203d7997df00a49d372a75086215-british-museum.jpg?auto=format&q=40&ar=16%3A9&fit=crop&crop=center&fm=auto&w=1946",
@@ -106,67 +106,67 @@ export const Container: FC<ContainerProps> = ({ places }) => {
             title: "https://images.unsplash.com/photo-1575372587186-5012f8886b4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bmV3JTIweW9yayUyMGNlbnRyYWwlMjBwYXJrfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
             display: "inline"
         },
-        "The Colosseum Rome": {
+        "The Colosseum, Rome": {
             top: 190,
             left: 655,
             title: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Colosseo_2020.jpg/405px-Colosseo_2020.jpg",
             display: "inline"
         },
-        "Disney Land USA": {
+        "Disney Land, USA": {
             top: 175,
             left: 200,
             title: "https://i.insider.com/60c7608023393a00188e2e91?width=1000&format=jpeg&auto=webp",
             display: "inline"
         },
-        "Forbidden City China": {
+        "Forbidden City, China": {
             top: 200,
             left: 1025,
             title: "https://cdn.britannica.com/59/180959-050-54A641EE/Hall-of-Supreme-Harmony-Beijing-Forbidden-City.jpg?w=690&h=388&c=crop",
             display: "inline"
         },
-        "Giza Pyramid Egypt": {
+        "Giza Pyramid, Egypt": {
             top: 250,
             left: 720,
             title: "https://cdn.mos.cms.futurecdn.net/YMa7Wx2FyjQFUjEeqa72Rm-1200-80.jpg.webp",
             display: "inline"
         },
-        "Grand Canyon USA": {
+        "Grand Canyon, USA": {
             top: 235,
             left: 250,
             title: "https://www.nps.gov/grca/planyourvisit/images/mather-point-2021.jpg?maxwidth=1200&maxheight=1200&autorotate=false",
             display: "inline"
         },
-        "The Acropolis Greece": {
+        "The Acropolis, Greece": {
             top: 180,
             left: 720,
             title: "https://whc.unesco.org/uploads/thumbs/site_0404_0001-750-750-20151105102353.jpg",
             display: "inline"
         },
-        "Statue of Liberty USA": {
+        "Statue of Liberty, USA": {
             top: 150,
             left: 425,
             title: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Lady_Liberty_under_a_blue_sky_%28cropped%29.jpg/330px-Lady_Liberty_under_a_blue_sky_%28cropped%29.jpg",
             display: "inline"
         },
-        "The Louvre France": {
+        "The Louvre, France": {
             top: 210,
             left: 595,
             title: "https://media.architecturaldigest.com/photos/5900cc370638dd3b70018b33/3:4/w_1547,h_2063,c_limit/Secrets%20of%20Louvre%201.jpg",
             display: "inline"
         },
-        "Notre Dame France": {
+        "Notre Dame, France": {
             top: 130,
             left: 650,
             title: "https://cdn.britannica.com/35/155335-050-D0C61BB7/Notre-Dame-de-Paris-France.jpg?w=690&h=388&c=crop",
             display: "inline"
         },
-        "Opera House Australia": {
+        "Sydney Opera House, Australia": {
             top: 520,
             left: 1150,
             title: "https://static.dezeen.com/uploads/2022/09/sydney-opera-house-concert-hall-renewal-arm-architecture-susan-kuriakose_dezeen_2364_col_0.jpg",
             display: "inline"
         },
-        "Taj Mahal India": {
+        "Taj Mahal, India": {
             top: 260,
             left: 890,
             title: "https://cdn.britannica.com/86/170586-050-AB7FEFAE/Taj-Mahal-Agra-India.jpg",
@@ -177,13 +177,79 @@ export const Container: FC<ContainerProps> = ({ places }) => {
             left: 950,
             title: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/The_Great_Wall_of_China_at_Jinshanling-edit.jpg/1200px-The_Great_Wall_of_China_at_Jinshanling-edit.jpg",
             display: "inline"
+        },
+        "Bora Bora Islands, French Polynesia": {
+            top: 420,
+            left: 1280,
+            title: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Bora_Bora_ISS006.jpg/260px-Bora_Bora_ISS006.jpg",
+            display: "inline"
+        },
+        "Great Barrier Reef, Australia": {
+            top: 465,
+            left: 1150,
+            title: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/ISS-45_StoryOfWater%2C_Great_Barrier_Reef%2C_Australia.jpg/255px-ISS-45_StoryOfWater%2C_Great_Barrier_Reef%2C_Australia.jpg",
+            display: "inline"
+        },
+        "Singapore, Asia": {
+            top: 370,
+            left: 980,
+            title: "https://www.planetware.com/wpimages/2020/03/singapore-in-pictures-beautiful-places-to-photograph-marina-bay-sands.jpg",
+            display: "inline"
+        },
+        "Milford Sound, New Zealand": {
+            top: 620,
+            left: 1155,
+            title: "https://www.newzealand.com/assets/Campaigns/If-You-Seek/Milford_Sound-Fiordland-MH1__aWxvdmVrZWxseQo_CropResizeWzEyMDAsNjMwLDc1LCJqcGciXQ.jpg",
+            display: "inline"
+        },
+        "Banana Reef, Maldives": {
+            top: 350,
+            left: 850,
+            title: "https://pyt-blogs.imgix.net/2020/04/banana-reef.jpg?auto=format&ixlib=php-3.3.0",
+            display: "inline"
+        },
+        "Rio de Janeiro, Brazil": {
+            top: 500,
+            left: 450,
+            title: "http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcTe-dwgdLWZjmiZcegXH0teITQ29VOPrOo9DoQnJj7leKBUd8X27XJVKfDCPaSDl5SC",
+            display: "inline"
+        },
+        "Santa Claus Village, Finland": {
+            top: 75,
+            left: 710,
+            title: "https://santaclausvillage.info/userassets/uploads/2018/03/central-plaza-santa-claus-village-rovaniemi-lapland-finland-1-1170x692.jpg",
+            display: "inline"
+        },
+        "Mount Fuji, Japan": {
+            top: 200,
+            left: 1100,
+            title: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjKpXiV_c6wL661jMtt7R0m5Yahs6tGx2gFc4QhYGma1Kv6-7-AXC9eI2TlCtJZ_V2iMc&usqp=CAU",
+            display: "inline"
+        },
+        "Victoria Falls, Zimbabwe": {
+            top: 480,
+            left: 700,
+            title: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkvClSWO6cjEqXmemco9GMaV5oRxiakbMPcrmoY6DLMuEcCJl12lXilEOqIRxCwG2CE8A&usqp=CAU",
+            display: "inline"
+        },
+        "Havana, Cuba": {
+            top: 280,
+            left: 340,
+            title: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Habana_Vieja_de_noche.jpg/280px-Habana_Vieja_de_noche.jpg",
+            display: "inline"
+        },
+        "Serengeti National Park, Tanzania": {
+            top: 400,
+            left: 740,
+            title: "https://upload.wikimedia.org/wikipedia/commons/e/e8/Serengeti_sunset-1001.jpg",
+            display: "inline"
         }
     });
     const addatEnd = () => {
         setBoxes({
             ...boxes,
-            "The Nile River Africa": {
-                top: 350,
+            "The Nile River, Africa": {
+                top: 320,
                 left: 720,
                 title: "https://upload.wikimedia.org/wikipedia/commons/a/a1/Evening%2C_Nile_River%2C_Uganda.jpg",
                 display: "inline"
