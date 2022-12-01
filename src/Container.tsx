@@ -12,6 +12,7 @@ import { Box } from "./Box";
 import type { DragItem } from "./interfaces";
 import { ItemTypes } from "./ItemTypes";
 import { Button } from "react-bootstrap";
+import { string } from "prop-types";
 
 const styles: CSSProperties = {
     width: 1350,
@@ -245,17 +246,23 @@ export const Container: FC<ContainerProps> = ({ places }) => {
             display: "inline"
         }
     });
+    //ABLE TO APPEND USING VARIABLES
     const addatEnd = () => {
+        const yourKeyVariable = "happyCount";
+        const someValueArray = {
+            top: 400,
+            left: 740,
+            title: "https://upload.wikimedia.org/wikipedia/commons/e/e8/Serengeti_sunset-1001.jpg",
+            display: "inline"
+        };
+
+        //const obj = { [yourKeyVariable]: someValueArray };
         setBoxes({
             ...boxes,
-            "The Nile River, Africa": {
-                top: 320,
-                left: 720,
-                title: "https://upload.wikimedia.org/wikipedia/commons/a/a1/Evening%2C_Nile_River%2C_Uganda.jpg",
-                display: "inline"
-            }
+            [yourKeyVariable]: someValueArray
         });
         //EXAMPLE OF PUSHING NEW KEY AT THE END
+        console.log(boxes);
     };
     console.log(boxes);
     const moveBox = (id: string, left: number, top: number) => {
@@ -279,7 +286,27 @@ export const Container: FC<ContainerProps> = ({ places }) => {
             return undefined;
         }
     });
-
+    const looper = () => {
+        return (
+            <div>
+                <Dustbin
+                    boxes={boxes}
+                    setBoxes={setBoxes}
+                    color={"white"}
+                ></Dustbin>
+            </div>
+        );
+    };
+    const renderLayers = () => {
+        return (
+            <div>
+                <Dustbin boxes={boxes} setBoxes={setBoxes} color={"black"}>
+                    {looper()}
+                </Dustbin>
+            </div>
+        );
+    };
+    renderLayers();
     return (
         <div>
             <div ref={drop} style={styles}>
@@ -309,6 +336,7 @@ export const Container: FC<ContainerProps> = ({ places }) => {
                 })}
             </div>
             <div
+                ref={() => renderLayers}
                 style={{
                     overflow: "hidden",
                     clear: "both",
@@ -318,7 +346,7 @@ export const Container: FC<ContainerProps> = ({ places }) => {
                     left: "0"
                 }}
             >
-                <Dustbin boxes={boxes} setBoxes={setBoxes}></Dustbin>
+                {renderLayers()}
             </div>
             <div
                 style={{

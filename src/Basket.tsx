@@ -46,6 +46,7 @@ export interface DustbinProps {
             };
         }>
     >;
+    color: string;
 }
 
 export interface DustbinState {
@@ -57,7 +58,8 @@ export const Dustbin: FC<DustbinProps> = ({
     greedy,
     children,
     boxes,
-    setBoxes
+    setBoxes,
+    color
 }) => {
     const [hasDropped, setHasDropped] = useState(false);
     const [hasDroppedOnChild, setHasDroppedOnChild] = useState(false);
@@ -68,16 +70,15 @@ export const Dustbin: FC<DustbinProps> = ({
             drop(item: object, monitor) {
                 const didDrop = monitor.didDrop();
                 if (didDrop && !greedy) {
+                    const x = Object(item).id;
+                    setName(name + " " + x);
                     return;
                 }
                 console.log(item, Object(item).id);
                 const x = Object(item).id;
-                Object(item).display = "none";
+                setName(name + " " + x);
                 setHasDropped(true);
                 setHasDroppedOnChild(didDrop);
-                const b = name + " " + x;
-                console.log(b);
-                setName(name + " " + x);
                 /*
                 setBoxes(
                     update(boxes, {
@@ -108,8 +109,11 @@ export const Dustbin: FC<DustbinProps> = ({
         [greedy, setHasDropped, setHasDroppedOnChild, setName]
     );
     const text = "Trip Location:";
-    let backgroundColor = "rgba(0, 0, 0, 1)";
-
+    const colors = color;
+    let backgroundColor = colors;
+    if (hasDroppedOnChild) {
+        setName(name);
+    }
     if (isOverCurrent || (isOver && greedy)) {
         backgroundColor = "darkgreen";
     }
