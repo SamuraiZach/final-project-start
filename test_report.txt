@@ -67,6 +67,7 @@ All files            |    0.39 |        0 |    1.38 |    0.39 |
   NumberBox.ts       |       0 |        0 |       0 |       0 |                   
   ObjectPlaces.tsx   |       0 |        0 |       0 |       0 |                   
   Place.ts           |       0 |        0 |       0 |       0 |                   
+  PlaceKeyVersion.ts |       0 |        0 |       0 |       0 |                   
   index.tsx          |       0 |      100 |       0 |       0 | 8-80              
   interfaces.ts      |       0 |        0 |       0 |       0 |                   
   reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-11              
@@ -86,5 +87,5 @@ All files            |    0.39 |        0 |    1.38 |    0.39 |
 Test Suites: 1 failed, 1 passed, 2 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        4.539 s
+Time:        3.301 s
 Ran all test suites.
