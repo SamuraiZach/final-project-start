@@ -246,16 +246,21 @@ export const ContainerSouth: FC<ContainerProps> = ({ places }) => {
         }
     });
     const addatEnd = () => {
+        const yourKeyVariable = "happyCount";
+        const someValueArray = {
+            top: 400,
+            left: 740,
+            title: "https://upload.wikimedia.org/wikipedia/commons/e/e8/Serengeti_sunset-1001.jpg",
+            display: "inline"
+        };
+
+        //const obj = { [yourKeyVariable]: someValueArray };
         setBoxes({
             ...boxes,
-            "The Nile River, Africa": {
-                top: 320,
-                left: 720,
-                title: "https://upload.wikimedia.org/wikipedia/commons/a/a1/Evening%2C_Nile_River%2C_Uganda.jpg",
-                display: "inline"
-            }
+            [yourKeyVariable]: someValueArray
         });
         //EXAMPLE OF PUSHING NEW KEY AT THE END
+        console.log(boxes);
     };
     console.log(boxes);
     const moveBox = (id: string, left: number, top: number) => {
@@ -318,7 +323,11 @@ export const ContainerSouth: FC<ContainerProps> = ({ places }) => {
                     left: "0"
                 }}
             >
-                <Dustbin boxes={boxes} setBoxes={setBoxes}></Dustbin>
+                <Dustbin
+                    boxes={boxes}
+                    setBoxes={setBoxes}
+                    color={"white"}
+                ></Dustbin>
             </div>
             <div
                 style={{
