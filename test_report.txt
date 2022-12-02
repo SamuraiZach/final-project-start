@@ -56,7 +56,7 @@ All files            |    0.35 |        0 |    1.33 |    0.36 |
   App.tsx            |     100 |      100 |     100 |     100 |                   
   Basket.tsx         |       0 |        0 |       0 |       0 | 12-121            
   Box.tsx            |       0 |        0 |       0 |       0 | 7-34              
-  Container.tsx      |       0 |        0 |       0 |       0 | 17-339            
+  Container.tsx      |       0 |        0 |       0 |       0 | 17-356            
   ContainerEast.tsx  |       0 |        0 |       0 |       0 | 16-298            
   ContainerNorth.tsx |       0 |        0 |       0 |       0 | 16-298            
   ContainerSouth.tsx |       0 |        0 |       0 |       0 | 16-298            
@@ -68,7 +68,7 @@ All files            |    0.35 |        0 |    1.33 |    0.36 |
   ObjectPlaces.tsx   |       0 |        0 |       0 |       0 |                   
   Place.ts           |       0 |        0 |       0 |       0 |                   
   PlaceKeyVersion.ts |       0 |        0 |       0 |       0 |                   
-  index.tsx          |       0 |      100 |       0 |       0 | 8-80              
+  index.tsx          |       0 |      100 |       0 |       0 | 8-125             
   interfaces.ts      |       0 |        0 |       0 |       0 |                   
   reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-11              
  src/ReferenceCode   |       0 |        0 |       0 |       0 |                   
@@ -87,5 +87,5 @@ All files            |    0.35 |        0 |    1.33 |    0.36 |
 Test Suites: 1 failed, 1 passed, 2 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        3.164 s
+Time:        3.321 s
 Ran all test suites.
