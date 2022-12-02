@@ -5,7 +5,7 @@ import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { Button, Form } from "react-bootstrap";
 import SAMPLE from "./PlacesKeyVersion.json";
-import { Box } from "./Box";
+//import { Box } from "./Box";
 import "./App.css";
 function App() {
     const [sortValue, setValue] = useState<string>("All");
