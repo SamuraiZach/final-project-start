@@ -13,3 +13,13 @@ code {
     position: absolute;
     text-align: center;
 }
+
+itemconfiguration {
+    height: 440px;
+    width: 215px;
+    /* background-color:#CCC; */
+    overflow-y: auto;
+    float: left;
+    position: relative;
+    margin-left: -5px;
+}

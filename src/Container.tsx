@@ -244,6 +244,12 @@ export const Container: FC<ContainerProps> = ({ places }) => {
             left: 740,
             title: "https://upload.wikimedia.org/wikipedia/commons/e/e8/Serengeti_sunset-1001.jpg",
             display: "inline"
+        },
+        "Easter Island, Chile": {
+            top: 400,
+            left: 280,
+            title: "https://th-thumbnailer.cdn-si-edu.com/DumApVFAdRR83rSEvxeXi69iKEg=/1000x750/filters:no_upscale():focal(2304x1536:2305x1537)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/81/22/8122e662-681b-4370-a20a-a82e936c3711/gettyimages-921707628.jpg",
+            display: "inline"
         }
     });
     //ABLE TO APPEND USING VARIABLES
