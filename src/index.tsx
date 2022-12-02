@@ -4,10 +4,26 @@ import { Interactables } from "./DraggingLayer";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { Button, Form } from "react-bootstrap";
+import SAMPLE from "./PlacesKeyVersion.json";
+import { Box } from "./Box";
+import "./App.css";
 function App() {
     const [sortValue, setValue] = useState<string>("All");
+    const [SortValueList, setSortValue] = useState<string>("None");
+    const [boxes, setBoxes] = useState<{
+        [key: string]: {
+            top: number;
+            left: number;
+            title: string;
+            display: string;
+        };
+    }>(SAMPLE);
+    console.log(Object.keys(boxes).length);
     function updateValue(event: React.ChangeEvent<HTMLSelectElement>) {
         setValue(event.target.value);
+    }
+    function updateValueSort(event: React.ChangeEvent<HTMLSelectElement>) {
+        setSortValue(event.target.value);
     }
     return (
         <div className="App">
@@ -73,7 +89,11 @@ function App() {
                         width: "1350px"
                     }}
                 >
-                    <Interactables sortValue={sortValue} />
+                    <Interactables
+                        sortValue={sortValue}
+                        boxes={boxes}
+                        setBoxes={setBoxes}
+                    />
                 </div>
                 <div
                     style={{
@@ -84,7 +104,9 @@ function App() {
                 >
                     <Form.Label>Sort View</Form.Label>
                     <Form.Select
-                        /*value={sortValue} onChange={updateValue}*/ style={{
+                        value={SortValueList}
+                        onChange={updateValueSort}
+                        style={{
                             width: 255
                         }}
                     >
@@ -113,15 +135,36 @@ function App() {
                     </Button>
                 </div>
                 <div
+                    className="itemconfiguration"
                     style={{
                         position: "relative",
-                        left: ".2%",
+                        left: ".1%",
                         top: "50px",
                         border: "1px solid black",
                         width: "14.6%",
-                        height: "750px"
+                        height: "750px",
+                        maxHeight: "750px",
+                        display: "inline-block"
                     }}
-                ></div>
+                >
+                    {Object.keys(boxes).map((key) => {
+                        const { title } = boxes[key] as {
+                            title: string;
+                        };
+                        return (
+                            <div key={key} style={{ height: "10vw" }}>
+                                <img
+                                    key={key}
+                                    id={key}
+                                    src={title}
+                                    width="50px%"
+                                    alt={title}
+                                />
+                                <span></span>
+                            </div>
+                        );
+                    })}
+                </div>
             </DndProvider>
         </div>
     );

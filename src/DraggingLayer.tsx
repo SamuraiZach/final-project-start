@@ -12,6 +12,24 @@ import { ContainerEast } from "./ContainerEast";
 
 export interface InteractablesProp {
     sortValue: string;
+    boxes: {
+        [key: string]: {
+            top: number;
+            left: number;
+            title: string;
+            display: string;
+        };
+    };
+    setBoxes: React.Dispatch<
+        React.SetStateAction<{
+            [key: string]: {
+                top: number;
+                left: number;
+                title: string;
+                display: string;
+            };
+        }>
+    >;
 }
 
 export const Interactables: FC<InteractablesProp> = ({ sortValue }) => {
