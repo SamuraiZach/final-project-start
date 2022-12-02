@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React from "react";
+import React, { ReactNode } from "react";
 import update from "immutability-helper";
 import type { CSSProperties, FC } from "react";
 import { useCallback, useState } from "react";
@@ -286,22 +286,40 @@ export const Container: FC<ContainerProps> = ({ places }) => {
             return undefined;
         }
     });
-    const looper = () => {
+    const childInstance = (): ReactNode => {
         return (
-            <div>
+            <div
+                style={{
+                    overflow: "hidden",
+                    clear: "both",
+                    margin: "-1rem",
+                    position: "relative",
+                    top: "0%",
+                    left: "0%"
+                }}
+            >
                 <Dustbin
                     boxes={boxes}
                     setBoxes={setBoxes}
-                    color={"white"}
+                    color={"grey"}
                 ></Dustbin>
             </div>
         );
     };
     const renderLayers = () => {
         return (
-            <div>
+            <div
+                style={{
+                    overflow: "hidden",
+                    clear: "both",
+                    margin: "-1rem",
+                    position: "absolute",
+                    top: "0",
+                    left: "0"
+                }}
+            >
                 <Dustbin boxes={boxes} setBoxes={setBoxes} color={"black"}>
-                    {looper()}
+                    {childInstance()}
                 </Dustbin>
             </div>
         );
@@ -335,19 +353,7 @@ export const Container: FC<ContainerProps> = ({ places }) => {
                     );
                 })}
             </div>
-            <div
-                ref={() => renderLayers}
-                style={{
-                    overflow: "hidden",
-                    clear: "both",
-                    margin: "-1rem",
-                    position: "absolute",
-                    top: "0",
-                    left: "0"
-                }}
-            >
-                {renderLayers()}
-            </div>
+            <div ref={() => renderLayers}>{renderLayers()}</div>
             <div
                 style={{
                     position: "absolute",
