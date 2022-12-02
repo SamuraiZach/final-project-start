@@ -6,180 +6,345 @@
         "display": "inline",
         "Name": "Eiffel Tower",
         "Country": "France",
-        "Description": "",
         "Continent": "Europe",
-        "Population_Country": 0,
-        "Average_Tourist": 0,
-        "onMap": false,
-        "priority": 0,
-        "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThNogb7-o4aaVM8FY751SGV1d7TcAQ2x2g3O6QKDqjH-4Co6j2_FbL_-FifB06n_aud-c&usqp=CAU"
+        "Population_Country": 65273511,
+        "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThNogb7-o4aaVM8FY751SGV1d7TcAQ2x2g3O6QKDqjH-4Co6j2_FbL_-FifB06n_aud-c&usqp=CAU",
+        "PopularFood": ["Pasta", "Pasteries"]
     },
     "Niagra Falls, Canada": {
         "top": 90,
         "left": 365,
         "title": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/3Falls_Niagara.jpg/1280px-3Falls_Niagara.jpg",
-        "display": "inline"
+        "display": "inline",
+        "Name": "Niagra Falls",
+        "Country": "Canada",
+        "Continent": "North America",
+        "Population_Country": 37742154,
+        "Image": "https://upload.wikimedia.org/wikipedia/commons/a/ab/3Falls_Niagara.jpg",
+        "PopularFood": ["Maple Syrup"]
     },
-    "Lincoln Memorial, USA": {
+    "Lincoln Memorial, United States of America": {
         "top": 210,
         "left": 365,
         "title": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Aerial_view_of_Lincoln_Memorial_-_east_side_EDIT.jpeg/375px-Aerial_view_of_Lincoln_Memorial_-_east_side_EDIT.jpeg",
-        "display": "inline"
+        "display": "inline",
+        "Name": "Lincoln Memorial",
+        "Country": "United States of America",
+        "Continent": "North America",
+        "Population_Country": 331002651,
+        "Image": "https://washington.org/sites/default/files/styles/generic_hero_banner_1440_x_600/public/pixels.sh_visitors-to-the-lincoln-memorial-at-night_mydccool-via-crowdriff.jpg?h=c9f93661&itok=rP1ROwa8",
+        "PopularFood": ["Pizza"]
     },
     "Machu Picchu, Peru": {
         "top": 450,
         "left": 350,
         "title": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Before_Machu_Picchu.jpg/450px-Before_Machu_Picchu.jpg",
-        "display": "inline"
+        "display": "inline",
+        "Name": "Machu Picchu",
+        "Country": "Peru",
+        "Continent": "South America",
+        "Population_Country": 32971854,
+        "Image": "https://i.natgeofe.com/n/1b3a8676-4cb2-4600-9d9b-45cb225328e1/37751.jpg",
+        "PopularFood": ["Ceviche"]
     },
-    "British Museum, Britain": {
+    "British Museum, England": {
         "top": 90,
         "left": 590,
         "title": "https://lp-cms-production.imgix.net/2019-06/46e3203d7997df00a49d372a75086215-british-museum.jpg?auto=format&q=40&ar=16%3A9&fit=crop&crop=center&fm=auto&w=1946",
-        "display": "inline"
+        "display": "inline",
+        "Name": "Biritish Museum",
+        "Country": "England",
+        "Continent": "Europe",
+        "Population_Country": 67886011,
+        "Image": "https://cdn.britannica.com/12/127112-050-F4DD3B7A/British-Museum-London.jpg",
+        "PopularFood": ["FishNChips"]
     },
-    "Central Park USA": {
+    "Central Park United States of America": {
         "top": 150,
         "left": 365,
         "title": "https://images.unsplash.com/photo-1575372587186-5012f8886b4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bmV3JTIweW9yayUyMGNlbnRyYWwlMjBwYXJrfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-        "display": "inline"
+        "display": "inline",
+        "Name": "Central Park",
+        "Country": "United States of America",
+        "Continent": "North America",
+        "Population_Country": 331002651,
+        "Image": "https://media.architecturaldigest.com/photos/62670cf1a841e371198e0b28/master/pass/GettyImages-1347979016.jpg",
+        "PopularFood": ["Pizza"]
     },
     "The Colosseum, Rome": {
         "top": 190,
         "left": 655,
         "title": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Colosseo_2020.jpg/405px-Colosseo_2020.jpg",
-        "display": "inline"
+        "display": "inline",
+        "Name": "The Colosseum",
+        "Country": "Rome",
+        "Continent": "Europe",
+        "Population_Country": 60461826,
+        "Image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Colosseo_2020.jpg/2560px-Colosseo_2020.jpg",
+        "PopularFood": ["Pasta"]
     },
-    "Disney Land, USA": {
+    "Disney World, USA": {
         "top": 175,
         "left": 200,
         "title": "https://i.insider.com/60c7608023393a00188e2e91?width=1000&format=jpeg&auto=webp",
-        "display": "inline"
+        "display": "inline",
+        "Name": "Disney World",
+        "Country": "United States of America",
+        "Continent": "North America",
+        "Population_Country": 331002651,
+        "Image": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/433/433/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/attractions/cinderella-castle/0526ZP_1270MS_xak_R2-1x1.jpg?2022-03-10T19:16:43+00:00",
+        "PopularFood": ["Chicken Nuggets"]
     },
     "Forbidden City, China": {
         "top": 200,
         "left": 1025,
         "title": "https://cdn.britannica.com/59/180959-050-54A641EE/Hall-of-Supreme-Harmony-Beijing-Forbidden-City.jpg?w=690&h=388&c=crop",
-        "display": "inline"
+        "display": "inline",
+        "Name": "Forbidden City",
+        "Country": "China",
+        "Continent": "Asia",
+        "Population_Country": 1439323776,
+        "Image": "https://images.chinahighlights.com/allpicture/2021/07/ba7326f5e3544102917eb2c0_cut_800x500_349.jpg",
+        "PopularFood": ["Egg Rolls"]
     },
-    "Giza Pyramid, Egypt": {
+    "Pyramids of Giza, Egypt": {
         "top": 250,
         "left": 720,
         "title": "https://cdn.mos.cms.futurecdn.net/YMa7Wx2FyjQFUjEeqa72Rm-1200-80.jpg.webp",
-        "display": "inline"
+        "display": "inline",
+        "Name": "Pyramids of Giza",
+        "Country": "Egypt",
+        "Continent": "Africa",
+        "Population_Country": 102334404,
+        "Image": "https://i.natgeofe.com/n/535f3cba-f8bb-4df2-b0c5-aaca16e9ff31/giza-plateau-pyramids.jpg",
+        "PopularFood": ["Legumes"]
     },
-    "Grand Canyon, USA": {
+    "Grand Canyon, United States of America": {
         "top": 235,
         "left": 250,
         "title": "https://www.nps.gov/grca/planyourvisit/images/mather-point-2021.jpg?maxwidth=1200&maxheight=1200&autorotate=false",
-        "display": "inline"
+        "display": "inline",
+        "Name": "Grand Canyon",
+        "Country": "United States of America",
+        "Continent": "North America",
+        "Population_Country": 331002651,
+        "Image": "https://morethanjustparks.com/wp-content/uploads/2022/04/grand-canyon1.jpg",
+        "PopularFood": ["Chicken Nuggets"]
     },
     "The Acropolis, Greece": {
         "top": 180,
         "left": 720,
         "title": "https://whc.unesco.org/uploads/thumbs/site_0404_0001-750-750-20151105102353.jpg",
-        "display": "inline"
+        "display": "inline",
+        "Name": "The Acropolis",
+        "Country": "Greece",
+        "Continent": "Europe",
+        "Population_Country": 10423054,
+        "Image": "https://photos.smugmug.com/photos/564223839_GxY53-X3.jpg",
+        "PopularFood": ["Pastitsio"]
     },
-    "Statue of Liberty, USA": {
+    "Statue of Liberty, United States of America": {
         "top": 150,
         "left": 425,
         "title": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Lady_Liberty_under_a_blue_sky_%28cropped%29.jpg/330px-Lady_Liberty_under_a_blue_sky_%28cropped%29.jpg",
-        "display": "inline"
+        "display": "inline",
+        "Name": "Statue of Liberty",
+        "Country": "United States of America",
+        "Continent": "North America",
+        "Population_Country": 331002651,
+        "Image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Lady_Liberty_under_a_blue_sky_%28cropped%29_%28cropped%29.jpg/1200px-Lady_Liberty_under_a_blue_sky_%28cropped%29_%28cropped%29.jpg",
+        "PopularFood": ["Pizza"]
     },
     "The Louvre, France": {
         "top": 210,
         "left": 595,
         "title": "https://media.architecturaldigest.com/photos/5900cc370638dd3b70018b33/3:4/w_1547,h_2063,c_limit/Secrets%20of%20Louvre%201.jpg",
-        "display": "inline"
+        "display": "inline",
+        "Name": "The Louvre",
+        "Country": "France",
+        "Continent": "Europe",
+        "Population_Country": 65273511,
+        "Image": "https://api-www.louvre.fr/sites/default/files/2021-01/cour-napoleon-et-pyramide_1.jpg",
+        "PopularFood": ["Cassoulet"]
     },
-    "Notre Dame, France": {
+    "Notre Dame Cathedral, France": {
         "top": 130,
         "left": 650,
         "title": "https://cdn.britannica.com/35/155335-050-D0C61BB7/Notre-Dame-de-Paris-France.jpg?w=690&h=388&c=crop",
-        "display": "inline"
+        "display": "inline",
+        "Name": "Notre Dame Cathedral",
+        "Country": "France",
+        "Continent": "Europe",
+        "Population_Country": 65273511,
+        "Image": "https://cdn.britannica.com/35/155335-050-D0C61BB7/Notre-Dame-de-Paris-France.jpg",
+        "PopularFood": ["Cassoulet"]
     },
     "Sydney Opera House, Australia": {
         "top": 520,
         "left": 1150,
         "title": "https://static.dezeen.com/uploads/2022/09/sydney-opera-house-concert-hall-renewal-arm-architecture-susan-kuriakose_dezeen_2364_col_0.jpg",
-        "display": "inline"
+        "display": "inline",
+        "Name": "Sydney Opera House",
+        "Country": "Australia",
+        "Continent": "Oceania",
+        "Population_Country": 25499884,
+        "Image": "https://cdn.britannica.com/96/100196-050-C92064E0/Sydney-Opera-House-Port-Jackson.jpg",
+        "PopularFood": ["Vegemite"]
     },
     "Taj Mahal, India": {
         "top": 260,
         "left": 890,
         "title": "https://cdn.britannica.com/86/170586-050-AB7FEFAE/Taj-Mahal-Agra-India.jpg",
-        "display": "inline"
+        "display": "inline",
+        "Name": "Taj Mahal",
+        "Country": "India",
+        "Continent": "Asia",
+        "Population_Country": 1380004385,
+        "Image": "https://cdn.britannica.com/86/170586-050-AB7FEFAE/Taj-Mahal-Agra-India.jpg",
+        "PopularFood": ["Curry"]
     },
-    "Great Wall of China": {
+    "Great Wall of China, China": {
         "top": 200,
         "left": 950,
         "title": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/The_Great_Wall_of_China_at_Jinshanling-edit.jpg/1200px-The_Great_Wall_of_China_at_Jinshanling-edit.jpg",
-        "display": "inline"
+        "display": "inline",
+        "Name": "Great Wall Of China",
+        "Country": "China",
+        "Continent": "Asia",
+        "Population_Country": 1439323776,
+        "Image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/The_Great_Wall_of_China_at_Jinshanling-edit.jpg/1200px-The_Great_Wall_of_China_at_Jinshanling-edit.jpg",
+        "PopularFood": ["Chow Mein"]
     },
     "Bora Bora Islands, French Polynesia": {
         "top": 420,
         "left": 1280,
         "title": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Bora_Bora_ISS006.jpg/260px-Bora_Bora_ISS006.jpg",
-        "display": "inline"
+        "display": "inline",
+        "Name": "Bora Bora Islands",
+        "Country": "French Polynesia",
+        "Continent": "Oceania",
+        "Population_Country": 280908,
+        "Image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Bora_Bora_ISS006.jpg/260px-Bora_Bora_ISS006.jpg",
+        "PopularFood": ["Pahua taioro"]
     },
     "Great Barrier Reef, Australia": {
         "top": 465,
         "left": 1150,
         "title": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/ISS-45_StoryOfWater%2C_Great_Barrier_Reef%2C_Australia.jpg/255px-ISS-45_StoryOfWater%2C_Great_Barrier_Reef%2C_Australia.jpg",
-        "display": "inline"
+        "display": "inline",
+        "Name": "Great Barrier Reef",
+        "Country": "Australia",
+        "Continent": "Oceania",
+        "Population_Country": 25499884,
+        "Image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/ISS-45_StoryOfWater%2C_Great_Barrier_Reef%2C_Australia.jpg/255px-ISS-45_StoryOfWater%2C_Great_Barrier_Reef%2C_Australia.jp",
+        "PopularFood": ["Vegemite"]
     },
     "Singapore, Asia": {
         "top": 370,
         "left": 980,
         "title": "https://www.planetware.com/wpimages/2020/03/singapore-in-pictures-beautiful-places-to-photograph-marina-bay-sands.jpg",
-        "display": "inline"
+        "display": "inline",
+        "Name": "Singapore",
+        "Country": "Asia",
+        "Continent": "Asia",
+        "Population_Country": 5850342,
+        "Image": "https://www.planetware.com/wpimages/2020/03/singapore-in-pictures-beautiful-places-to-photograph-marina-bay-sands.jpg",
+        "PopularFood": ["Laksa"]
     },
     "Milford Sound, New Zealand": {
         "top": 620,
         "left": 1155,
         "title": "https://www.newzealand.com/assets/Campaigns/If-You-Seek/Milford_Sound-Fiordland-MH1__aWxvdmVrZWxseQo_CropResizeWzEyMDAsNjMwLDc1LCJqcGciXQ.jpg",
-        "display": "inline"
+        "display": "inline",
+        "Name": "Milford Sound",
+        "Country": "New Zealand",
+        "Continent": "Oceania",
+        "Population_Country": 4822233,
+        "Image": "https://www.newzealand.com/assets/Campaigns/If-You-Seek/Milford_Sound-Fiordland-MH1__aWxvdmVrZWxseQo_CropResizeWzEyMDAsNjMwLDc1LCJqcGciXQ.jpg",
+        "PopularFood": ["Crayfish"]
     },
     "Banana Reef, Maldives": {
         "top": 350,
         "left": 850,
         "title": "https://pyt-blogs.imgix.net/2020/04/banana-reef.jpg?auto=format&ixlib=php-3.3.0",
-        "display": "inline"
+        "display": "inline",
+        "Name": "Banana Reef",
+        "Country": "Maldives",
+        "Continent": "Asia",
+        "Population_Country": 540544,
+        "Image": "https://pyt-blogs.imgix.net/2020/04/banana-reef.jpg?auto=format&ixlib=php-3.3.0",
+        "PopularFood": ["Garudhiya"]
     },
     "Rio de Janeiro, Brazil": {
         "top": 500,
         "left": 450,
         "title": "http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcTe-dwgdLWZjmiZcegXH0teITQ29VOPrOo9DoQnJj7leKBUd8X27XJVKfDCPaSDl5SC",
-        "display": "inline"
+        "display": "inline",
+        "Name": "Rio de Janeiro",
+        "Country": "Brazil",
+        "Continent": "South America",
+        "Population_Country": 212559417,
+        "Image": "http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcTe-dwgdLWZjmiZcegXH0teITQ29VOPrOo9DoQnJj7leKBUd8X27XJVKfDCPaSDl5SC",
+        "PopularFood": ["Feijoada"]
     },
     "Santa Claus Village, Finland": {
         "top": 75,
         "left": 710,
         "title": "https://santaclausvillage.info/userassets/uploads/2018/03/central-plaza-santa-claus-village-rovaniemi-lapland-finland-1-1170x692.jpg",
-        "display": "inline"
+        "display": "inline",
+        "Name": "Santa Claus Village",
+        "Country": "Finland",
+        "Continent": "Europe",
+        "Population_Country": 5540720,
+        "Image": "https://santaclausvillage.info/userassets/uploads/2018/03/central-plaza-santa-claus-village-rovaniemi-lapland-finland-1-1170x692.jpg",
+        "PopularFood": ["Karelian"]
     },
     "Mount Fuji, Japan": {
         "top": 200,
         "left": 1100,
         "title": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjKpXiV_c6wL661jMtt7R0m5Yahs6tGx2gFc4QhYGma1Kv6-7-AXC9eI2TlCtJZ_V2iMc&usqp=CAU",
-        "display": "inline"
+        "display": "inline",
+        "Name": "Mount Fuji",
+        "Country": "Japan",
+        "Continent": "Asia",
+        "Population_Country": 126476461,
+        "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjKpXiV_c6wL661jMtt7R0m5Yahs6tGx2gFc4QhYGma1Kv6-7-AXC9eI2TlCtJZ_V2iMc&usqp=CAU",
+        "PopularFood": ["Sushi"]
     },
     "Victoria Falls, Zimbabwe": {
         "top": 480,
         "left": 700,
         "title": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkvClSWO6cjEqXmemco9GMaV5oRxiakbMPcrmoY6DLMuEcCJl12lXilEOqIRxCwG2CE8A&usqp=CAU",
-        "display": "inline"
+        "display": "inline",
+        "Name": "Victoria Falls",
+        "Country": "Zimbabwe",
+        "Continent": "Africa",
+        "Population_Country": 14862924,
+        "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkvClSWO6cjEqXmemco9GMaV5oRxiakbMPcrmoY6DLMuEcCJl12lXilEOqIRxCwG2CE8A&usqp=CAU",
+        "PopularFood": ["Maheu"]
     },
     "Havana, Cuba": {
         "top": 280,
         "left": 340,
         "title": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Habana_Vieja_de_noche.jpg/280px-Habana_Vieja_de_noche.jpg",
-        "display": "inline"
+        "display": "inline",
+        "Name": "Havana",
+        "Country": "Cuba",
+        "Continent": "North America",
+        "Population_Country": 11326616,
+        "Image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Habana_Vieja_de_noche.jpg/280px-Habana_Vieja_de_noche.jpg",
+        "PopularFood": ["Ropa Vieja"]
     },
     "Serengeti National Park, Tanzania": {
         "top": 400,
         "left": 740,
         "title": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Serengeti_sunset-1001.jpg",
-        "display": "inline"
+        "display": "inline",
+        "Name": "Serengeti National Park",
+        "Country": "Tanzania",
+        "Continent": "Africa",
+        "Population_Country": 59734218,
+        "Image": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Serengeti_sunset-1001.jpg",
+        "PopularFood": ["ugali"]
     }
 }

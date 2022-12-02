@@ -93,6 +93,12 @@ function App() {
                         <option value="Left to Right">Left to Right</option>
                         <option value="Alpha L to G">Alpha L to G</option>
                         <option value="Right to Left">Right to Left</option>
+                        <option value="Population G to L">
+                            Population G to L
+                        </option>
+                        <option value="Population L to G">
+                            Population L to G
+                        </option>
                     </Form.Select>
                 </div>
                 <div
