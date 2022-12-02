@@ -51,26 +51,27 @@ PASS src/App.test.tsx
 ---------------------|---------|----------|---------|---------|-------------------
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ---------------------|---------|----------|---------|---------|-------------------
-All files            |    0.35 |        0 |    1.33 |    0.36 |                   
- src                 |    0.53 |        0 |    2.12 |    0.53 |                   
+All files            |    0.34 |        0 |    1.28 |    0.35 |                   
+ src                 |     0.5 |        0 |       2 |    0.51 |                   
   App.tsx            |     100 |      100 |     100 |     100 |                   
   Basket.tsx         |       0 |        0 |       0 |       0 | 12-121            
   Box.tsx            |       0 |        0 |       0 |       0 | 7-34              
-  Container.tsx      |       0 |        0 |       0 |       0 | 17-356            
+  Container.tsx      |       0 |        0 |       0 |       0 | 17-362            
   ContainerEast.tsx  |       0 |        0 |       0 |       0 | 16-298            
   ContainerNorth.tsx |       0 |        0 |       0 |       0 | 16-298            
   ContainerSouth.tsx |       0 |        0 |       0 |       0 | 16-298            
   ContainerWest.tsx  |       0 |        0 |       0 |       0 | 16-298            
-  DraggingLayer.tsx  |       0 |        0 |       0 |       0 | 17-74             
+  DraggingLayer.tsx  |       0 |        0 |       0 |       0 | 35-92             
   ItemTypes.ts       |       0 |      100 |     100 |       0 | 1                 
   MapBox.ts          |       0 |        0 |       0 |       0 |                   
   NumberBox.ts       |       0 |        0 |       0 |       0 |                   
   ObjectPlaces.tsx   |       0 |        0 |       0 |       0 |                   
   Place.ts           |       0 |        0 |       0 |       0 |                   
   PlaceKeyVersion.ts |       0 |        0 |       0 |       0 |                   
-  index.tsx          |       0 |      100 |       0 |       0 | 8-131             
+  index.tsx          |       0 |      100 |       0 |       0 | 11-174            
   interfaces.ts      |       0 |        0 |       0 |       0 |                   
   reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-11              
+  sortBox.tsx        |       0 |      100 |       0 |       0 | 5-20              
  src/ReferenceCode   |       0 |        0 |       0 |       0 |                   
   Board.tsx          |       0 |        0 |       0 |       0 | 8-38              
   BoardSquare.tsx    |       0 |        0 |       0 |       0 | 13-26             
@@ -87,5 +88,5 @@ All files            |    0.35 |        0 |    1.33 |    0.36 |
 Test Suites: 1 failed, 1 passed, 2 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        3.337 s
+Time:        3.382 s
 Ran all test suites.
