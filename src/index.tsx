@@ -3,7 +3,7 @@ import { render } from "react-dom";
 import { Interactables } from "./DraggingLayer";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import { Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 function App() {
     const [sortValue, setValue] = useState<string>("All");
     function updateValue(event: React.ChangeEvent<HTMLSelectElement>) {
@@ -47,12 +47,16 @@ function App() {
                 <div
                     style={{
                         position: "absolute",
-                        right: "2%",
+                        right: "1%",
                         top: "40px"
                     }}
                 >
                     <Form.Label>Show Hemisphere Specific Places</Form.Label>
-                    <Form.Select value={sortValue} onChange={updateValue}>
+                    <Form.Select
+                        value={sortValue}
+                        onChange={updateValue}
+                        style={{ width: 255 }}
+                    >
                         <option value="All">All</option>
                         <option value="West Side">Western Hemisphere</option>
                         <option value="East Side">Eastern Hemisphere</option>
@@ -71,6 +75,47 @@ function App() {
                 >
                     <Interactables sortValue={sortValue} />
                 </div>
+                <div
+                    style={{
+                        position: "absolute",
+                        right: "1%",
+                        top: "12%"
+                    }}
+                >
+                    <Form.Label>Sort View</Form.Label>
+                    <Form.Select
+                        /*value={sortValue} onChange={updateValue}*/ style={{
+                            width: 255
+                        }}
+                    >
+                        <option value="None">None</option>
+                        <option value="Alpha G to L">Alpha G to L</option>
+                        <option value="Left to Right">Left to Right</option>
+                        <option value="Alpha L to G">Alpha L to G</option>
+                        <option value="Right to Left">Right to Left</option>
+                    </Form.Select>
+                </div>
+                <div
+                    style={{
+                        position: "absolute",
+                        top: "21%",
+                        right: "1%"
+                    }}
+                >
+                    <Button style={{ width: 255 }} /*onClick={addatEnd}*/>
+                        Add Place
+                    </Button>
+                </div>
+                <div
+                    style={{
+                        position: "relative",
+                        left: ".2%",
+                        top: "50px",
+                        border: "1px solid black",
+                        width: "14.6%",
+                        height: "750px"
+                    }}
+                ></div>
             </DndProvider>
         </div>
     );
