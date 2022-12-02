@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/final-project-start/static/js/main.b3beaa85.js",
+    "main.js": "/final-project-start/static/js/main.19cf17b9.js",
     "static/media/worldmap2.png": "/final-project-start/static/media/worldmap2.f4bcaac4685af0173335.png",
     "index.html": "/final-project-start/index.html",
-    "main.b3beaa85.js.map": "/final-project-start/static/js/main.b3beaa85.js.map"
+    "main.19cf17b9.js.map": "/final-project-start/static/js/main.19cf17b9.js.map"
   },
   "entrypoints": [
-    "static/js/main.b3beaa85.js"
+    "static/js/main.19cf17b9.js"
   ]
 }
