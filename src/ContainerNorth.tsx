@@ -33,6 +33,8 @@ export interface ContainerProps {
             Population_Country: number;
             Image: string;
             PopularFood: string[];
+            resetTop: number;
+            resetLeft: number;
         };
     };
     setBoxes: React.Dispatch<
@@ -48,6 +50,8 @@ export interface ContainerProps {
                 Population_Country: number;
                 Image: string;
                 PopularFood: string[];
+                resetTop: number;
+                resetLeft: number;
             };
         }>
     >;

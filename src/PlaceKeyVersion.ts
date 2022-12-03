@@ -10,5 +10,7 @@ export interface PlaceKeyVersion {
         Population_Country: number;
         Image: string;
         PopularFood: string[];
+        resetTop: number;
+        resetLeft: number;
     };
 }
