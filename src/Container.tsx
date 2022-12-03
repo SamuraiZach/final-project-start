@@ -14,6 +14,8 @@ import { ItemTypes } from "./ItemTypes";
 import { Button } from "react-bootstrap";
 import { string } from "prop-types";
 import { DeleteBin } from "./DeleteBasket";
+import { ChildBin } from "./ChildBasket";
+import { NewPlannerBin } from "./BasketNewPlanner";
 
 const styles: CSSProperties = {
     width: 1350,
@@ -58,6 +60,7 @@ export interface ContainerProps {
         }>
     >;
     deleteBox: (value: string) => void;
+    basketMove: (item: object) => void;
 }
 
 export interface ContainerState {
@@ -76,7 +79,8 @@ export const Container: FC<ContainerProps> = ({
     places,
     boxes,
     setBoxes,
-    deleteBox
+    deleteBox,
+    basketMove
 }) => {
     const moveBox = (id: string, left: number, top: number) => {
         setBoxes(
@@ -111,11 +115,12 @@ export const Container: FC<ContainerProps> = ({
                     left: "0%"
                 }}
             >
-                <Dustbin
+                <ChildBin
                     boxes={boxes}
                     setBoxes={setBoxes}
                     color={"grey"}
-                ></Dustbin>
+                    basketMove={basketMove}
+                ></ChildBin>
             </div>
         );
     };
@@ -130,12 +135,22 @@ export const Container: FC<ContainerProps> = ({
                     left: "0%"
                 }}
             >
-                <Dustbin boxes={boxes} setBoxes={setBoxes} color={"black"}>
+                <Dustbin
+                    boxes={boxes}
+                    setBoxes={setBoxes}
+                    color={"black"}
+                    basketMove={basketMove}
+                >
                     {childInstance()}
                 </Dustbin>
-                <Dustbin boxes={boxes} setBoxes={setBoxes} color={"black"}>
+                <NewPlannerBin
+                    boxes={boxes}
+                    setBoxes={setBoxes}
+                    color={"black"}
+                    basketMove={basketMove}
+                >
                     {childInstance()}
-                </Dustbin>
+                </NewPlannerBin>
             </div>
         );
     };
@@ -144,12 +159,32 @@ export const Container: FC<ContainerProps> = ({
         <div>
             <div ref={drop} style={styles}>
                 {Object.keys(boxes).map((d) => {
-                    const { left, top, title, display, Name } = boxes[d] as {
-                        top: number;
+                    const {
+                        left,
+                        top,
+                        title,
+                        display,
+                        Name,
+                        Country,
+                        Continent,
+                        Population_Country,
+                        Image,
+                        PopularFood,
+                        resetTop,
+                        resetLeft
+                    } = boxes[d] as {
                         left: number;
+                        top: number;
                         title: string;
                         display: string;
                         Name: string;
+                        Country: string;
+                        Continent: string;
+                        Population_Country: number;
+                        Image: string;
+                        PopularFood: string[];
+                        resetTop: number;
+                        resetLeft: number;
                     };
                     return (
                         <Box
@@ -157,8 +192,16 @@ export const Container: FC<ContainerProps> = ({
                             id={d}
                             left={left}
                             top={top}
+                            title={title}
                             display={display}
                             Name={Name}
+                            Country={Country}
+                            Continent={Continent}
+                            Population_Country={Population_Country}
+                            Image={Image}
+                            PopularFood={PopularFood}
+                            resetTop={resetTop}
+                            resetLeft={resetLeft}
                         >
                             <img
                                 src={title}
@@ -201,6 +244,7 @@ export const Container: FC<ContainerProps> = ({
                     setBoxes={setBoxes}
                     color={"black"}
                     deleteBox={deleteBox}
+                    basketMove={basketMove}
                 ></DeleteBin>
             </div>
         </div>

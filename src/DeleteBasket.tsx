@@ -67,6 +67,7 @@ export interface DustbinProps {
     >;
     color: string;
     deleteBox: (value: string) => void;
+    basketMove: (item: object) => void;
 }
 
 export interface DustbinState {
@@ -80,7 +81,8 @@ export const DeleteBin: FC<DustbinProps> = ({
     boxes,
     setBoxes,
     color,
-    deleteBox
+    deleteBox,
+    basketMove
 }) => {
     const [hasDropped, setHasDropped] = useState(false);
     const [hasDroppedOnChild, setHasDroppedOnChild] = useState(false);
@@ -96,30 +98,21 @@ export const DeleteBin: FC<DustbinProps> = ({
                 deleteBox(Object(item).Name);
                 setHasDropped(true);
                 setHasDroppedOnChild(didDrop);
-                setBoxes({
-                    ...boxes,
-                    [x]: {
-                        top: Object(item).top,
-                        left: Object(item).left,
-                        title: Object(item).title,
-                        display: "none",
-                        Name: Object(item).Name,
-                        Country: Object(item).Country,
-                        Continent: Object(item).Continent,
-                        Population_Country: Object(item).Population_Country,
-                        Image: Object(item).Image,
-                        PopularFood: [Object(item).PopularFood],
-                        resetTop: Object(item).resetTop,
-                        resetLeft: Object(item).resetLeft
-                    }
-                });
+                basketMove(item);
             },
             collect: (monitor) => ({
                 isOver: monitor.isOver(),
                 isOverCurrent: monitor.isOver({ shallow: true })
             })
         }),
-        [greedy, setHasDropped, setHasDroppedOnChild, setName, deleteBox]
+        [
+            greedy,
+            setHasDropped,
+            setHasDroppedOnChild,
+            setName,
+            deleteBox,
+            basketMove
+        ]
     );
     const text = "Delete Trip:";
     const colors = color;

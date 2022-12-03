@@ -15,8 +15,16 @@ export interface BoxProps {
     id: string;
     left: number;
     top: number;
+    title: string;
     display: string;
     Name: string;
+    Country: string;
+    Continent: string;
+    Population_Country: number;
+    Image: string;
+    PopularFood: string[];
+    resetTop: number;
+    resetLeft: number;
     children?: ReactNode;
 }
 
@@ -24,13 +32,35 @@ export const Box: FC<BoxProps> = ({
     id,
     left,
     top,
+    title,
     display,
     Name,
+    Country,
+    Continent,
+    Population_Country,
+    Image,
+    PopularFood,
+    resetTop,
+    resetLeft,
     children
 }) => {
     const [{ isDragging }, drag] = useDrag({
         type: ItemTypes.BOX,
-        item: { id, left, top, display, Name },
+        item: {
+            id,
+            left,
+            top,
+            title,
+            display,
+            Name,
+            Country,
+            Continent,
+            Population_Country,
+            Image,
+            PopularFood,
+            resetTop,
+            resetLeft
+        },
         collect: (monitor) => ({
             isDragging: monitor.isDragging()
         })
