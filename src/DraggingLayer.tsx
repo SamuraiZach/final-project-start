@@ -18,6 +18,12 @@ export interface InteractablesProp {
             left: number;
             title: string;
             display: string;
+            Name: string;
+            Country: string;
+            Continent: string;
+            Population_Country: number;
+            Image: string;
+            PopularFood: string[];
         };
     };
     setBoxes: React.Dispatch<
@@ -27,6 +33,12 @@ export interface InteractablesProp {
                 left: number;
                 title: string;
                 display: string;
+                Name: string;
+                Country: string;
+                Continent: string;
+                Population_Country: number;
+                Image: string;
+                PopularFood: string[];
             };
         }>
     >;
