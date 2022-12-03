@@ -16,6 +16,12 @@ function App() {
             left: number;
             title: string;
             display: string;
+            Name: string;
+            Country: string;
+            Continent: string;
+            Population_Country: number;
+            Image: string;
+            PopularFood: string[];
         };
     }>(SAMPLE);
     console.log(Object.keys(boxes).length);
@@ -138,29 +144,46 @@ function App() {
                     className="itemconfiguration"
                     style={{
                         position: "relative",
-                        left: ".1%",
+                        left: "0%",
                         top: "50px",
                         border: "1px solid black",
-                        width: "14.6%",
+                        width: "15%",
                         height: "750px",
                         maxHeight: "750px",
                         display: "inline-block"
                     }}
                 >
                     {Object.keys(boxes).map((key) => {
-                        const { title } = boxes[key] as {
-                            title: string;
-                        };
+                        const { title, Population_Country, PopularFood } =
+                            boxes[key] as {
+                                Population_Country: number;
+                                PopularFood: string[];
+                                title: string;
+                            };
                         return (
-                            <div key={key} style={{ height: "10vw" }}>
-                                <img
-                                    key={key}
-                                    id={key}
-                                    src={title}
-                                    width="50px%"
-                                    alt={title}
-                                />
-                                <span></span>
+                            <div key={key}>
+                                <div key={key}>
+                                    <img
+                                        key={key}
+                                        id={key}
+                                        src={title}
+                                        width="90"
+                                        height="100"
+                                        alt={title}
+                                        style={{
+                                            position: "relative"
+                                        }}
+                                    />
+                                    <span
+                                        style={{
+                                            display: "wrap",
+                                            position: "absolute"
+                                        }}
+                                    >
+                                        {key} Population: {Population_Country},
+                                        Popular food: {PopularFood.toString()}
+                                    </span>
+                                </div>
                             </div>
                         );
                     })}

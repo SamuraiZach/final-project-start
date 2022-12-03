@@ -1,7 +1,3 @@
-.App {
-    text-align: center;
-}
-
 .App-logo {
     height: 40vmin;
     pointer-events: none;
@@ -45,5 +41,5 @@
     overflow-y: auto;
     float: left;
     position: relative;
-    margin-left: -5px;
+    left: "0%";
 }

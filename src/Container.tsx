@@ -74,7 +74,7 @@ export const Container: FC<ContainerProps> = ({ places }) => {
         "Eiffel Tower, France": {
             top: 151,
             left: 589,
-            title: "https://lh3.googleusercontent.com/p/AF1QipMVXIU7C3h4NRLgIXA8u9eS1dqgzvTHGBusFkFG=s1360-w1360-h1020",
+            title: "https://cdn.britannica.com/54/75854-050-E27E66C0/Eiffel-Tower-Paris.jpg",
             display: "inline"
         },
         "Niagra Falls, Canada": {

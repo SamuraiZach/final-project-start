@@ -2,7 +2,7 @@
     "Eiffel Tower, France": {
         "top": 151,
         "left": 589,
-        "title": "https://lh3.googleusercontent.com/p/AF1QipMVXIU7C3h4NRLgIXA8u9eS1dqgzvTHGBusFkFG=s1360-w1360-h1020",
+        "title": "https://cdn.britannica.com/54/75854-050-E27E66C0/Eiffel-Tower-Paris.jpg",
         "display": "inline",
         "Name": "Eiffel Tower",
         "Country": "France",
@@ -23,7 +23,7 @@
         "Image": "https://upload.wikimedia.org/wikipedia/commons/a/ab/3Falls_Niagara.jpg",
         "PopularFood": ["Maple Syrup"]
     },
-    "Lincoln Memorial, United States of America": {
+    "Lincoln Memorial, USA": {
         "top": 210,
         "left": 365,
         "title": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Aerial_view_of_Lincoln_Memorial_-_east_side_EDIT.jpeg/375px-Aerial_view_of_Lincoln_Memorial_-_east_side_EDIT.jpeg",
@@ -59,7 +59,7 @@
         "Image": "https://cdn.britannica.com/12/127112-050-F4DD3B7A/British-Museum-London.jpg",
         "PopularFood": ["FishNChips"]
     },
-    "Central Park United States of America": {
+    "Central Park, USA": {
         "top": 150,
         "left": 365,
         "title": "https://images.unsplash.com/photo-1575372587186-5012f8886b4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bmV3JTIweW9yayUyMGNlbnRyYWwlMjBwYXJrfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
@@ -119,7 +119,7 @@
         "Image": "https://i.natgeofe.com/n/535f3cba-f8bb-4df2-b0c5-aaca16e9ff31/giza-plateau-pyramids.jpg",
         "PopularFood": ["Legumes"]
     },
-    "Grand Canyon, United States of America": {
+    "Grand Canyon, USA": {
         "top": 235,
         "left": 250,
         "title": "https://www.nps.gov/grca/planyourvisit/images/mather-point-2021.jpg?maxwidth=1200&maxheight=1200&autorotate=false",
@@ -143,7 +143,7 @@
         "Image": "https://photos.smugmug.com/photos/564223839_GxY53-X3.jpg",
         "PopularFood": ["Pastitsio"]
     },
-    "Statue of Liberty, United States of America": {
+    "Statue of Liberty, USA": {
         "top": 150,
         "left": 425,
         "title": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Lady_Liberty_under_a_blue_sky_%28cropped%29.jpg/330px-Lady_Liberty_under_a_blue_sky_%28cropped%29.jpg",
