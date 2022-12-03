@@ -43,6 +43,8 @@ export interface DustbinProps {
             Population_Country: number;
             Image: string;
             PopularFood: string[];
+            resetTop: number;
+            resetLeft: number;
         };
     };
     setBoxes: React.Dispatch<
@@ -58,6 +60,8 @@ export interface DustbinProps {
                 Population_Country: number;
                 Image: string;
                 PopularFood: string[];
+                resetTop: number;
+                resetLeft: number;
             };
         }>
     >;

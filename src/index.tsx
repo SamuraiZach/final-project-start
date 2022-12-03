@@ -22,6 +22,8 @@ function App() {
             Population_Country: number;
             Image: string;
             PopularFood: string[];
+            resetTop: number;
+            resetLeft: number;
         };
     }>(SAMPLE);
     console.log(Object.keys(boxes).length);
@@ -43,7 +45,9 @@ function App() {
             Continent: "",
             Population_Country: 32932389,
             Image: "",
-            PopularFood: ["CACA"]
+            PopularFood: ["CACA"],
+            resetTop: 400,
+            resetLeft: 740
         };
 
         //const obj = { [yourKeyVariable]: someValueArray };

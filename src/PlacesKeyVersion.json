@@ -9,7 +9,9 @@
         "Continent": "Europe",
         "Population_Country": 65273511,
         "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThNogb7-o4aaVM8FY751SGV1d7TcAQ2x2g3O6QKDqjH-4Co6j2_FbL_-FifB06n_aud-c&usqp=CAU",
-        "PopularFood": ["Pasta", "Pasteries"]
+        "PopularFood": ["Pasta", "Pasteries"],
+        "resetTop": 151,
+        "resetLeft": 589
     },
     "Niagra Falls, Canada": {
         "top": 90,
@@ -21,7 +23,9 @@
         "Continent": "North America",
         "Population_Country": 37742154,
         "Image": "https://upload.wikimedia.org/wikipedia/commons/a/ab/3Falls_Niagara.jpg",
-        "PopularFood": ["Maple Syrup"]
+        "PopularFood": ["Maple Syrup"],
+        "resetTop": 90,
+        "resetLeft": 365
     },
     "Lincoln Memorial, USA": {
         "top": 210,
@@ -33,7 +37,9 @@
         "Continent": "North America",
         "Population_Country": 331002651,
         "Image": "https://washington.org/sites/default/files/styles/generic_hero_banner_1440_x_600/public/pixels.sh_visitors-to-the-lincoln-memorial-at-night_mydccool-via-crowdriff.jpg?h=c9f93661&itok=rP1ROwa8",
-        "PopularFood": ["Pizza"]
+        "PopularFood": ["Pizza"],
+        "resetTop": 210,
+        "resetLeft": 365
     },
     "Machu Picchu, Peru": {
         "top": 450,
@@ -45,7 +51,9 @@
         "Continent": "South America",
         "Population_Country": 32971854,
         "Image": "https://i.natgeofe.com/n/1b3a8676-4cb2-4600-9d9b-45cb225328e1/37751.jpg",
-        "PopularFood": ["Ceviche"]
+        "PopularFood": ["Ceviche"],
+        "resetTop": 450,
+        "resetLeft": 350
     },
     "British Museum, England": {
         "top": 90,
@@ -57,7 +65,9 @@
         "Continent": "Europe",
         "Population_Country": 67886011,
         "Image": "https://cdn.britannica.com/12/127112-050-F4DD3B7A/British-Museum-London.jpg",
-        "PopularFood": ["FishNChips"]
+        "PopularFood": ["FishNChips"],
+        "resetTop": 90,
+        "resetLeft": 590
     },
     "Central Park, USA": {
         "top": 150,
@@ -69,7 +79,9 @@
         "Continent": "North America",
         "Population_Country": 331002651,
         "Image": "https://media.architecturaldigest.com/photos/62670cf1a841e371198e0b28/master/pass/GettyImages-1347979016.jpg",
-        "PopularFood": ["Pizza"]
+        "PopularFood": ["Pizza"],
+        "resetTop": 150,
+        "resetLeft": 365
     },
     "The Colosseum, Rome": {
         "top": 190,
@@ -81,7 +93,9 @@
         "Continent": "Europe",
         "Population_Country": 60461826,
         "Image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Colosseo_2020.jpg/2560px-Colosseo_2020.jpg",
-        "PopularFood": ["Pasta"]
+        "PopularFood": ["Pasta"],
+        "resetTop": 190,
+        "resetLeft": 655
     },
     "Disney World, USA": {
         "top": 175,
@@ -93,7 +107,9 @@
         "Continent": "North America",
         "Population_Country": 331002651,
         "Image": "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/433/433/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/attractions/cinderella-castle/0526ZP_1270MS_xak_R2-1x1.jpg?2022-03-10T19:16:43+00:00",
-        "PopularFood": ["Chicken Nuggets"]
+        "PopularFood": ["Chicken Nuggets"],
+        "resetTop": 175,
+        "resetLeft": 200
     },
     "Forbidden City, China": {
         "top": 200,
@@ -105,7 +121,9 @@
         "Continent": "Asia",
         "Population_Country": 1439323776,
         "Image": "https://images.chinahighlights.com/allpicture/2021/07/ba7326f5e3544102917eb2c0_cut_800x500_349.jpg",
-        "PopularFood": ["Egg Rolls"]
+        "PopularFood": ["Egg Rolls"],
+        "resetTop": 200,
+        "resetLeft": 1025
     },
     "Pyramids of Giza, Egypt": {
         "top": 250,
@@ -117,7 +135,9 @@
         "Continent": "Africa",
         "Population_Country": 102334404,
         "Image": "https://i.natgeofe.com/n/535f3cba-f8bb-4df2-b0c5-aaca16e9ff31/giza-plateau-pyramids.jpg",
-        "PopularFood": ["Legumes"]
+        "PopularFood": ["Legumes"],
+        "resetTop": 250,
+        "resetLeft": 720
     },
     "Grand Canyon, USA": {
         "top": 235,
@@ -129,7 +149,9 @@
         "Continent": "North America",
         "Population_Country": 331002651,
         "Image": "https://morethanjustparks.com/wp-content/uploads/2022/04/grand-canyon1.jpg",
-        "PopularFood": ["Chicken Nuggets"]
+        "PopularFood": ["Chicken Nuggets"],
+        "resetTop": 235,
+        "resetLeft": 250
     },
     "The Acropolis, Greece": {
         "top": 180,
@@ -141,7 +163,9 @@
         "Continent": "Europe",
         "Population_Country": 10423054,
         "Image": "https://photos.smugmug.com/photos/564223839_GxY53-X3.jpg",
-        "PopularFood": ["Pastitsio"]
+        "PopularFood": ["Pastitsio"],
+        "resetTop": 180,
+        "resetLeft": 720
     },
     "Statue of Liberty, USA": {
         "top": 150,
@@ -153,7 +177,9 @@
         "Continent": "North America",
         "Population_Country": 331002651,
         "Image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Lady_Liberty_under_a_blue_sky_%28cropped%29_%28cropped%29.jpg/1200px-Lady_Liberty_under_a_blue_sky_%28cropped%29_%28cropped%29.jpg",
-        "PopularFood": ["Pizza"]
+        "PopularFood": ["Pizza"],
+        "resetTop": 150,
+        "resetLeft": 425
     },
     "The Louvre, France": {
         "top": 210,
@@ -165,7 +191,9 @@
         "Continent": "Europe",
         "Population_Country": 65273511,
         "Image": "https://api-www.louvre.fr/sites/default/files/2021-01/cour-napoleon-et-pyramide_1.jpg",
-        "PopularFood": ["Cassoulet"]
+        "PopularFood": ["Cassoulet"],
+        "resetTop": 210,
+        "resetLeft": 595
     },
     "Notre Dame Cathedral, France": {
         "top": 130,
@@ -177,7 +205,9 @@
         "Continent": "Europe",
         "Population_Country": 65273511,
         "Image": "https://cdn.britannica.com/35/155335-050-D0C61BB7/Notre-Dame-de-Paris-France.jpg",
-        "PopularFood": ["Cassoulet"]
+        "PopularFood": ["Cassoulet"],
+        "resetTop": 130,
+        "resetLeft": 650
     },
     "Sydney Opera House, Australia": {
         "top": 520,
@@ -189,7 +219,9 @@
         "Continent": "Oceania",
         "Population_Country": 25499884,
         "Image": "https://cdn.britannica.com/96/100196-050-C92064E0/Sydney-Opera-House-Port-Jackson.jpg",
-        "PopularFood": ["Vegemite"]
+        "PopularFood": ["Vegemite"],
+        "resetTop": 520,
+        "resetLeft": 1150
     },
     "Taj Mahal, India": {
         "top": 260,
@@ -201,7 +233,9 @@
         "Continent": "Asia",
         "Population_Country": 1380004385,
         "Image": "https://cdn.britannica.com/86/170586-050-AB7FEFAE/Taj-Mahal-Agra-India.jpg",
-        "PopularFood": ["Curry"]
+        "PopularFood": ["Curry"],
+        "resetTop": 260,
+        "resetLeft": 890
     },
     "Great Wall of China, China": {
         "top": 200,
@@ -213,7 +247,9 @@
         "Continent": "Asia",
         "Population_Country": 1439323776,
         "Image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/The_Great_Wall_of_China_at_Jinshanling-edit.jpg/1200px-The_Great_Wall_of_China_at_Jinshanling-edit.jpg",
-        "PopularFood": ["Chow Mein"]
+        "PopularFood": ["Chow Mein"],
+        "resetTop": 200,
+        "resetLeft": 950
     },
     "Bora Bora Islands, French Polynesia": {
         "top": 420,
@@ -225,7 +261,9 @@
         "Continent": "Oceania",
         "Population_Country": 280908,
         "Image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Bora_Bora_ISS006.jpg/260px-Bora_Bora_ISS006.jpg",
-        "PopularFood": ["Pahua taioro"]
+        "PopularFood": ["Pahua taioro"],
+        "resetTop": 420,
+        "resetLeft": 1280
     },
     "Great Barrier Reef, Australia": {
         "top": 465,
@@ -237,7 +275,9 @@
         "Continent": "Oceania",
         "Population_Country": 25499884,
         "Image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/ISS-45_StoryOfWater%2C_Great_Barrier_Reef%2C_Australia.jpg/255px-ISS-45_StoryOfWater%2C_Great_Barrier_Reef%2C_Australia.jp",
-        "PopularFood": ["Vegemite"]
+        "PopularFood": ["Vegemite"],
+        "resetTop": 465,
+        "resetLeft": 1150
     },
     "Singapore, Asia": {
         "top": 370,
@@ -249,7 +289,9 @@
         "Continent": "Asia",
         "Population_Country": 5850342,
         "Image": "https://www.planetware.com/wpimages/2020/03/singapore-in-pictures-beautiful-places-to-photograph-marina-bay-sands.jpg",
-        "PopularFood": ["Laksa"]
+        "PopularFood": ["Laksa"],
+        "resetTop": 370,
+        "resetLeft": 980
     },
     "Milford Sound, New Zealand": {
         "top": 620,
@@ -261,7 +303,9 @@
         "Continent": "Oceania",
         "Population_Country": 4822233,
         "Image": "https://www.newzealand.com/assets/Campaigns/If-You-Seek/Milford_Sound-Fiordland-MH1__aWxvdmVrZWxseQo_CropResizeWzEyMDAsNjMwLDc1LCJqcGciXQ.jpg",
-        "PopularFood": ["Crayfish"]
+        "PopularFood": ["Crayfish"],
+        "resetTop": 620,
+        "resetLeft": 1155
     },
     "Banana Reef, Maldives": {
         "top": 350,
@@ -273,7 +317,9 @@
         "Continent": "Asia",
         "Population_Country": 540544,
         "Image": "https://pyt-blogs.imgix.net/2020/04/banana-reef.jpg?auto=format&ixlib=php-3.3.0",
-        "PopularFood": ["Garudhiya"]
+        "PopularFood": ["Garudhiya"],
+        "resetTop": 350,
+        "resetLeft": 850
     },
     "Rio de Janeiro, Brazil": {
         "top": 500,
@@ -285,7 +331,9 @@
         "Continent": "South America",
         "Population_Country": 212559417,
         "Image": "http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcTe-dwgdLWZjmiZcegXH0teITQ29VOPrOo9DoQnJj7leKBUd8X27XJVKfDCPaSDl5SC",
-        "PopularFood": ["Feijoada"]
+        "PopularFood": ["Feijoada"],
+        "resetTop": 500,
+        "resetLeft": 450
     },
     "Santa Claus Village, Finland": {
         "top": 75,
@@ -297,7 +345,9 @@
         "Continent": "Europe",
         "Population_Country": 5540720,
         "Image": "https://santaclausvillage.info/userassets/uploads/2018/03/central-plaza-santa-claus-village-rovaniemi-lapland-finland-1-1170x692.jpg",
-        "PopularFood": ["Karelian"]
+        "PopularFood": ["Karelian"],
+        "resetTop": 75,
+        "resetLeft": 710
     },
     "Mount Fuji, Japan": {
         "top": 200,
@@ -309,7 +359,9 @@
         "Continent": "Asia",
         "Population_Country": 126476461,
         "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjKpXiV_c6wL661jMtt7R0m5Yahs6tGx2gFc4QhYGma1Kv6-7-AXC9eI2TlCtJZ_V2iMc&usqp=CAU",
-        "PopularFood": ["Sushi"]
+        "PopularFood": ["Sushi"],
+        "resetTop": 200,
+        "resetLeft": 1100
     },
     "Victoria Falls, Zimbabwe": {
         "top": 480,
@@ -321,7 +373,9 @@
         "Continent": "Africa",
         "Population_Country": 14862924,
         "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkvClSWO6cjEqXmemco9GMaV5oRxiakbMPcrmoY6DLMuEcCJl12lXilEOqIRxCwG2CE8A&usqp=CAU",
-        "PopularFood": ["Maheu"]
+        "PopularFood": ["Maheu"],
+        "resetTop": 480,
+        "resetLeft": 700
     },
     "Havana, Cuba": {
         "top": 280,
@@ -333,7 +387,9 @@
         "Continent": "North America",
         "Population_Country": 11326616,
         "Image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Habana_Vieja_de_noche.jpg/280px-Habana_Vieja_de_noche.jpg",
-        "PopularFood": ["Ropa Vieja"]
+        "PopularFood": ["Ropa Vieja"],
+        "resetTop": 280,
+        "resetLeft": 340
     },
     "Serengeti National Park, Tanzania": {
         "top": 400,
@@ -345,7 +401,9 @@
         "Continent": "Africa",
         "Population_Country": 59734218,
         "Image": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Serengeti_sunset-1001.jpg",
-        "PopularFood": ["ugali"]
+        "PopularFood": ["ugali"],
+        "resetTop": 400,
+        "resetLeft": 740
     },
     "Easter Island, Chile": {
         "top": 400,
@@ -357,6 +415,8 @@
         "Continent": "South America",
         "Population_Country": 19511378,
         "Image": "https://th-thumbnailer.cdn-si-edu.com/DumApVFAdRR83rSEvxeXi69iKEg=/1000x750/filters:no_upscale():focal(2304x1536:2305x1537)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/81/22/8122e662-681b-4370-a20a-a82e936c3711/gettyimages-921707628.jpg",
-        "PopularFood": ["Fish"]
+        "PopularFood": ["Fish"],
+        "resetTop": 400,
+        "resetLeft": 280
     }
 }
