@@ -47,13 +47,15 @@ export interface InteractablesProp {
         }>
     >;
     deleteBox: (value: string) => void;
+    basketMove: (item: object) => void;
 }
 
 export const Interactables: FC<InteractablesProp> = ({
     sortValue,
     boxes,
     setBoxes,
-    deleteBox
+    deleteBox,
+    basketMove
 }) => {
     //const [formAdd, setFormAdd] = useState(false);
     const PLACES = sample.map((place): Place => ({ ...place }));
@@ -107,6 +109,7 @@ export const Interactables: FC<InteractablesProp> = ({
                 boxes={boxes}
                 setBoxes={setBoxes}
                 deleteBox={deleteBox}
+                basketMove={basketMove}
             />
         );
     } else if (sortValue === "West Side") {

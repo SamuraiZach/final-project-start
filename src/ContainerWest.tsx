@@ -310,12 +310,32 @@ export const ContainerWest: FC<ContainerProps> = ({
         <div>
             <div ref={drop} style={styles}>
                 {Object.keys(boxes).map((d) => {
-                    const { left, top, title, display, Name } = boxes[d] as {
-                        top: number;
+                    const {
+                        left,
+                        top,
+                        title,
+                        display,
+                        Name,
+                        Country,
+                        Continent,
+                        Population_Country,
+                        Image,
+                        PopularFood,
+                        resetTop,
+                        resetLeft
+                    } = boxes[d] as {
                         left: number;
+                        top: number;
                         title: string;
                         display: string;
                         Name: string;
+                        Country: string;
+                        Continent: string;
+                        Population_Country: number;
+                        Image: string;
+                        PopularFood: string[];
+                        resetTop: number;
+                        resetLeft: number;
                     };
                     return (
                         <Box
@@ -323,8 +343,16 @@ export const ContainerWest: FC<ContainerProps> = ({
                             id={d}
                             left={left}
                             top={top}
+                            title={title}
                             display={display}
                             Name={Name}
+                            Country={Country}
+                            Continent={Continent}
+                            Population_Country={Population_Country}
+                            Image={Image}
+                            PopularFood={PopularFood}
+                            resetTop={resetTop}
+                            resetLeft={resetLeft}
                         >
                             <img
                                 src={title}
@@ -336,24 +364,24 @@ export const ContainerWest: FC<ContainerProps> = ({
                     );
                 })}
             </div>
-            <div
-                style={{
-                    overflow: "hidden",
-                    clear: "both",
-                    margin: "-1rem",
-                    position: "absolute",
-                    top: "0",
-                    left: "0"
-                }}
-            >
-                <Dustbin
-                    boxes={boxes}
-                    setBoxes={setBoxes}
-                    color={"white"}
-                ></Dustbin>
-            </div>
         </div>
     );
 };
 //<Button onClick={addatEnd}>Test Button</Button> PUT IN EMPTY DIV
 //<img src={title} width="60" height="60" alt={title} />
+//*<div
+//                style={{
+//                   overflow: "hidden",
+///                 clear: "both",
+//               margin: "-1rem",
+//              position: "absolute",
+//             top: "0",
+//            left: "0"
+//       }}
+//  >
+//     <Dustbin
+//         boxes={boxes}
+//         setBoxes={setBoxes}
+//      color={"white"}
+//    ></Dustbin>
+//</div>*/

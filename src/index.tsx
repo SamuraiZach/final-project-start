@@ -109,6 +109,25 @@ function App() {
             })
         );
     }
+    function basketMove(item: object) {
+        setBoxes({
+            ...boxes,
+            [Object(item).id]: {
+                top: 650,
+                left: 0,
+                title: Object(item).title,
+                display: "inline",
+                Name: Object(item).Name,
+                Country: Object(item).Country,
+                Continent: Object(item).Continent,
+                Population_Country: Object(item).Population_Country,
+                Image: Object(item).Image,
+                PopularFood: [Object(item).PopularFood],
+                resetTop: Object(item).resetTop,
+                resetLeft: Object(item).resetLeft
+            }
+        });
+    }
     const addatEnd = () => {
         const yourKeyVariable = "happyCount";
         const someValueArray = {
@@ -213,6 +232,7 @@ function App() {
                         boxes={boxes}
                         setBoxes={setBoxes}
                         deleteBox={deleteBox}
+                        basketMove={basketMove}
                     />
                 </div>
                 <div

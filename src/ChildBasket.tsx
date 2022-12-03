@@ -74,7 +74,7 @@ export interface DustbinState {
     hasDroppedOnChild: boolean;
 }
 
-export const Dustbin: FC<DustbinProps> = ({
+export const ChildBin: FC<DustbinProps> = ({
     greedy,
     children,
     color,
@@ -94,25 +94,35 @@ export const Dustbin: FC<DustbinProps> = ({
                 setName(name + "\n" + val + ": " + x);
                 setHasDropped(true);
                 setHasDroppedOnChild(didDrop);
+                basketMove(item);
             },
             collect: (monitor) => ({
                 isOver: monitor.isOver(),
                 isOverCurrent: monitor.isOver({ shallow: true })
             })
         }),
-        [greedy, setHasDropped, setHasDroppedOnChild, setName]
+        [greedy, setHasDropped, setHasDroppedOnChild, setName, basketMove]
     );
-    const text = "Trip Planner 1 ->";
+    const text = "Place";
     const colors = color;
     let backgroundColor = colors;
+    if (hasDroppedOnChild) {
+        setName(name);
+    }
     if (isOverCurrent || (isOver && greedy)) {
         backgroundColor = "darkgreen";
     }
+
     return (
         <div ref={drop} style={getStyle(backgroundColor)}>
             {text}
             <br />
-            <div>{children}</div>
+            {hasDropped && (
+                <li style={{ position: "relative", display: "inline" }}>
+                    {name}
+                </li>
+            )}
+            <div></div>
         </div>
     );
 };
