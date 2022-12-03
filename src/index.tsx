@@ -49,8 +49,6 @@ function App() {
             resetTop: 400,
             resetLeft: 740
         };
-
-        //const obj = { [yourKeyVariable]: someValueArray };
         setBoxes({
             ...boxes,
             [yourKeyVariable]: someValueArray
@@ -204,7 +202,7 @@ function App() {
                                         id={key}
                                         src={title}
                                         width="90"
-                                        height="100"
+                                        height="140"
                                         alt={title}
                                         style={{
                                             position: "relative"
@@ -219,6 +217,24 @@ function App() {
                                         {key} Population: {Population_Country},
                                         Popular food: {PopularFood.toString()}
                                     </span>
+                                    <Button
+                                        style={{
+                                            display: "wrap",
+                                            position: "relative",
+                                            top: "50px"
+                                        }}
+                                    >
+                                        EDIT
+                                    </Button>
+                                    <Button
+                                        style={{
+                                            display: "wrap",
+                                            position: "relative",
+                                            top: "50px"
+                                        }}
+                                    >
+                                        VIEW MORE
+                                    </Button>
                                 </div>
                             </div>
                         );
@@ -239,7 +255,7 @@ function App() {
         </div>
     );
 }
-
+//EDIT PLACE NEEDS FORM SAME WITH VIEW MORE
 const rootElement = document.getElementById("root");
 render(<App />, rootElement);
 export default App;
