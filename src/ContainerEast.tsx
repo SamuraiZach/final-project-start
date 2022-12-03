@@ -21,6 +21,36 @@ const styles: CSSProperties = {
 
 export interface ContainerProps {
     places: Place[];
+    boxes: {
+        [key: string]: {
+            top: number;
+            left: number;
+            title: string;
+            display: string;
+            Name: string;
+            Country: string;
+            Continent: string;
+            Population_Country: number;
+            Image: string;
+            PopularFood: string[];
+        };
+    };
+    setBoxes: React.Dispatch<
+        React.SetStateAction<{
+            [key: string]: {
+                top: number;
+                left: number;
+                title: string;
+                display: string;
+                Name: string;
+                Country: string;
+                Continent: string;
+                Population_Country: number;
+                Image: string;
+                PopularFood: string[];
+            };
+        }>
+    >;
 }
 
 export interface ContainerState {
@@ -35,7 +65,11 @@ export interface ContainerState {
     test: { [key: string]: { top: number; left: number; title: string } };
 }
 
-export const ContainerEast: FC<ContainerProps> = ({ places }) => {
+export const ContainerEast: FC<ContainerProps> = ({
+    places,
+    boxes,
+    setBoxes
+}) => {
     const [test, testSet] = useState<{
         [key: string]: {
             top: number;
@@ -62,6 +96,7 @@ export const ContainerEast: FC<ContainerProps> = ({ places }) => {
         //test["a"]({ top: 2, left: 2, title: "tt" });
         return true;
     };
+    /*
     const [boxes, setBoxes] = useState<{
         [key: string]: {
             top: number;
@@ -245,23 +280,7 @@ export const ContainerEast: FC<ContainerProps> = ({ places }) => {
             display: "inline"
         }
     });
-    const addatEnd = () => {
-        const yourKeyVariable = "happyCount";
-        const someValueArray = {
-            top: 400,
-            left: 740,
-            title: "https://upload.wikimedia.org/wikipedia/commons/e/e8/Serengeti_sunset-1001.jpg",
-            display: "inline"
-        };
-
-        //const obj = { [yourKeyVariable]: someValueArray };
-        setBoxes({
-            ...boxes,
-            [yourKeyVariable]: someValueArray
-        });
-        //EXAMPLE OF PUSHING NEW KEY AT THE END
-        console.log(boxes);
-    };
+    */
     console.log(boxes);
     const moveBox = (id: string, left: number, top: number) => {
         setBoxes(
@@ -328,15 +347,6 @@ export const ContainerEast: FC<ContainerProps> = ({ places }) => {
                     setBoxes={setBoxes}
                     color={"white"}
                 ></Dustbin>
-            </div>
-            <div
-                style={{
-                    position: "absolute",
-                    top: 713,
-                    left: 30
-                }}
-            >
-                <Button onClick={addatEnd}>Test Button</Button>
             </div>
         </div>
     );
