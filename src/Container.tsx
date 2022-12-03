@@ -13,6 +13,7 @@ import type { DragItem } from "./interfaces";
 import { ItemTypes } from "./ItemTypes";
 import { Button } from "react-bootstrap";
 import { string } from "prop-types";
+import { DeleteBin } from "./DeleteBasket";
 
 const styles: CSSProperties = {
     width: 1350,
@@ -56,6 +57,7 @@ export interface ContainerProps {
             };
         }>
     >;
+    deleteBox: (value: string) => void;
 }
 
 export interface ContainerState {
@@ -70,7 +72,12 @@ export interface ContainerState {
     test: { [key: string]: { top: number; left: number; title: string } };
 }
 
-export const Container: FC<ContainerProps> = ({ places, boxes, setBoxes }) => {
+export const Container: FC<ContainerProps> = ({
+    places,
+    boxes,
+    setBoxes,
+    deleteBox
+}) => {
     const moveBox = (id: string, left: number, top: number) => {
         setBoxes(
             update(boxes, {
@@ -137,11 +144,12 @@ export const Container: FC<ContainerProps> = ({ places, boxes, setBoxes }) => {
         <div>
             <div ref={drop} style={styles}>
                 {Object.keys(boxes).map((d) => {
-                    const { left, top, title, display } = boxes[d] as {
+                    const { left, top, title, display, Name } = boxes[d] as {
                         top: number;
                         left: number;
                         title: string;
                         display: string;
+                        Name: string;
                     };
                     return (
                         <Box
@@ -150,6 +158,7 @@ export const Container: FC<ContainerProps> = ({ places, boxes, setBoxes }) => {
                             left={left}
                             top={top}
                             display={display}
+                            Name={Name}
                         >
                             <img
                                 src={title}
@@ -170,11 +179,29 @@ export const Container: FC<ContainerProps> = ({ places, boxes, setBoxes }) => {
                     top: "0%",
                     border: "1px solid black",
                     width: "11.5%",
-                    height: "752px",
-                    maxHeight: "752px"
+                    height: "623px",
+                    maxHeight: "623px"
                 }}
             >
                 {renderLayers()}
+            </div>
+            <div
+                className="itemconfiguration"
+                style={{
+                    top: "608px",
+                    position: "absolute",
+                    border: "1px solid black",
+                    width: "11.5%",
+                    height: "144px",
+                    maxHeight: "144px"
+                }}
+            >
+                <DeleteBin
+                    boxes={boxes}
+                    setBoxes={setBoxes}
+                    color={"black"}
+                    deleteBox={deleteBox}
+                ></DeleteBin>
             </div>
         </div>
     );

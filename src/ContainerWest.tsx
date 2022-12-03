@@ -310,11 +310,12 @@ export const ContainerWest: FC<ContainerProps> = ({
         <div>
             <div ref={drop} style={styles}>
                 {Object.keys(boxes).map((d) => {
-                    const { left, top, title, display } = boxes[d] as {
+                    const { left, top, title, display, Name } = boxes[d] as {
                         top: number;
                         left: number;
                         title: string;
                         display: string;
+                        Name: string;
                     };
                     return (
                         <Box
@@ -323,6 +324,7 @@ export const ContainerWest: FC<ContainerProps> = ({
                             left={left}
                             top={top}
                             display={display}
+                            Name={Name}
                         >
                             <img
                                 src={title}

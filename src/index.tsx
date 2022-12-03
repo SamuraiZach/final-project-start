@@ -5,6 +5,7 @@ import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { Button, Form } from "react-bootstrap";
 import SAMPLE from "./PlacesKeyVersion.json";
+import { forOwn } from "lodash";
 //import { Box } from "./Box";
 import "./App.css";
 function App() {
@@ -98,6 +99,15 @@ function App() {
                 }
             });
         });
+    }
+    function deleteBox(value: string) {
+        console.log(value);
+        setBoxes(
+            forOwn(boxes, function (x, k) {
+                x.Name === value && delete boxes[k];
+                setBoxes(boxes);
+            })
+        );
     }
     const addatEnd = () => {
         const yourKeyVariable = "happyCount";
@@ -202,6 +212,7 @@ function App() {
                         sortValue={HemisphereSort}
                         boxes={boxes}
                         setBoxes={setBoxes}
+                        deleteBox={deleteBox}
                     />
                 </div>
                 <div
