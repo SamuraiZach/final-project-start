@@ -48,46 +48,48 @@ FAIL src/index.test.tsx
       at Object.<anonymous> (src/index.test.tsx:3:1)
 
 PASS src/App.test.tsx
----------------------|---------|----------|---------|---------|-------------------
-File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
----------------------|---------|----------|---------|---------|-------------------
-All files            |    0.33 |        0 |    1.19 |    0.34 |                   
- src                 |    0.48 |        0 |    1.78 |    0.49 |                   
-  App.tsx            |     100 |      100 |     100 |     100 |                   
-  Basket.tsx         |       0 |        0 |       0 |       0 | 12-157            
-  Box.tsx            |       0 |        0 |       0 |       0 | 7-42              
-  Container.tsx      |       0 |        0 |       0 |       0 | 18-174            
-  ContainerEast.tsx  |       0 |        0 |       0 |       0 | 16-322            
-  ContainerNorth.tsx |       0 |        0 |       0 |       0 | 16-322            
-  ContainerSouth.tsx |       0 |        0 |       0 |       0 | 16-320            
-  ContainerWest.tsx  |       0 |        0 |       0 |       0 | 16-320            
-  DeleteBasket.tsx   |       0 |        0 |       0 |       0 | 12-134            
-  DraggingLayer.tsx  |       0 |        0 |       0 |       0 | 52-129            
-  ItemTypes.ts       |       0 |      100 |     100 |       0 | 1                 
-  MapBox.ts          |       0 |        0 |       0 |       0 |                   
-  NumberBox.ts       |       0 |        0 |       0 |       0 |                   
-  ObjectPlaces.tsx   |       0 |        0 |       0 |       0 |                   
-  Place.ts           |       0 |        0 |       0 |       0 |                   
-  PlaceKeyVersion.ts |       0 |        0 |       0 |       0 |                   
-  index.tsx          |       0 |        0 |       0 |       0 | 12-371            
-  interfaces.ts      |       0 |        0 |       0 |       0 |                   
-  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-11              
-  sortBox.tsx        |       0 |      100 |       0 |       0 | 5-20              
- src/ReferenceCode   |       0 |        0 |       0 |       0 |                   
-  Board.tsx          |       0 |        0 |       0 |       0 | 8-38              
-  BoardSquare.tsx    |       0 |        0 |       0 |       0 | 13-26             
-  DraggableLayer.tsx |       0 |      100 |       0 |       0 | 16-32             
-  Overlay.tsx        |       0 |      100 |       0 |       0 | 7-8               
-  Pic.tsx            |       0 |      100 |       0 |       0 | 6-7               
-  PicSquare.tsx      |       0 |      100 |       0 |       0 | 14-27             
-  PlacePic.tsx       |       0 |      100 |       0 |       0 | 17-61             
-  Square.tsx         |       0 |        0 |       0 |       0 | 7-11              
-  constants.ts       |       0 |      100 |     100 |       0 | 1                 
-  game.ts            |       0 |        0 |       0 |       0 | 4-35              
----------------------|---------|----------|---------|---------|-------------------
+-----------------------|---------|----------|---------|---------|-------------------
+File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------------------|---------|----------|---------|---------|-------------------
+All files              |    0.29 |        0 |    1.05 |     0.3 |                   
+ src                   |     0.4 |        0 |    1.49 |     0.4 |                   
+  App.tsx              |     100 |      100 |     100 |     100 |                   
+  Basket.tsx           |       0 |        0 |       0 |       0 | 12-111            
+  BasketNewPlanner.tsx |       0 |        0 |       0 |       0 | 12-113            
+  Box.tsx              |       0 |        0 |       0 |       0 | 7-72              
+  ChildBasket.tsx      |       0 |        0 |       0 |       0 | 12-116            
+  Container.tsx        |       0 |        0 |       0 |       0 | 20-217            
+  ContainerEast.tsx    |       0 |        0 |       0 |       0 | 16-342            
+  ContainerNorth.tsx   |       0 |        0 |       0 |       0 | 16-342            
+  ContainerSouth.tsx   |       0 |        0 |       0 |       0 | 16-340            
+  ContainerWest.tsx    |       0 |        0 |       0 |       0 | 16-340            
+  DeleteBasket.tsx     |       0 |        0 |       0 |       0 | 12-127            
+  DraggingLayer.tsx    |       0 |        0 |       0 |       0 | 53-132            
+  ItemTypes.ts         |       0 |      100 |     100 |       0 | 1                 
+  MapBox.ts            |       0 |        0 |       0 |       0 |                   
+  NumberBox.ts         |       0 |        0 |       0 |       0 |                   
+  ObjectPlaces.tsx     |       0 |        0 |       0 |       0 |                   
+  Place.ts             |       0 |        0 |       0 |       0 |                   
+  PlaceKeyVersion.ts   |       0 |        0 |       0 |       0 |                   
+  index.tsx            |       0 |        0 |       0 |       0 | 12-391            
+  interfaces.ts        |       0 |        0 |       0 |       0 |                   
+  reportWebVitals.ts   |       0 |        0 |       0 |       0 | 3-11              
+  sortBox.tsx          |       0 |      100 |       0 |       0 | 5-20              
+ src/ReferenceCode     |       0 |        0 |       0 |       0 |                   
+  Board.tsx            |       0 |        0 |       0 |       0 | 8-38              
+  BoardSquare.tsx      |       0 |        0 |       0 |       0 | 13-26             
+  DraggableLayer.tsx   |       0 |      100 |       0 |       0 | 16-32             
+  Overlay.tsx          |       0 |      100 |       0 |       0 | 7-8               
+  Pic.tsx              |       0 |      100 |       0 |       0 | 6-7               
+  PicSquare.tsx        |       0 |      100 |       0 |       0 | 14-27             
+  PlacePic.tsx         |       0 |      100 |       0 |       0 | 17-61             
+  Square.tsx           |       0 |        0 |       0 |       0 | 7-11              
+  constants.ts         |       0 |      100 |     100 |       0 | 1                 
+  game.ts              |       0 |        0 |       0 |       0 | 4-35              
+-----------------------|---------|----------|---------|---------|-------------------
 
 Test Suites: 1 failed, 1 passed, 2 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        4.313 s
+Time:        3.975 s
 Ran all test suites.
