@@ -61,14 +61,14 @@ All files            |    0.34 |        0 |    1.28 |    0.35 |
   ContainerNorth.tsx |       0 |        0 |       0 |       0 | 16-298            
   ContainerSouth.tsx |       0 |        0 |       0 |       0 | 16-298            
   ContainerWest.tsx  |       0 |        0 |       0 |       0 | 16-298            
-  DraggingLayer.tsx  |       0 |        0 |       0 |       0 | 35-92             
+  DraggingLayer.tsx  |       0 |        0 |       0 |       0 | 47-104            
   ItemTypes.ts       |       0 |      100 |     100 |       0 | 1                 
   MapBox.ts          |       0 |        0 |       0 |       0 |                   
   NumberBox.ts       |       0 |        0 |       0 |       0 |                   
   ObjectPlaces.tsx   |       0 |        0 |       0 |       0 |                   
   Place.ts           |       0 |        0 |       0 |       0 |                   
   PlaceKeyVersion.ts |       0 |        0 |       0 |       0 |                   
-  index.tsx          |       0 |      100 |       0 |       0 | 11-174            
+  index.tsx          |       0 |      100 |       0 |       0 | 11-197            
   interfaces.ts      |       0 |        0 |       0 |       0 |                   
   reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-11              
   sortBox.tsx        |       0 |      100 |       0 |       0 | 5-20              
@@ -88,5 +88,5 @@ All files            |    0.34 |        0 |    1.28 |    0.35 |
 Test Suites: 1 failed, 1 passed, 2 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        3.382 s
+Time:        3.268 s
 Ran all test suites.
