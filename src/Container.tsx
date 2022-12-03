@@ -71,7 +71,6 @@ export interface ContainerState {
 }
 
 export const Container: FC<ContainerProps> = ({ places, boxes, setBoxes }) => {
-    console.log(boxes);
     const moveBox = (id: string, left: number, top: number) => {
         setBoxes(
             update(boxes, {

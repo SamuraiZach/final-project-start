@@ -8,7 +8,7 @@ import SAMPLE from "./PlacesKeyVersion.json";
 //import { Box } from "./Box";
 import "./App.css";
 function App() {
-    const [sortValue, setValue] = useState<string>("All");
+    const [HemisphereSort, setHemiSort] = useState<string>("All");
     const [SortValueList, setSortValue] = useState<string>("None");
     const [boxes, setBoxes] = useState<{
         [key: string]: {
@@ -26,12 +26,78 @@ function App() {
             resetLeft: number;
         };
     }>(SAMPLE);
+    const [r] = useState<{
+        [key: string]: {
+            top: number;
+            left: number;
+            title: string;
+            display: string;
+            Name: string;
+            Country: string;
+            Continent: string;
+            Population_Country: number;
+            Image: string;
+            PopularFood: string[];
+            resetTop: number;
+            resetLeft: number;
+        };
+    }>(boxes);
     console.log(Object.keys(boxes).length);
     function updateValue(event: React.ChangeEvent<HTMLSelectElement>) {
-        setValue(event.target.value);
+        setHemiSort(event.target.value);
     }
     function updateValueSort(event: React.ChangeEvent<HTMLSelectElement>) {
         setSortValue(event.target.value);
+    }
+    function emptyHouse() {
+        setBoxes({});
+    }
+    function startingOver() {
+        setBoxes(SAMPLE);
+    }
+    function resetValues() {
+        Object.keys(boxes).map((key) => {
+            const {
+                title,
+                display,
+                Name,
+                Country,
+                Continent,
+                Population_Country,
+                Image,
+                PopularFood,
+                resetTop,
+                resetLeft
+            } = boxes[key] as {
+                title: string;
+                display: string;
+                Name: string;
+                Country: string;
+                Continent: string;
+                Population_Country: number;
+                Image: string;
+                PopularFood: string[];
+                resetTop: number;
+                resetLeft: number;
+            };
+            setBoxes({
+                ...r,
+                [key]: {
+                    top: resetTop,
+                    left: resetLeft,
+                    title: title,
+                    display: display,
+                    Name: Name,
+                    Country: Country,
+                    Continent: Continent,
+                    Population_Country: Population_Country,
+                    Image: Image,
+                    PopularFood: PopularFood,
+                    resetTop: resetTop,
+                    resetLeft: resetLeft
+                }
+            });
+        });
     }
     const addatEnd = () => {
         const yourKeyVariable = "happyCount";
@@ -56,6 +122,9 @@ function App() {
         //EXAMPLE OF PUSHING NEW KEY AT THE END
         console.log(boxes);
     };
+    if (HemisphereSort === "All") {
+        console.log("hi");
+    }
     return (
         <div className="App">
             <DndProvider backend={HTML5Backend}>
@@ -109,7 +178,7 @@ function App() {
                 >
                     <Form.Label>Show Hemisphere Specific Places</Form.Label>
                     <Form.Select
-                        value={sortValue}
+                        value={HemisphereSort}
                         onChange={updateValue}
                         style={{ width: 255 }}
                     >
@@ -130,7 +199,7 @@ function App() {
                     }}
                 >
                     <Interactables
-                        sortValue={sortValue}
+                        sortValue={HemisphereSort}
                         boxes={boxes}
                         setBoxes={setBoxes}
                     />
@@ -170,8 +239,41 @@ function App() {
                         right: "1%"
                     }}
                 >
-                    <Button style={{ width: 255 }} /*onClick={addatEnd}*/>
+                    <Button style={{ width: 255 }} /*onClick={resetValues}*/>
                         Add Place
+                    </Button>
+                </div>
+                <div
+                    style={{
+                        position: "absolute",
+                        top: "26%",
+                        right: "1%"
+                    }}
+                >
+                    <Button style={{ width: 255 }} onClick={emptyHouse}>
+                        Clear
+                    </Button>
+                </div>
+                <div
+                    style={{
+                        position: "absolute",
+                        top: "31%",
+                        right: "1%"
+                    }}
+                >
+                    <Button style={{ width: 255 }} onClick={resetValues}>
+                        Reset Positions
+                    </Button>
+                </div>
+                <div
+                    style={{
+                        position: "absolute",
+                        top: "36%",
+                        right: "1%"
+                    }}
+                >
+                    <Button style={{ width: 255 }} onClick={startingOver}>
+                        Restart
                     </Button>
                 </div>
                 <div
@@ -247,9 +349,7 @@ function App() {
                         left: 30
                     }}
                 >
-                    <Button onClick={addatEnd}>
-                        BUTTON FOR ADDING JUST NEED FORMS?
-                    </Button>
+                    <Button onClick={addatEnd}>addAtEnd button test</Button>
                 </div>
             </DndProvider>
         </div>
