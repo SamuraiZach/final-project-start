@@ -54,21 +54,21 @@ File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #
 All files            |    0.38 |        0 |    1.36 |    0.39 |                   
  src                 |    0.59 |        0 |    2.22 |    0.59 |                   
   App.tsx            |     100 |      100 |     100 |     100 |                   
-  Basket.tsx         |       0 |        0 |       0 |       0 | 12-136            
+  Basket.tsx         |       0 |        0 |       0 |       0 | 12-140            
   Box.tsx            |       0 |        0 |       0 |       0 | 7-34              
-  Container.tsx      |       0 |        0 |       0 |       0 | 17-162            
-  ContainerEast.tsx  |       0 |        0 |       0 |       0 | 16-317            
-  ContainerNorth.tsx |       0 |        0 |       0 |       0 | 16-317            
-  ContainerSouth.tsx |       0 |        0 |       0 |       0 | 16-315            
-  ContainerWest.tsx  |       0 |        0 |       0 |       0 | 16-315            
-  DraggingLayer.tsx  |       0 |        0 |       0 |       0 | 47-116            
+  Container.tsx      |       0 |        0 |       0 |       0 | 17-166            
+  ContainerEast.tsx  |       0 |        0 |       0 |       0 | 16-321            
+  ContainerNorth.tsx |       0 |        0 |       0 |       0 | 16-321            
+  ContainerSouth.tsx |       0 |        0 |       0 |       0 | 16-319            
+  ContainerWest.tsx  |       0 |        0 |       0 |       0 | 16-319            
+  DraggingLayer.tsx  |       0 |        0 |       0 |       0 | 51-120            
   ItemTypes.ts       |       0 |      100 |     100 |       0 | 1                 
   MapBox.ts          |       0 |        0 |       0 |       0 |                   
   NumberBox.ts       |       0 |        0 |       0 |       0 |                   
   ObjectPlaces.tsx   |       0 |        0 |       0 |       0 |                   
   Place.ts           |       0 |        0 |       0 |       0 |                   
   PlaceKeyVersion.ts |       0 |        0 |       0 |       0 |                   
-  index.tsx          |       0 |      100 |       0 |       0 | 11-240            
+  index.tsx          |       0 |      100 |       0 |       0 | 11-244            
   interfaces.ts      |       0 |        0 |       0 |       0 |                   
   reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-11              
   sortBox.tsx        |       0 |      100 |       0 |       0 | 5-20              
@@ -88,5 +88,5 @@ All files            |    0.38 |        0 |    1.36 |    0.39 |
 Test Suites: 1 failed, 1 passed, 2 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        3.249 s
+Time:        3.198 s
 Ran all test suites.
