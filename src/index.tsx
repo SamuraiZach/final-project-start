@@ -31,6 +31,29 @@ function App() {
     function updateValueSort(event: React.ChangeEvent<HTMLSelectElement>) {
         setSortValue(event.target.value);
     }
+    const addatEnd = () => {
+        const yourKeyVariable = "happyCount";
+        const someValueArray = {
+            top: 400,
+            left: 740,
+            title: "https://upload.wikimedia.org/wikipedia/commons/e/e8/Serengeti_sunset-1001.jpg",
+            display: "inline",
+            Name: "",
+            Country: "",
+            Continent: "",
+            Population_Country: 32932389,
+            Image: "",
+            PopularFood: ["CACA"]
+        };
+
+        //const obj = { [yourKeyVariable]: someValueArray };
+        setBoxes({
+            ...boxes,
+            [yourKeyVariable]: someValueArray
+        });
+        //EXAMPLE OF PUSHING NEW KEY AT THE END
+        console.log(boxes);
+    };
     return (
         <div className="App">
             <DndProvider backend={HTML5Backend}>
@@ -41,6 +64,15 @@ function App() {
                     }}
                 >
                     <span>Team 4: Traveler Map Planner</span>
+                </div>
+                <div
+                    style={{
+                        position: "absolute",
+                        left: "5%",
+                        top: "3%"
+                    }}
+                >
+                    <span>View Places</span>
                 </div>
                 <div
                     style={{
@@ -148,8 +180,8 @@ function App() {
                         top: "50px",
                         border: "1px solid black",
                         width: "15%",
-                        height: "750px",
-                        maxHeight: "750px",
+                        height: "752px",
+                        maxHeight: "752px",
                         display: "inline-block"
                     }}
                 >
@@ -187,6 +219,17 @@ function App() {
                             </div>
                         );
                     })}
+                </div>
+                <div
+                    style={{
+                        position: "absolute",
+                        top: 900,
+                        left: 30
+                    }}
+                >
+                    <Button onClick={addatEnd}>
+                        BUTTON FOR ADDING JUST NEED FORMS?
+                    </Button>
                 </div>
             </DndProvider>
         </div>

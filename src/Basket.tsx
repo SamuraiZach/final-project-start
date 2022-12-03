@@ -12,8 +12,8 @@ function getStyle(backgroundColor: string): CSSProperties {
     return {
         border: "1px solid rgba(0,0,0,0.2)",
         minHeight: "8rem",
-        minWidth: "9.5rem",
-        maxWidth: "9.5rem",
+        minWidth: "9.6rem",
+        maxWidth: "9.6rem",
         color: "white",
         backgroundColor,
         padding: "1rem",
@@ -21,7 +21,10 @@ function getStyle(backgroundColor: string): CSSProperties {
         margin: "1rem",
         textAlign: "center",
         float: "left",
-        fontSize: "1rem"
+        left: "-15.6px",
+        top: "-4%",
+        fontSize: "1rem",
+        position: "relative"
     };
 }
 
@@ -34,6 +37,12 @@ export interface DustbinProps {
             left: number;
             title: string;
             display: string;
+            Name: string;
+            Country: string;
+            Continent: string;
+            Population_Country: number;
+            Image: string;
+            PopularFood: string[];
         };
     };
     setBoxes: React.Dispatch<
@@ -43,6 +52,12 @@ export interface DustbinProps {
                 left: number;
                 title: string;
                 display: string;
+                Name: string;
+                Country: string;
+                Continent: string;
+                Population_Country: number;
+                Image: string;
+                PopularFood: string[];
             };
         }>
     >;
@@ -123,7 +138,7 @@ export const Dustbin: FC<DustbinProps> = ({
             {text}
             <br />
             {hasDropped && (
-                <span>
+                <span style={{ position: "relative" }}>
                     {name} {hasDroppedOnChild && " on child"}
                 </span>
             )}

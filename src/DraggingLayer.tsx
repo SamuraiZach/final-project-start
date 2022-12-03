@@ -44,7 +44,11 @@ export interface InteractablesProp {
     >;
 }
 
-export const Interactables: FC<InteractablesProp> = ({ sortValue }) => {
+export const Interactables: FC<InteractablesProp> = ({
+    sortValue,
+    boxes,
+    setBoxes
+}) => {
     //const [formAdd, setFormAdd] = useState(false);
     const PLACES = sample.map((place): Place => ({ ...place }));
     /*
@@ -91,15 +95,23 @@ export const Interactables: FC<InteractablesProp> = ({ sortValue }) => {
                         <option value="South Side">South Side</option>
     */
     if (sortValue === "All") {
-        return <Container places={PLACES} />;
+        return <Container places={PLACES} boxes={boxes} setBoxes={setBoxes} />;
     } else if (sortValue === "West Side") {
-        return <ContainerWest places={PLACES} />;
+        return (
+            <ContainerWest places={PLACES} boxes={boxes} setBoxes={setBoxes} />
+        );
     } else if (sortValue === "North Side") {
-        return <ContainerNorth places={PLACES} />;
+        return (
+            <ContainerNorth places={PLACES} boxes={boxes} setBoxes={setBoxes} />
+        );
     } else if (sortValue === "South Side") {
-        return <ContainerSouth places={PLACES} />;
+        return (
+            <ContainerSouth places={PLACES} boxes={boxes} setBoxes={setBoxes} />
+        );
     } else if (sortValue === "East Side") {
-        return <ContainerEast places={PLACES} />;
+        return (
+            <ContainerEast places={PLACES} boxes={boxes} setBoxes={setBoxes} />
+        );
     }
     return (
         <div>
