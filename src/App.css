@@ -39,7 +39,7 @@
     width: 200px;
     /* background-color:#CCC; */
     overflow-y: auto;
-    overflow-x: auto;
+    overflow-x: hidden;
     float: left;
     position: relative;
     left: "0%";

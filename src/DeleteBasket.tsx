@@ -11,7 +11,7 @@ import update from "immutability-helper";
 function getStyle(backgroundColor: string): CSSProperties {
     return {
         border: "1px solid rgba(0,0,0,0.2)",
-        minHeight: "8rem",
+        minHeight: "9rem",
         minWidth: "9.6rem",
         maxWidth: "9.6rem",
         color: "white",
@@ -22,7 +22,7 @@ function getStyle(backgroundColor: string): CSSProperties {
         textAlign: "center",
         float: "left",
         left: "-15.6px",
-        top: "-4%",
+        top: "-10%",
         fontSize: "1rem",
         position: "relative"
     };
@@ -66,6 +66,7 @@ export interface DustbinProps {
         }>
     >;
     color: string;
+    deleteBox: (value: string) => void;
 }
 
 export interface DustbinState {
@@ -73,12 +74,13 @@ export interface DustbinState {
     hasDroppedOnChild: boolean;
 }
 
-export const Dustbin: FC<DustbinProps> = ({
+export const DeleteBin: FC<DustbinProps> = ({
     greedy,
     children,
     boxes,
     setBoxes,
-    color
+    color,
+    deleteBox
 }) => {
     const [hasDropped, setHasDropped] = useState(false);
     const [hasDroppedOnChild, setHasDroppedOnChild] = useState(false);
@@ -88,14 +90,10 @@ export const Dustbin: FC<DustbinProps> = ({
             accept: ItemTypes.BOX,
             drop(item: object, monitor) {
                 const didDrop = monitor.didDrop();
-                if (didDrop && !greedy) {
-                    const x = Object(item).id;
-                    setName(name + " " + x);
-                    return;
-                }
-                console.log(item, Object(item).id);
                 const x = Object(item).id;
+                console.log(x);
                 setName(name + " " + x);
+                deleteBox(Object(item).Name);
                 setHasDropped(true);
                 setHasDroppedOnChild(didDrop);
                 setBoxes({
@@ -115,36 +113,15 @@ export const Dustbin: FC<DustbinProps> = ({
                         resetLeft: Object(item).resetLeft
                     }
                 });
-                /*
-                setBoxes(
-                    update(boxes, {
-                        [Object(item).id]: {
-                            $merge: { top: 0, left: 0, display: "none" }
-                        }
-                    })
-                );
-                */
-                //^ Disappear
-                /*
-                setBoxes(
-                    update(boxes, {
-                        [Object(item).id]: {
-                            $merge: { top: 0, left: 0 }
-                        }
-                    })
-                );
-                //Just move out^
-                */
-                //moveBox(Object(item).id, 0, 0);
             },
             collect: (monitor) => ({
                 isOver: monitor.isOver(),
                 isOverCurrent: monitor.isOver({ shallow: true })
             })
         }),
-        [greedy, setHasDropped, setHasDroppedOnChild, setName]
+        [greedy, setHasDropped, setHasDroppedOnChild, setName, deleteBox]
     );
-    const text = "Trip Location:";
+    const text = "Delete Trip:";
     const colors = color;
     let backgroundColor = colors;
     if (hasDroppedOnChild) {
