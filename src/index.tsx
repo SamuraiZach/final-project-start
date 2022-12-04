@@ -72,9 +72,187 @@ function App() {
     }
     function changeHemiFilter(v: string) {
         console.log(v);
+        if (v === "All") {
+            console.log(SortValueList);
+            if (SortValueList === "None") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Alpha G to L") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Left to Right") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Alpha L to G") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Right to Left") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Population G to L") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Population L to G") {
+                console.log(SortValueList);
+            }
+        } else if (v === "West Side") {
+            console.log(SortValueList);
+            if (SortValueList === "None") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Alpha G to L") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Left to Right") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Alpha L to G") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Right to Left") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Population G to L") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Population L to G") {
+                console.log(SortValueList);
+            }
+        } else if (v === "East Side") {
+            console.log(SortValueList);
+            if (SortValueList === "None") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Alpha G to L") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Left to Right") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Alpha L to G") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Right to Left") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Population G to L") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Population L to G") {
+                console.log(SortValueList);
+            }
+        } else if (v === "North Side") {
+            console.log(SortValueList);
+            if (SortValueList === "None") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Alpha G to L") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Left to Right") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Alpha L to G") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Right to Left") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Population G to L") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Population L to G") {
+                console.log(SortValueList);
+            }
+        } else if (v === "South Side") {
+            console.log(SortValueList);
+            if (SortValueList === "None") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Alpha G to L") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Left to Right") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Alpha L to G") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Right to Left") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Population G to L") {
+                console.log(SortValueList);
+            } else if (SortValueList === "Population L to G") {
+                console.log(SortValueList);
+            }
+        }
     }
     function changeListSort(c: string) {
         console.log(c);
+        if (c === "None") {
+            console.log(HemisphereSort);
+            if (HemisphereSort === "All") {
+                console.log(HemisphereSort);
+            } else if (HemisphereSort === "West Side") {
+                console.log(HemisphereSort);
+            } else if (HemisphereSort === "East Side") {
+                console.log(HemisphereSort);
+            } else if (HemisphereSort === "South Side") {
+                console.log(HemisphereSort);
+            } else if (HemisphereSort === "North Side") {
+                console.log(HemisphereSort);
+            }
+        } else if (c === "Alpha G to L") {
+            console.log(HemisphereSort);
+            if (HemisphereSort === "All") {
+                console.log(HemisphereSort);
+            } else if (HemisphereSort === "West Side") {
+                console.log(HemisphereSort);
+            } else if (HemisphereSort === "East Side") {
+                console.log(HemisphereSort);
+            } else if (HemisphereSort === "South Side") {
+                console.log(HemisphereSort);
+            } else if (HemisphereSort === "North Side") {
+                console.log(HemisphereSort);
+            }
+        } else if (c === "Left to Right") {
+            console.log(HemisphereSort);
+            if (HemisphereSort === "All") {
+                console.log(HemisphereSort);
+            } else if (HemisphereSort === "West Side") {
+                console.log(HemisphereSort);
+            } else if (HemisphereSort === "East Side") {
+                console.log(HemisphereSort);
+            } else if (HemisphereSort === "South Side") {
+                console.log(HemisphereSort);
+            } else if (HemisphereSort === "North Side") {
+                console.log(HemisphereSort);
+            }
+        } else if (c === "Alpha L to G") {
+            console.log(HemisphereSort);
+            if (HemisphereSort === "All") {
+                console.log(HemisphereSort);
+            } else if (HemisphereSort === "West Side") {
+                console.log(HemisphereSort);
+            } else if (HemisphereSort === "East Side") {
+                console.log(HemisphereSort);
+            } else if (HemisphereSort === "South Side") {
+                console.log(HemisphereSort);
+            } else if (HemisphereSort === "North Side") {
+                console.log(HemisphereSort);
+            }
+        } else if (c === "Right to Left") {
+            console.log(HemisphereSort);
+            if (HemisphereSort === "All") {
+                console.log(HemisphereSort);
+            } else if (HemisphereSort === "West Side") {
+                console.log(HemisphereSort);
+            } else if (HemisphereSort === "East Side") {
+                console.log(HemisphereSort);
+            } else if (HemisphereSort === "South Side") {
+                console.log(HemisphereSort);
+            } else if (HemisphereSort === "North Side") {
+                console.log(HemisphereSort);
+            }
+        } else if (c === "Population G to L") {
+            console.log(HemisphereSort);
+            if (HemisphereSort === "All") {
+                console.log(HemisphereSort);
+            } else if (HemisphereSort === "West Side") {
+                console.log(HemisphereSort);
+            } else if (HemisphereSort === "East Side") {
+                console.log(HemisphereSort);
+            } else if (HemisphereSort === "South Side") {
+                console.log(HemisphereSort);
+            } else if (HemisphereSort === "North Side") {
+                console.log(HemisphereSort);
+            }
+        } else if (c === "Population L to G") {
+            console.log(HemisphereSort);
+            if (HemisphereSort === "All") {
+                console.log(HemisphereSort);
+            } else if (HemisphereSort === "West Side") {
+                console.log(HemisphereSort);
+            } else if (HemisphereSort === "East Side") {
+                console.log(HemisphereSort);
+            } else if (HemisphereSort === "South Side") {
+                console.log(HemisphereSort);
+            } else if (HemisphereSort === "North Side") {
+                console.log(HemisphereSort);
+            }
+        }
     }
     function emptyHouse() {
         setBoxes({});
