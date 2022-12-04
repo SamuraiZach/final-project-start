@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { Place } from "../Place";
-import sample from "../Places.json";
+import sample from "./Places.json";
 import { PlacePic } from "./PlacePic";
 import { ObjectPlaces } from "../ObjectPlaces";
 //import { Containers } from "./Containers";

@@ -4,7 +4,7 @@ import { Interactables } from "./DraggingLayer";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { Button, Form } from "react-bootstrap";
-import SAMPLE from "./PlacesKeyVersion.json";
+import ALLALL from "./PlaceKeys/ALLALL.json";
 import { forOwn } from "lodash";
 //import { Box } from "./Box";
 import "./App.css";
@@ -26,7 +26,24 @@ function App() {
             resetTop: number;
             resetLeft: number;
         };
-    }>(SAMPLE);
+    }>(ALLALL);
+    //POST RENDER PLACE IS WHEN ADDING TO THE END BUT DUNNO HOW TO SORT SO IT JUST ADDS TO THE END
+    /*const [postRenderPlace, setPost] = useState<{
+        [key: string]: {
+            top: number;
+            left: number;
+            title: string;
+            display: string;
+            Name: string;
+            Country: string;
+            Continent: string;
+            Population_Country: number;
+            Image: string;
+            PopularFood: string[];
+            resetTop: number;
+            resetLeft: number;
+        };
+    }>({});*/
     const [r] = useState<{
         [key: string]: {
             top: number;
@@ -43,20 +60,30 @@ function App() {
             resetLeft: number;
         };
     }>(boxes);
+    console.log(Object.keys(boxes).sort());
     console.log(Object.keys(boxes).length);
     function updateValue(event: React.ChangeEvent<HTMLSelectElement>) {
         setHemiSort(event.target.value);
+        changeHemiFilter(event.target.value);
     }
     function updateValueSort(event: React.ChangeEvent<HTMLSelectElement>) {
         setSortValue(event.target.value);
+        changeListSort(event.target.value);
+    }
+    function changeHemiFilter(v: string) {
+        console.log(v);
+    }
+    function changeListSort(c: string) {
+        console.log(c);
     }
     function emptyHouse() {
         setBoxes({});
     }
     function startingOver() {
-        setBoxes(SAMPLE);
+        setBoxes(ALLALL);
     }
     function resetValues() {
+        console.log(Object.entries(boxes));
         Object.keys(boxes).map((key) => {
             const {
                 title,
@@ -151,9 +178,6 @@ function App() {
         //EXAMPLE OF PUSHING NEW KEY AT THE END
         console.log(boxes);
     };
-    if (HemisphereSort === "All") {
-        console.log("hi");
-    }
     return (
         <div className="App">
             <DndProvider backend={HTML5Backend}>

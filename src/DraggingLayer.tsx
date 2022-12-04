@@ -1,14 +1,8 @@
 import type { FC } from "react";
 import React from "react";
 //import { useState } from "react";
-import { Place } from "./Place";
-import sample from "./Places.json";
 //import { Form, Button } from "react-bootstrap";
 import { Container } from "./Container";
-import { ContainerWest } from "./ContainerWest";
-import { ContainerNorth } from "./ContainerNorth";
-import { ContainerSouth } from "./ContainerSouth";
-import { ContainerEast } from "./ContainerEast";
 
 export interface InteractablesProp {
     sortValue: string;
@@ -51,14 +45,12 @@ export interface InteractablesProp {
 }
 
 export const Interactables: FC<InteractablesProp> = ({
-    sortValue,
     boxes,
     setBoxes,
     deleteBox,
     basketMove
 }) => {
     //const [formAdd, setFormAdd] = useState(false);
-    const PLACES = sample.map((place): Place => ({ ...place }));
     /*
     const temp = new Map([["k", ["d", "d"]]]);
     console.log(temp);
@@ -102,42 +94,16 @@ export const Interactables: FC<InteractablesProp> = ({
                         <option value="North Side">North Side</option>
                         <option value="South Side">South Side</option>
     */
-    if (sortValue === "All") {
-        return (
-            <Container
-                places={PLACES}
-                boxes={boxes}
-                setBoxes={setBoxes}
-                deleteBox={deleteBox}
-                basketMove={basketMove}
-            />
-        );
-    } else if (sortValue === "West Side") {
-        return (
-            <ContainerWest places={PLACES} boxes={boxes} setBoxes={setBoxes} />
-        );
-    } else if (sortValue === "North Side") {
-        return (
-            <ContainerNorth places={PLACES} boxes={boxes} setBoxes={setBoxes} />
-        );
-    } else if (sortValue === "South Side") {
-        return (
-            <ContainerSouth places={PLACES} boxes={boxes} setBoxes={setBoxes} />
-        );
-    } else if (sortValue === "East Side") {
-        return (
-            <ContainerEast places={PLACES} boxes={boxes} setBoxes={setBoxes} />
-        );
-    }
     return (
         <div>
-            <div
-                style={{
-                    position: "absolute",
-                    top: 713,
-                    left: 30
-                }}
-            ></div>
+            <div>
+                <Container
+                    boxes={boxes}
+                    setBoxes={setBoxes}
+                    deleteBox={deleteBox}
+                    basketMove={basketMove}
+                />
+            </div>
         </div>
     );
 };
