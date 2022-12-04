@@ -43,7 +43,7 @@ FAIL src/index.test.tsx
 
       at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1728:14)
       at Object.<anonymous> (src/Container.tsx:7:1)
-      at Object.<anonymous> (src/DraggingLayer.tsx:7:1)
+      at Object.<anonymous> (src/DraggingLayer.tsx:5:1)
       at Object.<anonymous> (src/index.tsx:3:1)
       at Object.<anonymous> (src/index.test.tsx:3:1)
 
@@ -51,27 +51,23 @@ PASS src/App.test.tsx
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |    0.29 |        0 |    1.05 |     0.3 |                   
- src                   |     0.4 |        0 |    1.49 |     0.4 |                   
+All files              |    0.39 |        0 |    1.31 |     0.4 |                   
+ src                   |    0.61 |        0 |    2.08 |    0.61 |                   
   App.tsx              |     100 |      100 |     100 |     100 |                   
-  Basket.tsx           |       0 |        0 |       0 |       0 | 12-111            
+  Basket.tsx           |       0 |      100 |       0 |       0 | 12-108            
   BasketNewPlanner.tsx |       0 |        0 |       0 |       0 | 12-113            
   Box.tsx              |       0 |        0 |       0 |       0 | 7-72              
   ChildBasket.tsx      |       0 |        0 |       0 |       0 | 12-116            
-  Container.tsx        |       0 |        0 |       0 |       0 | 20-217            
-  ContainerEast.tsx    |       0 |        0 |       0 |       0 | 16-342            
-  ContainerNorth.tsx   |       0 |        0 |       0 |       0 | 16-342            
-  ContainerSouth.tsx   |       0 |        0 |       0 |       0 | 16-340            
-  ContainerWest.tsx    |       0 |        0 |       0 |       0 | 16-340            
+  Container.tsx        |       0 |        0 |       0 |       0 | 20-215            
   DeleteBasket.tsx     |       0 |        0 |       0 |       0 | 12-127            
-  DraggingLayer.tsx    |       0 |        0 |       0 |       0 | 53-132            
+  DraggingLayer.tsx    |       0 |      100 |       0 |       0 | 47-97             
   ItemTypes.ts         |       0 |      100 |     100 |       0 | 1                 
   MapBox.ts            |       0 |        0 |       0 |       0 |                   
   NumberBox.ts         |       0 |        0 |       0 |       0 |                   
   ObjectPlaces.tsx     |       0 |        0 |       0 |       0 |                   
   Place.ts             |       0 |        0 |       0 |       0 |                   
   PlaceKeyVersion.ts   |       0 |        0 |       0 |       0 |                   
-  index.tsx            |       0 |        0 |       0 |       0 | 12-391            
+  index.tsx            |       0 |        0 |       0 |       0 | 12-415            
   interfaces.ts        |       0 |        0 |       0 |       0 |                   
   reportWebVitals.ts   |       0 |        0 |       0 |       0 | 3-11              
   sortBox.tsx          |       0 |      100 |       0 |       0 | 5-20              
@@ -91,5 +87,5 @@ All files              |    0.29 |        0 |    1.05 |     0.3 |
 Test Suites: 1 failed, 1 passed, 2 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        3.975 s
+Time:        3.791 s
 Ran all test suites.
