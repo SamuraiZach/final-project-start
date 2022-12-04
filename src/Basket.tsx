@@ -4,10 +4,12 @@
 import React, { useCallback } from "react";
 import type { CSSProperties, FC, ReactNode } from "react";
 import { useState } from "react";
-import { useDrop } from "react-dnd";
+import { DndProvider, useDrop } from "react-dnd";
 import { ContainerState } from "./Container";
 import { ItemTypes } from "./ItemTypes";
 import update from "immutability-helper";
+import { ChildBin } from "./ChildBasket";
+import { HTML5Backend } from "react-dnd-html5-backend";
 function getStyle(backgroundColor: string): CSSProperties {
     return {
         border: "1px solid rgba(0,0,0,0.2)",
@@ -66,6 +68,7 @@ export interface DustbinProps {
         }>
     >;
     color: string;
+    value: number;
     basketMove: (item: object) => void;
 }
 
@@ -78,12 +81,45 @@ export const Dustbin: FC<DustbinProps> = ({
     greedy,
     children,
     color,
-    basketMove
+    basketMove,
+    boxes,
+    setBoxes,
+    value
 }) => {
+    const [amountOfChild, setChild] = useState(1);
     const [hasDropped, setHasDropped] = useState(false);
     const [hasDroppedOnChild, setHasDroppedOnChild] = useState(false);
     const [val, setVal] = useState(1);
     const [name, setName] = useState("");
+    const [valueofDropContainers, setDropContainer] = useState(1);
+    const childInstance = (i: number): ReactNode => {
+        return (
+            <div
+                style={{
+                    overflow: "hidden",
+                    clear: "both",
+                    margin: "-1rem",
+                    position: "relative",
+                    top: "50",
+                    left: "0%"
+                }}
+            >
+                <ChildBin
+                    i={i}
+                    valueofDropContainers={valueofDropContainers}
+                    setDropContainer={setDropContainer}
+                    boxes={boxes}
+                    setBoxes={setBoxes}
+                    color={"grey"}
+                    basketMove={basketMove}
+                ></ChildBin>
+            </div>
+        );
+    };
+    const PopulateChildren = [];
+    for (let i = 0; i < valueofDropContainers; i++) {
+        PopulateChildren.push(childInstance(i));
+    }
     const [{ isOver, isOverCurrent }, drop] = useDrop(
         () => ({
             accept: ItemTypes.BOX,
@@ -102,14 +138,18 @@ export const Dustbin: FC<DustbinProps> = ({
         }),
         [greedy, setHasDropped, setHasDroppedOnChild, setName]
     );
-    const text = "Trip Planner 1 ->";
+    const text = "Trip Planner " + (value + 1) + " ->";
     const colors = color;
     const backgroundColor = colors;
     return (
         <div ref={drop} style={getStyle(backgroundColor)}>
             {text}
             <br />
-            <div>{children}</div>
+            <div>
+                <DndProvider backend={HTML5Backend}>
+                    <div>{PopulateChildren}</div>
+                </DndProvider>
+            </div>
         </div>
     );
 };

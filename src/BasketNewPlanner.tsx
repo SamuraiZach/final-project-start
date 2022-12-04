@@ -65,6 +65,8 @@ export interface DustbinProps {
             };
         }>
     >;
+    valueofDropContainers: number;
+    setDropContainer: React.Dispatch<React.SetStateAction<number>>;
     color: string;
     basketMove: (item: object) => void;
 }
@@ -78,7 +80,9 @@ export const NewPlannerBin: FC<DustbinProps> = ({
     greedy,
     children,
     color,
-    basketMove
+    basketMove,
+    valueofDropContainers,
+    setDropContainer
 }) => {
     const [hasDropped, setHasDropped] = useState(false);
     const [hasDroppedOnChild, setHasDroppedOnChild] = useState(false);
@@ -89,16 +93,21 @@ export const NewPlannerBin: FC<DustbinProps> = ({
             accept: ItemTypes.BOX,
             drop(item: object, monitor) {
                 const didDrop = monitor.didDrop();
-                const x = Object(item).id;
-                setHasDropped(true);
-                setHasDroppedOnChild(didDrop);
+                setDropContainer(valueofDropContainers + 1);
             },
             collect: (monitor) => ({
                 isOver: monitor.isOver(),
                 isOverCurrent: monitor.isOver({ shallow: true })
             })
         }),
-        [greedy, setHasDropped, setHasDroppedOnChild, setName, basketMove]
+        [
+            greedy,
+            setHasDropped,
+            setHasDroppedOnChild,
+            setName,
+            basketMove,
+            setDropContainer
+        ]
     );
     const text = "Drop for new planner";
     const colors = color;

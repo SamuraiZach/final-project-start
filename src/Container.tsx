@@ -3,7 +3,7 @@ import React, { ReactNode } from "react";
 import update from "immutability-helper";
 import type { CSSProperties, FC } from "react";
 import { useCallback, useState } from "react";
-import type { XYCoord } from "react-dnd";
+import { DndProvider, XYCoord } from "react-dnd";
 import { useDrop } from "react-dnd";
 import { Place } from "./Place";
 
@@ -16,6 +16,7 @@ import { string } from "prop-types";
 import { DeleteBin } from "./DeleteBasket";
 import { ChildBin } from "./ChildBasket";
 import { NewPlannerBin } from "./BasketNewPlanner";
+import { HTML5Backend } from "react-dnd-html5-backend";
 
 const styles: CSSProperties = {
     width: 1350,
@@ -71,7 +72,6 @@ export interface ContainerState {
             display: string;
         };
     };
-    test: { [key: string]: { top: number; left: number; title: string } };
 }
 
 export const Container: FC<ContainerProps> = ({
@@ -80,6 +80,7 @@ export const Container: FC<ContainerProps> = ({
     deleteBox,
     basketMove
 }) => {
+    const [valueofDropContainers, setDropContainer] = useState(1);
     const moveBox = (id: string, left: number, top: number) => {
         setBoxes(
             update(boxes, {
@@ -101,28 +102,7 @@ export const Container: FC<ContainerProps> = ({
             return undefined;
         }
     });
-    const childInstance = (): ReactNode => {
-        return (
-            <div
-                style={{
-                    overflow: "hidden",
-                    clear: "both",
-                    margin: "-1rem",
-                    position: "relative",
-                    top: "50",
-                    left: "0%"
-                }}
-            >
-                <ChildBin
-                    boxes={boxes}
-                    setBoxes={setBoxes}
-                    color={"grey"}
-                    basketMove={basketMove}
-                ></ChildBin>
-            </div>
-        );
-    };
-    const renderLayers = () => {
+    const renderPieces = (i: number): ReactNode => {
         return (
             <div
                 style={{
@@ -134,25 +114,19 @@ export const Container: FC<ContainerProps> = ({
                 }}
             >
                 <Dustbin
+                    value={i}
                     boxes={boxes}
                     setBoxes={setBoxes}
                     color={"black"}
                     basketMove={basketMove}
-                >
-                    {childInstance()}
-                </Dustbin>
-                <NewPlannerBin
-                    boxes={boxes}
-                    setBoxes={setBoxes}
-                    color={"black"}
-                    basketMove={basketMove}
-                >
-                    {childInstance()}
-                </NewPlannerBin>
+                ></Dustbin>
             </div>
         );
     };
-    renderLayers();
+    const PopulateTrips = [];
+    for (let i = 0; i < valueofDropContainers; i++) {
+        PopulateTrips.push(renderPieces(i));
+    }
     return (
         <div>
             <div ref={drop} style={styles}>
@@ -212,21 +186,6 @@ export const Container: FC<ContainerProps> = ({
                 })}
             </div>
             <div
-                ref={() => renderLayers}
-                className="itemconfiguration"
-                style={{
-                    position: "absolute",
-                    left: "0%",
-                    top: "0%",
-                    border: "1px solid black",
-                    width: "11.5%",
-                    height: "623px",
-                    maxHeight: "623px"
-                }}
-            >
-                {renderLayers()}
-            </div>
-            <div
                 className="itemconfiguration"
                 style={{
                     top: "608px",
@@ -245,6 +204,30 @@ export const Container: FC<ContainerProps> = ({
                     basketMove={basketMove}
                 ></DeleteBin>
             </div>
+            <DndProvider backend={HTML5Backend}>
+                <div
+                    className="itemconfiguration"
+                    style={{
+                        position: "absolute",
+                        left: "0%",
+                        top: "0%",
+                        border: "1px solid black",
+                        width: "11.5%",
+                        height: "623px",
+                        maxHeight: "623px"
+                    }}
+                >
+                    {PopulateTrips}
+                    <NewPlannerBin
+                        boxes={boxes}
+                        setBoxes={setBoxes}
+                        color={"black"}
+                        valueofDropContainers={valueofDropContainers}
+                        setDropContainer={setDropContainer}
+                        basketMove={basketMove}
+                    ></NewPlannerBin>
+                </div>
+            </DndProvider>
         </div>
     );
 };

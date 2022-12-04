@@ -50,50 +50,6 @@ export const Interactables: FC<InteractablesProp> = ({
     deleteBox,
     basketMove
 }) => {
-    //const [formAdd, setFormAdd] = useState(false);
-    /*
-    const temp = new Map([["k", ["d", "d"]]]);
-    console.log(temp);
-    const [test, testSet] = useState<{
-        [key: string]: {
-            top: number;
-            left: number;
-            title: string;
-        };
-    }>({});
-    const initBoxes = (
-        places: Place[],
-        test: {
-            [key: string]: {
-                top: number;
-                left: number;
-                title: string;
-            };
-        }
-    ) => {
-        //test["a"]({ top: 2, left: 2, title: "tt" });
-        for (let i = 0; i < 2; i++) {
-            const name = places[i].Name;
-            test.push;
-        }
-    };
-    initBoxes(PLACES, test);
-    */
-
-    /*
-    const toggleAdd = () => {
-        if (formAdd) {
-            setFormAdd(false);
-        } else {
-            setFormAdd(true);
-        }
-        return null;
-    };
-    West Side">West Side</option>
-                        <option value="East Side">East Side</option>
-                        <option value="North Side">North Side</option>
-                        <option value="South Side">South Side</option>
-    */
     return (
         <div>
             <div>
