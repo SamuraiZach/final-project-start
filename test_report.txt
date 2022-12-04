@@ -51,8 +51,8 @@ PASS src/App.test.tsx
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |    0.18 |        0 |    1.19 |    0.18 |                   
- src                   |    0.21 |        0 |    1.78 |    0.22 |                   
+All files              |    0.17 |        0 |    1.13 |    0.18 |                   
+ src                   |    0.21 |        0 |    1.66 |    0.21 |                   
   App.tsx              |     100 |      100 |     100 |     100 |                   
   Basket.tsx           |       0 |      100 |       0 |       0 | 14-144            
   BasketNewPlanner.tsx |       0 |        0 |       0 |       0 | 12-122            
@@ -68,7 +68,7 @@ All files              |    0.18 |        0 |    1.19 |    0.18 |
   ObjectPlaces.tsx     |       0 |        0 |       0 |       0 |                   
   Place.ts             |       0 |        0 |       0 |       0 |                   
   PlaceKeyVersion.ts   |       0 |        0 |       0 |       0 |                   
-  index.tsx            |       0 |        0 |       0 |       0 | 47-884            
+  index.tsx            |       0 |        0 |       0 |       0 | 47-934            
   interfaces.ts        |       0 |        0 |       0 |       0 |                   
   reportWebVitals.ts   |       0 |        0 |       0 |       0 | 3-11              
   sortBox.tsx          |       0 |      100 |       0 |       0 | 5-20              
@@ -88,5 +88,5 @@ All files              |    0.18 |        0 |    1.19 |    0.18 |
 Test Suites: 1 failed, 1 passed, 2 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        5.635 s
+Time:        4.542 s
 Ran all test suites.
