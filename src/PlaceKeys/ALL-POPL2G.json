@@ -27,6 +27,20 @@
         "resetTop": 350,
         "resetLeft": 850
     },
+    "Milford Sound, New Zealand": {
+        "top": 0,
+        "left": 0,
+        "title": "https://www.newzealand.com/assets/Campaigns/If-You-Seek/Milford_Sound-Fiordland-MH1__aWxvdmVrZWxseQo_CropResizeWzEyMDAsNjMwLDc1LCJqcGciXQ.jpg",
+        "display": "inline",
+        "Name": "Milford Sound",
+        "Country": "New Zealand",
+        "Continent": "Oceania",
+        "Population_Country": 4822233,
+        "Image": "https://www.newzealand.com/assets/Campaigns/If-You-Seek/Milford_Sound-Fiordland-MH1__aWxvdmVrZWxseQo_CropResizeWzEyMDAsNjMwLDc1LCJqcGciXQ.jpg",
+        "PopularFood": ["Crayfish"],
+        "resetTop": 620,
+        "resetLeft": 1155
+    },
     "Santa Claus Village, Finland": {
         "top": 75,
         "left": 710,

@@ -33,6 +33,13 @@ import SOUTHNONE from "./PlaceKeys/SOUTH-NONE.json";
 import SOUTHPOPL2G from "./PlaceKeys/SOUTH-POPL2G.json";
 import SOUTHPOPG2L from "./PlaceKeys/SOUTH-POPG2L.json";
 import SOUTHR2L from "./PlaceKeys/SOUTH-R2L.json";
+import WESTALPHAG2L from "./PlaceKeys/WEST-ALPHAG2L.json";
+import WESTALPHAL2G from "./PlaceKeys/WEST-ALPHAL2G.json";
+import WESTL2R from "./PlaceKeys/WEST-L2R.json";
+import WESTNONE from "./PlaceKeys/WEST-NONE.json";
+import WESTPOPL2G from "./PlaceKeys/WEST-POPL2G.json";
+import WESTPOPG2L from "./PlaceKeys/WEST-POPG2L.json";
+import WESTR2L from "./PlaceKeys/WEST-R2L.json";
 import { forOwn } from "lodash";
 //import { Box } from "./Box";
 import "./App.css";
@@ -56,7 +63,7 @@ function App() {
         };
     }>(ALLALL);
     //POST RENDER PLACE IS WHEN ADDING TO THE END BUT DUNNO HOW TO SORT SO IT JUST ADDS TO THE END
-    /*const [postRenderPlace, setPost] = useState<{
+    const [postRenderPlace, setPost] = useState<{
         [key: string]: {
             top: number;
             left: number;
@@ -71,7 +78,7 @@ function App() {
             resetTop: number;
             resetLeft: number;
         };
-    }>({});*/
+    }>({});
     const [r] = useState<{
         [key: string]: {
             top: number;
@@ -98,187 +105,289 @@ function App() {
         setSortValue(event.target.value);
         changeListSort(event.target.value);
     }
+    function addPostRender() {
+        Object.keys(postRenderPlace).map((key) => {
+            const {
+                title,
+                display,
+                Name,
+                Country,
+                Continent,
+                Population_Country,
+                Image,
+                PopularFood,
+                resetTop,
+                resetLeft
+            } = postRenderPlace[key] as {
+                title: string;
+                display: string;
+                Name: string;
+                Country: string;
+                Continent: string;
+                Population_Country: number;
+                Image: string;
+                PopularFood: string[];
+                resetTop: number;
+                resetLeft: number;
+            };
+            setBoxes({
+                ...boxes,
+                [key]: {
+                    top: resetTop,
+                    left: resetLeft,
+                    title: title,
+                    display: display,
+                    Name: Name,
+                    Country: Country,
+                    Continent: Continent,
+                    Population_Country: Population_Country,
+                    Image: Image,
+                    PopularFood: PopularFood,
+                    resetTop: resetTop,
+                    resetLeft: resetLeft
+                }
+            });
+        });
+    }
     function changeHemiFilter(v: string) {
         console.log(v);
         if (v === "All") {
-            console.log(SortValueList);
             if (SortValueList === "None") {
-                console.log(SortValueList);
+                setBoxes(ALLALL);
+                addPostRender();
             } else if (SortValueList === "Alpha G to L") {
-                console.log(SortValueList);
+                setBoxes(ALLALPHAG2L);
+                addPostRender();
             } else if (SortValueList === "Left to Right") {
-                console.log(SortValueList);
+                setBoxes(ALLL2R);
+                addPostRender();
             } else if (SortValueList === "Alpha L to G") {
-                console.log(SortValueList);
+                setBoxes(ALLALPHAL2G);
+                addPostRender();
             } else if (SortValueList === "Right to Left") {
-                console.log(SortValueList);
+                setBoxes(ALLR2L);
+                addPostRender();
             } else if (SortValueList === "Population G to L") {
-                console.log(SortValueList);
+                setBoxes(ALLPOPG2L);
+                addPostRender();
             } else if (SortValueList === "Population L to G") {
-                console.log(SortValueList);
+                setBoxes(ALLPOPL2G);
+                addPostRender();
             }
         } else if (v === "West Side") {
-            console.log(SortValueList);
             if (SortValueList === "None") {
-                console.log(SortValueList);
+                setBoxes(WESTNONE);
+                addPostRender();
             } else if (SortValueList === "Alpha G to L") {
-                console.log(SortValueList);
+                setBoxes(WESTALPHAG2L);
+                addPostRender();
             } else if (SortValueList === "Left to Right") {
-                console.log(SortValueList);
+                setBoxes(WESTL2R);
+                addPostRender();
             } else if (SortValueList === "Alpha L to G") {
-                console.log(SortValueList);
+                setBoxes(WESTALPHAL2G);
+                addPostRender();
             } else if (SortValueList === "Right to Left") {
-                console.log(SortValueList);
+                setBoxes(WESTR2L);
+                addPostRender();
             } else if (SortValueList === "Population G to L") {
-                console.log(SortValueList);
+                setBoxes(WESTPOPG2L);
+                addPostRender();
             } else if (SortValueList === "Population L to G") {
-                console.log(SortValueList);
+                setBoxes(WESTPOPL2G);
+                addPostRender();
             }
         } else if (v === "East Side") {
-            console.log(SortValueList);
             if (SortValueList === "None") {
-                console.log(SortValueList);
+                setBoxes(EASTNONE);
+                addPostRender();
             } else if (SortValueList === "Alpha G to L") {
-                console.log(SortValueList);
+                setBoxes(EASTALPHAG2L);
+                addPostRender();
             } else if (SortValueList === "Left to Right") {
-                console.log(SortValueList);
+                setBoxes(EASTL2R);
+                addPostRender();
             } else if (SortValueList === "Alpha L to G") {
-                console.log(SortValueList);
+                setBoxes(EASTALPHAL2G);
+                addPostRender();
             } else if (SortValueList === "Right to Left") {
-                console.log(SortValueList);
+                setBoxes(EASTR2L);
+                addPostRender();
             } else if (SortValueList === "Population G to L") {
-                console.log(SortValueList);
+                setBoxes(EASTPOPG2L);
+                addPostRender();
             } else if (SortValueList === "Population L to G") {
-                console.log(SortValueList);
+                setBoxes(EASTPOPL2G);
+                addPostRender();
             }
         } else if (v === "North Side") {
-            console.log(SortValueList);
             if (SortValueList === "None") {
-                console.log(SortValueList);
+                setBoxes(NORTHNONE);
+                addPostRender();
             } else if (SortValueList === "Alpha G to L") {
-                console.log(SortValueList);
+                setBoxes(NORTHALPHAG2L);
+                addPostRender();
             } else if (SortValueList === "Left to Right") {
-                console.log(SortValueList);
+                setBoxes(NORTHL2R);
+                addPostRender();
             } else if (SortValueList === "Alpha L to G") {
-                console.log(SortValueList);
+                setBoxes(NORTHALPHAL2G);
+                addPostRender();
             } else if (SortValueList === "Right to Left") {
-                console.log(SortValueList);
+                setBoxes(NORTHR2L);
+                addPostRender();
             } else if (SortValueList === "Population G to L") {
-                console.log(SortValueList);
+                setBoxes(NORTHPOPG2L);
+                addPostRender();
             } else if (SortValueList === "Population L to G") {
-                console.log(SortValueList);
+                setBoxes(NORTHPOPL2G);
+                addPostRender();
             }
         } else if (v === "South Side") {
-            console.log(SortValueList);
             if (SortValueList === "None") {
-                console.log(SortValueList);
+                setBoxes(SOUTHNONE);
+                addPostRender();
             } else if (SortValueList === "Alpha G to L") {
-                console.log(SortValueList);
+                setBoxes(SOUTHALPHAG2L);
+                addPostRender();
             } else if (SortValueList === "Left to Right") {
-                console.log(SortValueList);
+                setBoxes(SOUTHL2R);
+                addPostRender();
             } else if (SortValueList === "Alpha L to G") {
-                console.log(SortValueList);
+                setBoxes(SOUTHALPHAL2G);
+                addPostRender();
             } else if (SortValueList === "Right to Left") {
-                console.log(SortValueList);
+                setBoxes(SOUTHR2L);
+                addPostRender();
             } else if (SortValueList === "Population G to L") {
-                console.log(SortValueList);
+                setBoxes(NORTHPOPG2L);
+                addPostRender();
             } else if (SortValueList === "Population L to G") {
-                console.log(SortValueList);
+                setBoxes(NORTHPOPL2G);
+                addPostRender();
             }
         }
     }
     function changeListSort(c: string) {
         console.log(c);
         if (c === "None") {
-            console.log(HemisphereSort);
             if (HemisphereSort === "All") {
-                console.log(HemisphereSort);
+                setBoxes(ALLALL);
+                addPostRender();
             } else if (HemisphereSort === "West Side") {
-                console.log(HemisphereSort);
+                setBoxes(WESTNONE);
+                addPostRender();
             } else if (HemisphereSort === "East Side") {
-                console.log(HemisphereSort);
+                setBoxes(EASTNONE);
+                addPostRender();
             } else if (HemisphereSort === "South Side") {
-                console.log(HemisphereSort);
+                setBoxes(SOUTHNONE);
+                addPostRender();
             } else if (HemisphereSort === "North Side") {
-                console.log(HemisphereSort);
+                setBoxes(NORTHNONE);
+                addPostRender();
             }
         } else if (c === "Alpha G to L") {
-            console.log(HemisphereSort);
             if (HemisphereSort === "All") {
-                console.log(HemisphereSort);
+                setBoxes(ALLALPHAG2L);
+                addPostRender();
             } else if (HemisphereSort === "West Side") {
-                console.log(HemisphereSort);
+                setBoxes(WESTALPHAG2L);
+                addPostRender();
             } else if (HemisphereSort === "East Side") {
-                console.log(HemisphereSort);
+                setBoxes(EASTALPHAG2L);
+                addPostRender();
             } else if (HemisphereSort === "South Side") {
-                console.log(HemisphereSort);
+                setBoxes(SOUTHALPHAG2L);
+                addPostRender();
             } else if (HemisphereSort === "North Side") {
-                console.log(HemisphereSort);
+                setBoxes(NORTHALPHAG2L);
+                addPostRender();
             }
         } else if (c === "Left to Right") {
-            console.log(HemisphereSort);
             if (HemisphereSort === "All") {
-                console.log(HemisphereSort);
+                setBoxes(ALLL2R);
+                addPostRender();
             } else if (HemisphereSort === "West Side") {
-                console.log(HemisphereSort);
+                setBoxes(WESTL2R);
+                addPostRender();
             } else if (HemisphereSort === "East Side") {
-                console.log(HemisphereSort);
+                setBoxes(EASTL2R);
+                addPostRender();
             } else if (HemisphereSort === "South Side") {
-                console.log(HemisphereSort);
+                setBoxes(SOUTHL2R);
+                addPostRender();
             } else if (HemisphereSort === "North Side") {
-                console.log(HemisphereSort);
+                setBoxes(NORTHL2R);
+                addPostRender();
             }
         } else if (c === "Alpha L to G") {
-            console.log(HemisphereSort);
             if (HemisphereSort === "All") {
-                console.log(HemisphereSort);
+                setBoxes(ALLALPHAL2G);
+                addPostRender();
             } else if (HemisphereSort === "West Side") {
-                console.log(HemisphereSort);
+                setBoxes(WESTALPHAL2G);
+                addPostRender();
             } else if (HemisphereSort === "East Side") {
-                console.log(HemisphereSort);
+                setBoxes(EASTALPHAL2G);
+                addPostRender();
             } else if (HemisphereSort === "South Side") {
-                console.log(HemisphereSort);
+                setBoxes(SOUTHALPHAL2G);
+                addPostRender();
             } else if (HemisphereSort === "North Side") {
-                console.log(HemisphereSort);
+                setBoxes(NORTHALPHAL2G);
+                addPostRender();
             }
         } else if (c === "Right to Left") {
-            console.log(HemisphereSort);
             if (HemisphereSort === "All") {
-                console.log(HemisphereSort);
+                setBoxes(ALLR2L);
+                addPostRender();
             } else if (HemisphereSort === "West Side") {
-                console.log(HemisphereSort);
+                setBoxes(WESTR2L);
+                addPostRender();
             } else if (HemisphereSort === "East Side") {
-                console.log(HemisphereSort);
+                setBoxes(EASTR2L);
+                addPostRender();
             } else if (HemisphereSort === "South Side") {
-                console.log(HemisphereSort);
+                setBoxes(SOUTHR2L);
+                addPostRender();
             } else if (HemisphereSort === "North Side") {
-                console.log(HemisphereSort);
+                setBoxes(NORTHR2L);
+                addPostRender();
             }
         } else if (c === "Population G to L") {
-            console.log(HemisphereSort);
             if (HemisphereSort === "All") {
-                console.log(HemisphereSort);
+                setBoxes(ALLPOPG2L);
+                addPostRender();
             } else if (HemisphereSort === "West Side") {
-                console.log(HemisphereSort);
+                setBoxes(WESTPOPG2L);
+                addPostRender();
             } else if (HemisphereSort === "East Side") {
-                console.log(HemisphereSort);
+                setBoxes(EASTPOPG2L);
+                addPostRender();
             } else if (HemisphereSort === "South Side") {
-                console.log(HemisphereSort);
+                setBoxes(SOUTHPOPG2L);
+                addPostRender();
             } else if (HemisphereSort === "North Side") {
-                console.log(HemisphereSort);
+                setBoxes(NORTHPOPG2L);
+                addPostRender();
             }
         } else if (c === "Population L to G") {
-            console.log(HemisphereSort);
             if (HemisphereSort === "All") {
-                console.log(HemisphereSort);
+                setBoxes(ALLPOPL2G);
+                addPostRender();
             } else if (HemisphereSort === "West Side") {
-                console.log(HemisphereSort);
+                setBoxes(WESTPOPL2G);
+                addPostRender();
             } else if (HemisphereSort === "East Side") {
-                console.log(HemisphereSort);
+                setBoxes(EASTPOPL2G);
+                addPostRender();
             } else if (HemisphereSort === "South Side") {
-                console.log(HemisphereSort);
+                setBoxes(SOUTHPOPL2G);
+                addPostRender();
             } else if (HemisphereSort === "North Side") {
-                console.log(HemisphereSort);
+                setBoxes(NORTHPOPL2G);
+                addPostRender();
             }
         }
     }
@@ -377,6 +486,7 @@ function App() {
             resetTop: 400,
             resetLeft: 740
         };
+        setPost({ ...postRenderPlace, [yourKeyVariable]: someValueArray });
         setBoxes({
             ...boxes,
             [yourKeyVariable]: someValueArray
