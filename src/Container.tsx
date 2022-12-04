@@ -24,7 +24,6 @@ const styles: CSSProperties = {
 };
 
 export interface ContainerProps {
-    places: Place[];
     boxes: {
         [key: string]: {
             top: number;
@@ -76,7 +75,6 @@ export interface ContainerState {
 }
 
 export const Container: FC<ContainerProps> = ({
-    places,
     boxes,
     setBoxes,
     deleteBox,

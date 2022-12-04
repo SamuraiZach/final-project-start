@@ -104,10 +104,7 @@ export const Dustbin: FC<DustbinProps> = ({
     );
     const text = "Trip Planner 1 ->";
     const colors = color;
-    let backgroundColor = colors;
-    if (isOverCurrent || (isOver && greedy)) {
-        backgroundColor = "darkgreen";
-    }
+    const backgroundColor = colors;
     return (
         <div ref={drop} style={getStyle(backgroundColor)}>
             {text}
