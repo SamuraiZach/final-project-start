@@ -22,7 +22,7 @@ function getStyle(backgroundColor: string): CSSProperties {
         textAlign: "center",
         float: "left",
         left: "-15.6px",
-        top: "-10%",
+        top: "-18px",
         fontSize: "1rem",
         position: "relative"
     };
