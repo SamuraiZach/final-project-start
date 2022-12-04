@@ -213,15 +213,15 @@ export const Container: FC<ContainerProps> = ({
                         top: "0%",
                         border: "1px solid black",
                         width: "11.5%",
-                        height: "623px",
-                        maxHeight: "623px"
+                        height: "609px",
+                        maxHeight: "609px"
                     }}
                 >
                     {PopulateTrips}
                     <NewPlannerBin
                         boxes={boxes}
                         setBoxes={setBoxes}
-                        color={"black"}
+                        color={"blue"}
                         valueofDropContainers={valueofDropContainers}
                         setDropContainer={setDropContainer}
                         basketMove={basketMove}

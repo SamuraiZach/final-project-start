@@ -4,7 +4,7 @@ import { render } from "react-dom";
 import { Interactables } from "./DraggingLayer";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, Modal } from "react-bootstrap";
 import ALLALL from "./PlaceKeys/ALLALL.json";
 import ALLALPHAG2L from "./PlaceKeys/ALL-ALPHAG2L.json";
 import ALLALPHAL2G from "./PlaceKeys/ALL-ALPHAL2G.json";
@@ -41,11 +41,14 @@ import WESTPOPL2G from "./PlaceKeys/WEST-POPL2G.json";
 import WESTPOPG2L from "./PlaceKeys/WEST-POPG2L.json";
 import WESTR2L from "./PlaceKeys/WEST-R2L.json";
 import { forOwn } from "lodash";
-//import { Box } from "./Box";
+import { ModalViewX } from "./Modal";
 import "./App.css";
 function App() {
     const [HemisphereSort, setHemiSort] = useState<string>("All");
     const [SortValueList, setSortValue] = useState<string>("None");
+    const [modalEditOpen, setmodalEditOpen] = React.useState(false);
+    const [modalViewOpen, setmodalViewOpen] = React.useState(false);
+
     const [boxes, setBoxes] = useState<{
         [key: string]: {
             top: number;
@@ -95,8 +98,6 @@ function App() {
             resetLeft: number;
         };
     }>(boxes);
-    console.log(Object.keys(boxes).sort());
-    console.log(Object.keys(boxes).length);
     function updateValue(event: React.ChangeEvent<HTMLSelectElement>) {
         setHemiSort(event.target.value);
         changeHemiFilter(event.target.value);
@@ -444,7 +445,6 @@ function App() {
         });
     }
     function deleteBox(value: string) {
-        console.log(value);
         setBoxes(
             forOwn(boxes, function (x, k) {
                 x.Name === value && delete boxes[k];
@@ -494,6 +494,79 @@ function App() {
         });
         //EXAMPLE OF PUSHING NEW KEY AT THE END
         console.log(boxes);
+    };
+
+    const [ModalTitle, setModalTitle] = useState<string>("None");
+    const [ModalKey, setModalKey] = useState<string>("None");
+    const [ModalPopCountry, setModalPopCountry] = useState<number>(0);
+    const [ModalPopFood, setModalPopFood] = useState<string[]>([""]);
+    const [ModalTop, setModalTop] = useState<number>(0);
+    const [ModalLeft, setModalLeft] = useState<number>(0);
+    const [ModalDisplay, setModalDisplay] = useState<string>("None");
+    const [ModalCountry, setModalCountry] = useState<string>("None");
+    const [ModalContinent, setModalContinent] = useState<string>("None");
+    const [ModalName, setModalName] = useState<string>("None");
+    const [ModalImage, setModalImage] = useState<string>("None");
+
+    const showModalEdit = (
+        key: string,
+        title: string,
+        Left: number,
+        Top: number,
+        PopCountry: number,
+        PopFood: string[],
+        Name: string,
+        Display: string,
+        Image: string,
+        Country: string,
+        Continent: string
+    ) => {
+        console.log(key);
+        setModalKey(key);
+        setModalTitle(title);
+        setModalLeft(Left);
+        setModalTop(Top);
+        setModalPopCountry(PopCountry);
+        setModalDisplay(Display);
+        setModalName(Name);
+        setModalCountry(Country);
+        setModalContinent(Continent);
+        setModalImage(Image);
+        setModalPopFood(PopFood);
+        setmodalEditOpen(true);
+    };
+    const closeEditModal = () => {
+        setmodalEditOpen(false);
+    };
+    const closeViewModal = () => {
+        setmodalViewOpen(false);
+    };
+    const showModalView = (
+        key: string,
+        title: string,
+        Left: number,
+        Top: number,
+        PopCountry: number,
+        PopFood: string[],
+        Name: string,
+        Display: string,
+        Image: string,
+        Country: string,
+        Continent: string
+    ) => {
+        console.log(key);
+        setModalKey(key);
+        setModalTitle(title);
+        setModalLeft(Left);
+        setModalTop(Top);
+        setModalPopCountry(PopCountry);
+        setModalDisplay(Display);
+        setModalName(Name);
+        setModalCountry(Country);
+        setModalContinent(Continent);
+        setModalImage(Image);
+        setModalPopFood(PopFood);
+        setmodalViewOpen(true);
     };
     return (
         <div className="App">
@@ -662,12 +735,29 @@ function App() {
                     }}
                 >
                     {Object.keys(boxes).map((key) => {
-                        const { title, Population_Country, PopularFood } =
-                            boxes[key] as {
-                                Population_Country: number;
-                                PopularFood: string[];
-                                title: string;
-                            };
+                        const {
+                            title,
+                            Population_Country,
+                            PopularFood,
+                            top,
+                            left,
+                            display,
+                            Country,
+                            Continent,
+                            Name,
+                            Image
+                        } = boxes[key] as {
+                            top: number;
+                            left: number;
+                            title: string;
+                            display: string;
+                            Name: string;
+                            Country: string;
+                            Continent: string;
+                            Population_Country: number;
+                            Image: string;
+                            PopularFood: string[];
+                        };
                         return (
                             <div key={key}>
                                 <div key={key}>
@@ -697,6 +787,21 @@ function App() {
                                             position: "relative",
                                             top: "50px"
                                         }}
+                                        onClick={() =>
+                                            showModalEdit(
+                                                key,
+                                                title,
+                                                left,
+                                                top,
+                                                Population_Country,
+                                                PopularFood,
+                                                Name,
+                                                display,
+                                                Image,
+                                                Country,
+                                                Continent
+                                            )
+                                        }
                                     >
                                         EDIT
                                     </Button>
@@ -706,6 +811,21 @@ function App() {
                                             position: "relative",
                                             top: "50px"
                                         }}
+                                        onClick={() =>
+                                            showModalView(
+                                                key,
+                                                title,
+                                                left,
+                                                top,
+                                                Population_Country,
+                                                PopularFood,
+                                                Name,
+                                                display,
+                                                Image,
+                                                Country,
+                                                Continent
+                                            )
+                                        }
                                     >
                                         VIEW MORE
                                     </Button>
@@ -723,6 +843,38 @@ function App() {
                 >
                     <Button onClick={addatEnd}>addAtEnd button test</Button>
                 </div>
+                <div>
+                    <Modal show={modalViewOpen} onHide={closeViewModal}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>{ModalKey}</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <img
+                                style={{
+                                    position: "relative"
+                                }}
+                                src={ModalTitle}
+                                width="50%"
+                            ></img>
+                        </Modal.Body>
+                    </Modal>
+                </div>
+                <div>
+                    <Modal show={modalEditOpen} onHide={closeEditModal}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>{ModalKey}</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <img
+                                style={{
+                                    position: "relative"
+                                }}
+                                src={ModalTitle}
+                                width="50%"
+                            ></img>
+                        </Modal.Body>
+                    </Modal>
+                </div>
             </DndProvider>
         </div>
     );
@@ -731,3 +883,4 @@ function App() {
 const rootElement = document.getElementById("root");
 render(<App />, rootElement);
 export default App;
+//MODAL EDIT AND VIEW ARE PROTOTYPES JUST TO GET STUFF TO WORK
