@@ -5,6 +5,7 @@ import { Interactables } from "./DraggingLayer";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { Button, Form } from "react-bootstrap";
+import Modal from "react-bootstrap/Modal";
 import ALLALL from "./PlaceKeys/ALLALL.json";
 import ALLALPHAG2L from "./PlaceKeys/ALL-ALPHAG2L.json";
 import ALLALPHAL2G from "./PlaceKeys/ALL-ALPHAL2G.json";
@@ -44,6 +45,9 @@ import { forOwn } from "lodash";
 //import { Box } from "./Box";
 import "./App.css";
 function App() {
+    const [show, setShow] = useState(false);
+    const [name, setName] = useState("");
+    const [source, setSource] = useState("");
     const [HemisphereSort, setHemiSort] = useState<string>("All");
     const [SortValueList, setSortValue] = useState<string>("None");
     const [boxes, setBoxes] = useState<{
@@ -97,6 +101,16 @@ function App() {
     }>(boxes);
     console.log(Object.keys(boxes).sort());
     console.log(Object.keys(boxes).length);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    const nameHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setName(event.target.value);
+    };
+    const sourceHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setSource(event.target.value);
+    };
+
     function updateValue(event: React.ChangeEvent<HTMLSelectElement>) {
         setHemiSort(event.target.value);
         changeHemiFilter(event.target.value);
@@ -472,11 +486,12 @@ function App() {
         });
     }
     const addatEnd = () => {
-        const yourKeyVariable = "happyCount";
+        const yourKeyVariable = name;
         const someValueArray = {
             top: 400,
-            left: 740,
-            title: "https://upload.wikimedia.org/wikipedia/commons/e/e8/Serengeti_sunset-1001.jpg",
+            left: 640,
+            //title: "https://upload.wikimedia.org/wikipedia/commons/e/e8/Serengeti_sunset-1001.jpg",
+            title: source,
             display: "inline",
             Name: "",
             Country: "",
@@ -485,13 +500,14 @@ function App() {
             Image: "",
             PopularFood: ["CACA"],
             resetTop: 400,
-            resetLeft: 740
+            resetLeft: 640
         };
         setPost({ ...postRenderPlace, [yourKeyVariable]: someValueArray });
         setBoxes({
             ...boxes,
             [yourKeyVariable]: someValueArray
         });
+        handleClose();
         //EXAMPLE OF PUSHING NEW KEY AT THE END
         console.log(boxes);
     };
@@ -611,10 +627,43 @@ function App() {
                         right: "1%"
                     }}
                 >
-                    <Button style={{ width: 255 }} /*onClick={resetValues}*/>
+                    <Button style={{ width: 255 }} onClick={handleShow}>
                         Add Place
                     </Button>
                 </div>
+                <Modal show={show} onHide={handleClose}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Add a New Place!</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <Form>
+                            <Form.Group className="addPlaceName">
+                                <Form.Label>Name!</Form.Label>
+                                <Form.Control
+                                    type="textarea"
+                                    placeholder="Place Name..."
+                                    value={name}
+                                    onChange={nameHandler}
+                                    autoFocus
+                                />
+                            </Form.Group>
+                            <Form.Group className="addPlaceImage">
+                                <Form.Label>
+                                    Paste Image Address Here!
+                                </Form.Label>
+                                <Form.Control
+                                    type="textarea"
+                                    placeholder="Right Click on Image and copy image address. "
+                                    value={source}
+                                    onChange={sourceHandler}
+                                />
+                            </Form.Group>
+                        </Form>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button onClick={addatEnd}>Add!</Button>
+                    </Modal.Footer>
+                </Modal>
                 <div
                     style={{
                         position: "absolute",
