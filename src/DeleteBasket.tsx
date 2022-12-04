@@ -93,9 +93,10 @@ export const DeleteBin: FC<DustbinProps> = ({
             drop(item: object, monitor) {
                 const didDrop = monitor.didDrop();
                 const x = Object(item).id;
+                const y = Object(item).Name;
                 console.log(x);
                 setName(name + " " + x);
-                deleteBox(Object(item).Name);
+                deleteBox(y);
                 setHasDropped(true);
                 setHasDroppedOnChild(didDrop);
                 basketMove(item);
