@@ -149,6 +149,7 @@ function App() {
             });
         });
     }
+    //for the change filter and sort try an update function with ternary operator where if its less use the position or 0 it
     function changeHemiFilter(v: string) {
         console.log(v);
         if (v === "All") {

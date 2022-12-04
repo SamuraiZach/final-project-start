@@ -65,7 +65,10 @@ export interface DustbinProps {
             };
         }>
     >;
+    valueofDropContainers: number;
+    setDropContainer: React.Dispatch<React.SetStateAction<number>>;
     color: string;
+    i: number;
     basketMove: (item: object) => void;
 }
 
@@ -78,7 +81,10 @@ export const ChildBin: FC<DustbinProps> = ({
     greedy,
     children,
     color,
-    basketMove
+    basketMove,
+    valueofDropContainers,
+    setDropContainer,
+    i
 }) => {
     const [hasDropped, setHasDropped] = useState(false);
     const [hasDroppedOnChild, setHasDroppedOnChild] = useState(false);
@@ -91,10 +97,11 @@ export const ChildBin: FC<DustbinProps> = ({
                 const didDrop = monitor.didDrop();
                 const x = Object(item).id;
                 setVal(val + 1);
-                setName(name + "\n" + val + ": " + x);
+                setName(x);
                 setHasDropped(true);
                 setHasDroppedOnChild(didDrop);
                 basketMove(item);
+                setDropContainer(valueofDropContainers + 1);
             },
             collect: (monitor) => ({
                 isOver: monitor.isOver(),
@@ -103,12 +110,10 @@ export const ChildBin: FC<DustbinProps> = ({
         }),
         [greedy, setHasDropped, setHasDroppedOnChild, setName, basketMove]
     );
-    const text = "Place";
+    const text = "Place " + (i + 1);
     const colors = color;
     let backgroundColor = colors;
-    if (hasDroppedOnChild) {
-        setName(name);
-    }
+
     if (isOverCurrent || (isOver && greedy)) {
         backgroundColor = "darkgreen";
     }
@@ -117,11 +122,8 @@ export const ChildBin: FC<DustbinProps> = ({
         <div ref={drop} style={getStyle(backgroundColor)}>
             {text}
             <br />
-            {hasDropped && (
-                <li style={{ position: "relative", display: "inline" }}>
-                    {name}
-                </li>
-            )}
+            <li style={{ position: "relative", display: "inline" }}>{name}</li>
+
             <div></div>
         </div>
     );
