@@ -67,6 +67,7 @@ export interface ContainerProps {
     PopulateTrips: any[];
     resetChildTrips: boolean;
     setCTreset: React.Dispatch<React.SetStateAction<boolean>>;
+    slider: number;
 }
 
 export interface ContainerState {
@@ -89,7 +90,8 @@ export const Container: FC<ContainerProps> = ({
     setDropContainer,
     PopulateTrips,
     resetChildTrips,
-    setCTreset
+    setCTreset,
+    slider
 }) => {
     const moveBox = (id: string, left: number, top: number) => {
         setBoxes(
@@ -188,8 +190,8 @@ export const Container: FC<ContainerProps> = ({
                         >
                             <img
                                 src={title}
-                                width="60"
-                                height="60"
+                                width={60 + slider}
+                                height={60 + slider}
                                 alt={title}
                             />
                         </Box>
