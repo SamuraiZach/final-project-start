@@ -42,13 +42,24 @@ export interface InteractablesProp {
     >;
     deleteBox: (value: string) => void;
     basketMove: (item: object) => void;
+    valueofDropContainers: number;
+    setDropContainer: React.Dispatch<React.SetStateAction<number>>;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    PopulateTrips: any[];
+    resetChildTrips: boolean;
+    setCTreset: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const Interactables: FC<InteractablesProp> = ({
     boxes,
     setBoxes,
     deleteBox,
-    basketMove
+    basketMove,
+    valueofDropContainers,
+    setDropContainer,
+    PopulateTrips,
+    resetChildTrips,
+    setCTreset
 }) => {
     return (
         <div>
@@ -58,6 +69,11 @@ export const Interactables: FC<InteractablesProp> = ({
                     setBoxes={setBoxes}
                     deleteBox={deleteBox}
                     basketMove={basketMove}
+                    setDropContainer={setDropContainer}
+                    valueofDropContainers={valueofDropContainers}
+                    PopulateTrips={PopulateTrips}
+                    resetChildTrips={resetChildTrips}
+                    setCTreset={setCTreset}
                 />
             </div>
         </div>

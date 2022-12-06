@@ -44,9 +44,17 @@ import { forOwn } from "lodash";
 import { ModalViewX } from "./Modal";
 import "./App.css";
 function App() {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let PopulateTrips: any[] = [];
+    const [valueofDropContainers, setDropContainer] = useState(1);
+    const [resetChildTrips, setCTreset] = useState(false);
     const [show, setShow] = useState(false);
     const [name, setName] = useState("");
     const [source, setSource] = useState("");
+    const [continent, setContinent] = useState("");
+    const [country, setCountry] = useState("");
+    const [population, setPopulation] = useState(0);
+    const [food, setFood] = useState([""]);
     const [HemisphereSort, setHemiSort] = useState<string>("All");
     const [SortValueList, setSortValue] = useState<string>("None");
     const [modalEditOpen, setmodalEditOpen] = React.useState(false);
@@ -112,6 +120,18 @@ function App() {
     };
     const sourceHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSource(event.target.value);
+    };
+    const continentHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setContinent(event.target.value);
+    };
+    const countryHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setCountry(event.target.value);
+    };
+    const populationHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setPopulation(parseInt(event.target.value));
+    };
+    const foodHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setFood([event.target.value]);
     };
     function updateValue(event: React.ChangeEvent<HTMLSelectElement>) {
         setHemiSort(event.target.value);
@@ -412,6 +432,8 @@ function App() {
         setBoxes({});
     }
     function startingOver() {
+        PopulateTrips = [];
+        setDropContainer(1);
         setBoxes(ALLALL);
     }
     function resetValues() {
@@ -494,12 +516,12 @@ function App() {
             //title: "https://upload.wikimedia.org/wikipedia/commons/e/e8/Serengeti_sunset-1001.jpg",
             title: source,
             display: "inline",
-            Name: "",
-            Country: "",
-            Continent: "",
-            Population_Country: 32932389,
-            Image: "",
-            PopularFood: ["CACA"],
+            Name: name,
+            Country: country,
+            Continent: continent,
+            Population_Country: population,
+            Image: source,
+            PopularFood: food,
             resetTop: 400,
             resetLeft: 640
         };
@@ -509,6 +531,12 @@ function App() {
             [yourKeyVariable]: someValueArray
         });
         handleClose();
+        setName("");
+        setSource("");
+        setContinent("");
+        setContinent("");
+        setPopulation(0);
+        setFood([""]);
         //EXAMPLE OF PUSHING NEW KEY AT THE END
         console.log(boxes);
     };
@@ -520,6 +548,7 @@ function App() {
     const [ModalTop, setModalTop] = useState<number>(0);
     const [ModalLeft, setModalLeft] = useState<number>(0);
     const [ModalDisplay, setModalDisplay] = useState<string>("None");
+    const [wikiLink, setWikiLink] = useState<string>("");
     const [ModalCountry, setModalCountry] = useState<string>("None");
     const [ModalContinent, setModalContinent] = useState<string>("None");
     const [ModalName, setModalName] = useState<string>("None");
@@ -584,6 +613,7 @@ function App() {
         setModalImage(Image);
         setModalPopFood(PopFood);
         setmodalViewOpen(true);
+        setWikiLink("https://en.wikipedia.org/wiki/" + Name);
     };
     return (
         <div className="App">
@@ -664,6 +694,11 @@ function App() {
                         setBoxes={setBoxes}
                         deleteBox={deleteBox}
                         basketMove={basketMove}
+                        setDropContainer={setDropContainer}
+                        valueofDropContainers={valueofDropContainers}
+                        PopulateTrips={PopulateTrips}
+                        resetChildTrips={resetChildTrips}
+                        setCTreset={setCTreset}
                     />
                 </div>
                 <div
@@ -721,6 +756,46 @@ function App() {
                                     autoFocus
                                 />
                             </Form.Group>
+                            <Form.Group className="addPlaceCountry">
+                                <Form.Label>Place Country...</Form.Label>
+                                <Form.Control
+                                    type="textarea"
+                                    placeholder="Place Country..."
+                                    value={country}
+                                    onChange={countryHandler}
+                                    autoFocus
+                                />
+                            </Form.Group>
+                            <Form.Group className="addPlaceContinent">
+                                <Form.Label>Place Continent...</Form.Label>
+                                <Form.Control
+                                    type="textarea"
+                                    placeholder="Place Continent..."
+                                    value={continent}
+                                    onChange={continentHandler}
+                                    autoFocus
+                                />
+                            </Form.Group>
+                            <Form.Group className="addPlacePopulation">
+                                <Form.Label>Place Population...</Form.Label>
+                                <Form.Control
+                                    type="textarea"
+                                    placeholder="Place Population Number..."
+                                    value={population}
+                                    onChange={populationHandler}
+                                    autoFocus
+                                />
+                            </Form.Group>
+                            <Form.Group className="addPlaceFood">
+                                <Form.Label>Place Popular Food...</Form.Label>
+                                <Form.Control
+                                    type="textarea"
+                                    placeholder="Place Popular Food..."
+                                    value={food}
+                                    onChange={foodHandler}
+                                    autoFocus
+                                />
+                            </Form.Group>
                             <Form.Group className="addPlaceImage">
                                 <Form.Label>
                                     Paste Image Address Here!
@@ -732,6 +807,15 @@ function App() {
                                     onChange={sourceHandler}
                                 />
                             </Form.Group>
+                            <img
+                                src={source}
+                                style={{
+                                    position: "relative",
+                                    left: "0%",
+                                    width: "100%",
+                                    height: "100%"
+                                }}
+                            ></img>
                         </Form>
                     </Modal.Body>
                     <Modal.Footer>
@@ -768,7 +852,7 @@ function App() {
                     }}
                 >
                     <Button style={{ width: 255 }} onClick={startingOver}>
-                        Restart
+                        Restart/Clear Additional Planners
                     </Button>
                 </div>
                 <div
@@ -904,8 +988,41 @@ function App() {
                                     position: "relative"
                                 }}
                                 src={ModalTitle}
-                                width="50%"
+                                width="100%"
                             ></img>
+                            <ul>
+                                <li>
+                                    {ModalKey} which is in {ModalCountry} has a
+                                    population of: {ModalPopCountry}
+                                </li>
+                                <li>
+                                    Popular food from {ModalKey} include:{" "}
+                                    {ModalPopFood.toString()}
+                                </li>
+                                <li>
+                                    {ModalName} is located in {ModalContinent},{" "}
+                                    {ModalCountry}
+                                </li>
+                                <li>
+                                    {ModalKey} is currently located at: {"("}
+                                    {ModalLeft}
+                                    {","}
+                                    {ModalTop}
+                                    {")"}
+                                </li>
+                                <li>
+                                    The image used for {ModalKey} is from this
+                                    url <a href={ModalTitle}>here!</a>
+                                </li>
+                                <li>
+                                    Wish to learn more about {ModalKey}? Check
+                                    out:{" "}
+                                    <a href={wikiLink}>
+                                        https://en.wikipedia.org/wiki/
+                                        {ModalName}
+                                    </a>
+                                </li>
+                            </ul>
                         </Modal.Body>
                     </Modal>
                 </div>
