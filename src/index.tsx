@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import { render } from "react-dom";
 import { Interactables } from "./DraggingLayer";
+import update from "immutability-helper";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { Button, Form, Modal } from "react-bootstrap";
@@ -46,6 +47,7 @@ import "./App.css";
 function App() {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let PopulateTrips: any[] = [];
+    const [indexSelectDop, setISD] = useState(0);
     const [valueofDropContainers, setDropContainer] = useState(1);
     const [resetChildTrips, setCTreset] = useState(false);
     const [show, setShow] = useState(false);
@@ -59,7 +61,9 @@ function App() {
     const [SortValueList, setSortValue] = useState<string>("None");
     const [modalEditOpen, setmodalEditOpen] = React.useState(false);
     const [modalViewOpen, setmodalViewOpen] = React.useState(false);
-
+    const ISDHandler = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        setISD(parseInt(event.target.value));
+    };
     const [boxes, setBoxes] = useState<{
         [key: string]: {
             top: number;
@@ -140,6 +144,29 @@ function App() {
     };
     const foodHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setFood([event.target.value]);
+    };
+    const MnameHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setModalName(event.target.value);
+    };
+    const MsourceHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setModalTitle(event.target.value);
+    };
+    const McontinentHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setModalContinent(event.target.value);
+    };
+    const McountryHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setModalCountry(event.target.value);
+    };
+    const MpopulationHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setModalPopCountry(parseInt(event.target.value));
+    };
+    const MfoodHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+        if (indexSelectDop > ModalPopFood.length) {
+            setModalPopFood([...ModalPopFood, event.target.value]);
+        } else {
+            ModalPopFood[indexSelectDop] = event.target.value;
+            setModalPopFood(ModalPopFood);
+        }
     };
     function updateValue(event: React.ChangeEvent<HTMLSelectElement>) {
         setHemiSort(event.target.value);
@@ -561,7 +588,17 @@ function App() {
     const [ModalContinent, setModalContinent] = useState<string>("None");
     const [ModalName, setModalName] = useState<string>("None");
     const [ModalImage, setModalImage] = useState<string>("None");
-
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const arraySelectDown: any[] = [];
+    const addFoodFavorite = () => {
+        ModalPopFood.push(" ");
+        arraySelectDown.push(
+            <option key={indexSelectDop + 1} value={indexSelectDop + 1}>
+                {indexSelectDop + 1}
+            </option>
+        );
+        setModalPopFood(ModalPopFood);
+    };
     const showModalEdit = (
         key: string,
         title: string,
@@ -623,6 +660,44 @@ function App() {
         setmodalViewOpen(true);
         setWikiLink("https://en.wikipedia.org/wiki/" + Name);
     };
+    const editAdd = (
+        top: number,
+        left: number,
+        title: string,
+        Name: string,
+        Country: string,
+        Continent: string,
+        Population_Country: number,
+        PopularFood: string[]
+    ) => {
+        setBoxes(
+            update(boxes, {
+                [ModalKey]: {
+                    $merge: {
+                        top,
+                        left,
+                        title,
+                        Name,
+                        Country,
+                        Continent,
+                        Population_Country,
+                        PopularFood
+                    }
+                }
+            })
+        );
+        setmodalEditOpen(false);
+    };
+    for (let i = 0; i < ModalPopFood.length + 1; i++) {
+        arraySelectDown.push(
+            <option key={i} value={i}>
+                {i + 1}
+            </option>
+        );
+    } /*
+    const populateSwitch = () => {
+        
+    };*/
     return (
         <div className="App">
             <DndProvider backend={HTML5Backend}>
@@ -920,8 +995,9 @@ function App() {
                                             position: "absolute"
                                         }}
                                     >
-                                        {key} Population: {Population_Country},
-                                        Popular food: {PopularFood.toString()}
+                                        {Name}, {Country} Population:{" "}
+                                        {Population_Country}, Popular food:{" "}
+                                        {PopularFood.toString()}
                                     </span>
                                     <Button
                                         style={{
@@ -1037,17 +1113,107 @@ function App() {
                 <div>
                     <Modal show={modalEditOpen} onHide={closeEditModal}>
                         <Modal.Header closeButton>
-                            <Modal.Title>{ModalKey}</Modal.Title>
+                            <Modal.Title>
+                                Edit: {ModalName}, {ModalCountry}
+                            </Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
-                            <img
-                                style={{
-                                    position: "relative"
-                                }}
-                                src={ModalTitle}
-                                width="50%"
-                            ></img>
+                            <Form>
+                                <img
+                                    style={{
+                                        position: "relative"
+                                    }}
+                                    src={ModalTitle}
+                                    width="50%"
+                                ></img>
+                                <Form.Group className="addPlaceName">
+                                    <Form.Label>Name:</Form.Label>
+                                    <Form.Control
+                                        type="textarea"
+                                        placeholder="Place Name..."
+                                        value={ModalName}
+                                        onChange={MnameHandler}
+                                        autoFocus
+                                    />
+                                </Form.Group>
+                                <Form.Group className="addPlaceCountry">
+                                    <Form.Label>Country: </Form.Label>
+                                    <Form.Control
+                                        type="textarea"
+                                        placeholder="Place Country..."
+                                        value={ModalCountry}
+                                        onChange={McountryHandler}
+                                        autoFocus
+                                    />
+                                </Form.Group>
+                                <Form.Group className="addPlaceContinent">
+                                    <Form.Label>Continent: </Form.Label>
+                                    <Form.Control
+                                        type="textarea"
+                                        placeholder="Place Continent..."
+                                        value={ModalContinent}
+                                        onChange={McontinentHandler}
+                                        autoFocus
+                                    />
+                                </Form.Group>
+                                <Form.Group className="addPlacePopulation">
+                                    <Form.Label>Population: </Form.Label>
+                                    <Form.Control
+                                        type="textarea"
+                                        placeholder="Place Population Number..."
+                                        value={ModalPopCountry}
+                                        onChange={MpopulationHandler}
+                                        autoFocus
+                                    />
+                                </Form.Group>
+                                <Form.Group className="addPlaceImage">
+                                    <Form.Label>Edit Popular Food: </Form.Label>
+                                </Form.Group>
+                                <Form.Group className="add">
+                                    <Form.Select
+                                        value={indexSelectDop}
+                                        onChange={ISDHandler}
+                                    >
+                                        {arraySelectDown}
+                                    </Form.Select>
+                                    <Form.Control
+                                        type="textarea"
+                                        placeholder="Edit food"
+                                        value={ModalPopFood[indexSelectDop]}
+                                        onChange={MfoodHandler}
+                                    />
+                                </Form.Group>
+                                <Form.Group className="addPlaceImage">
+                                    <Form.Label>
+                                        Image address for: {ModalKey}
+                                    </Form.Label>
+                                    <Form.Control
+                                        type="textarea"
+                                        placeholder="Right Click on Image and copy image address. "
+                                        value={ModalTitle}
+                                        onChange={MsourceHandler}
+                                    />
+                                </Form.Group>
+                            </Form>
                         </Modal.Body>
+                        <Modal.Footer>
+                            <Button
+                                onClick={() =>
+                                    editAdd(
+                                        ModalTop,
+                                        ModalLeft,
+                                        ModalTitle,
+                                        ModalName,
+                                        ModalCountry,
+                                        ModalContinent,
+                                        ModalPopCountry,
+                                        ModalPopFood
+                                    )
+                                }
+                            >
+                                Add
+                            </Button>
+                        </Modal.Footer>
                     </Modal>
                 </div>
             </DndProvider>
