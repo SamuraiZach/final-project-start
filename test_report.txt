@@ -51,16 +51,16 @@ PASS src/App.test.tsx
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |    0.17 |        0 |    1.13 |    0.18 |                   
- src                   |    0.21 |        0 |    1.66 |    0.21 |                   
+All files              |    0.17 |        0 |    1.08 |    0.17 |                   
+ src                   |     0.2 |        0 |    1.56 |     0.2 |                   
   App.tsx              |     100 |      100 |     100 |     100 |                   
-  Basket.tsx           |       0 |      100 |       0 |       0 | 14-144            
+  Basket.tsx           |       0 |        0 |       0 |       0 | 14-152            
   BasketNewPlanner.tsx |       0 |        0 |       0 |       0 | 12-122            
   Box.tsx              |       0 |        0 |       0 |       0 | 7-72              
   ChildBasket.tsx      |       0 |        0 |       0 |       0 | 12-121            
-  Container.tsx        |       0 |        0 |       0 |       0 | 21-161            
+  Container.tsx        |       0 |        0 |       0 |       0 | 21-172            
   DeleteBasket.tsx     |       0 |        0 |       0 |       0 | 12-128            
-  DraggingLayer.tsx    |       0 |      100 |       0 |       0 | 47-53             
+  DraggingLayer.tsx    |       0 |      100 |       0 |       0 | 53-64             
   ItemTypes.ts         |       0 |      100 |     100 |       0 | 1                 
   MapBox.ts            |       0 |        0 |       0 |       0 |                   
   Modal.tsx            |       0 |        0 |       0 |       0 | 31-68             
@@ -68,7 +68,7 @@ All files              |    0.17 |        0 |    1.13 |    0.18 |
   ObjectPlaces.tsx     |       0 |        0 |       0 |       0 |                   
   Place.ts             |       0 |        0 |       0 |       0 |                   
   PlaceKeyVersion.ts   |       0 |        0 |       0 |       0 |                   
-  index.tsx            |       0 |        0 |       0 |       0 | 47-934            
+  index.tsx            |       0 |        0 |       0 |       0 | 48-1051           
   interfaces.ts        |       0 |        0 |       0 |       0 |                   
   reportWebVitals.ts   |       0 |        0 |       0 |       0 | 3-11              
   sortBox.tsx          |       0 |      100 |       0 |       0 | 5-20              
@@ -88,5 +88,5 @@ All files              |    0.17 |        0 |    1.13 |    0.18 |
 Test Suites: 1 failed, 1 passed, 2 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        5.055 s
+Time:        4.2 s
 Ran all test suites.
