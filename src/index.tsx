@@ -696,8 +696,9 @@ function App() {
         );
     } /*
     const populateSwitch = () => {
-        
+    
     };*/
+    const [slider, setSlider] = useState(0);
     return (
         <div className="App">
             <DndProvider backend={HTML5Backend}>
@@ -708,6 +709,37 @@ function App() {
                     }}
                 >
                     <span>Team 4: Traveler Map Planner</span>
+                </div>
+                <div
+                    style={{
+                        position: "absolute",
+                        right: "5.5%",
+                        top: "44%"
+                    }}
+                >
+                    <span>Value Scale: {slider}</span>
+                </div>
+                <div
+                    style={{
+                        position: "absolute",
+                        right: "3%",
+                        top: "47%"
+                    }}
+                >
+                    <Button
+                        onClick={() =>
+                            setSlider(slider < 20 ? slider + 2 : slider)
+                        }
+                    >
+                        Increase
+                    </Button>
+                    <Button
+                        onClick={() =>
+                            setSlider(slider > -20 ? slider - 2 : slider)
+                        }
+                    >
+                        Decrease
+                    </Button>
                 </div>
                 <div
                     style={{
@@ -772,6 +804,7 @@ function App() {
                     }}
                 >
                     <Interactables
+                        slider={slider}
                         sortValue={HemisphereSort}
                         boxes={boxes}
                         setBoxes={setBoxes}

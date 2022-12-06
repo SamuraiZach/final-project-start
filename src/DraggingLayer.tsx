@@ -48,6 +48,7 @@ export interface InteractablesProp {
     PopulateTrips: any[];
     resetChildTrips: boolean;
     setCTreset: React.Dispatch<React.SetStateAction<boolean>>;
+    slider: number;
 }
 
 export const Interactables: FC<InteractablesProp> = ({
@@ -59,12 +60,14 @@ export const Interactables: FC<InteractablesProp> = ({
     setDropContainer,
     PopulateTrips,
     resetChildTrips,
-    setCTreset
+    setCTreset,
+    slider
 }) => {
     return (
         <div>
             <div>
                 <Container
+                    slider={slider}
                     boxes={boxes}
                     setBoxes={setBoxes}
                     deleteBox={deleteBox}
