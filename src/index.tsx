@@ -113,7 +113,15 @@ function App() {
     console.log(Object.keys(boxes).sort());
     console.log(Object.keys(boxes).length);
 
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+        setName("");
+        setSource("");
+        setContinent("");
+        setCountry("");
+        setPopulation(0);
+        setFood([""]);
+        setShow(false);
+    };
     const handleShow = () => setShow(true);
     const nameHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setName(event.target.value);
