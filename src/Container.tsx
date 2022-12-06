@@ -61,6 +61,12 @@ export interface ContainerProps {
     >;
     deleteBox: (value: string) => void;
     basketMove: (item: object) => void;
+    valueofDropContainers: number;
+    setDropContainer: React.Dispatch<React.SetStateAction<number>>;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    PopulateTrips: any[];
+    resetChildTrips: boolean;
+    setCTreset: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export interface ContainerState {
@@ -78,9 +84,13 @@ export const Container: FC<ContainerProps> = ({
     boxes,
     setBoxes,
     deleteBox,
-    basketMove
+    basketMove,
+    valueofDropContainers,
+    setDropContainer,
+    PopulateTrips,
+    resetChildTrips,
+    setCTreset
 }) => {
-    const [valueofDropContainers, setDropContainer] = useState(1);
     const moveBox = (id: string, left: number, top: number) => {
         setBoxes(
             update(boxes, {
@@ -114,6 +124,8 @@ export const Container: FC<ContainerProps> = ({
                 }}
             >
                 <Dustbin
+                    setCTreset={setCTreset}
+                    resetChildTrips={resetChildTrips}
                     value={i}
                     boxes={boxes}
                     setBoxes={setBoxes}
@@ -123,7 +135,6 @@ export const Container: FC<ContainerProps> = ({
             </div>
         );
     };
-    const PopulateTrips = [];
     for (let i = 0; i < valueofDropContainers; i++) {
         PopulateTrips.push(renderPieces(i));
     }

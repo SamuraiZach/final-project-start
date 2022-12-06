@@ -70,6 +70,8 @@ export interface DustbinProps {
     color: string;
     value: number;
     basketMove: (item: object) => void;
+    resetChildTrips: boolean;
+    setCTreset: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export interface DustbinState {
@@ -84,7 +86,9 @@ export const Dustbin: FC<DustbinProps> = ({
     basketMove,
     boxes,
     setBoxes,
-    value
+    value,
+    resetChildTrips,
+    setCTreset
 }) => {
     const [amountOfChild, setChild] = useState(1);
     const [hasDropped, setHasDropped] = useState(false);
@@ -116,9 +120,13 @@ export const Dustbin: FC<DustbinProps> = ({
             </div>
         );
     };
-    const PopulateChildren = [];
+    let PopulateChildren = [];
     for (let i = 0; i < valueofDropContainers; i++) {
         PopulateChildren.push(childInstance(i));
+    }
+    if (resetChildTrips === true) {
+        PopulateChildren = [];
+        setDropContainer(0);
     }
     const [{ isOver, isOverCurrent }, drop] = useDrop(
         () => ({
