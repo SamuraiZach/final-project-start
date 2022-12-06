@@ -517,7 +517,7 @@ function App() {
         });
     }
     const addatEnd = () => {
-        const yourKeyVariable = name;
+        const yourKeyVariable = name + ", " + country;
         const someValueArray = {
             top: 400,
             left: 640,
@@ -541,7 +541,7 @@ function App() {
         handleClose();
         setName("");
         setSource("");
-        setContinent("");
+        setCountry("");
         setContinent("");
         setPopulation(0);
         setFood([""]);
