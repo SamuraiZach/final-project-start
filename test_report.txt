@@ -54,7 +54,7 @@ File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line
 All files              |    0.15 |        0 |    0.92 |    0.15 |                   
  src                   |    0.18 |        0 |    1.25 |    0.18 |                   
   App.tsx              |     100 |      100 |     100 |     100 |                   
-  Basket.tsx           |       0 |        0 |       0 |       0 | 14-152            
+  Basket.tsx           |       0 |        0 |       0 |       0 | 14-159            
   BasketNewPlanner.tsx |       0 |        0 |       0 |       0 | 12-122            
   Box.tsx              |       0 |        0 |       0 |       0 | 7-72              
   ChildBasket.tsx      |       0 |        0 |       0 |       0 | 12-121            
@@ -88,5 +88,5 @@ All files              |    0.15 |        0 |    0.92 |    0.15 |
 Test Suites: 1 failed, 1 passed, 2 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        4.807 s
+Time:        5.638 s
 Ran all test suites.
