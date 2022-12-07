@@ -47,10 +47,15 @@ import "./App.css";
 function App() {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let PopulateTrips: any[] = [];
+    const [preMap, setPreMap] = useState("");
+    const [MapLink, setMap] = useState(
+        "https://wallpapercave.com/wp/wp2753342.png"
+    );
     const [indexSelectDop, setISD] = useState(0);
     const [valueofDropContainers, setDropContainer] = useState(1);
     const [resetChildTrips, setCTreset] = useState(false);
     const [show, setShow] = useState(false);
+    const [showMap, setShowMap] = useState(false);
     const [name, setName] = useState("");
     const [source, setSource] = useState("");
     const [continent, setContinent] = useState("");
@@ -126,9 +131,20 @@ function App() {
         setFood([""]);
         setShow(false);
     };
+    const handleCloseMap = () => {
+        setShowMap(false);
+    };
+    const handleShowMap = () => setShowMap(true);
     const handleShow = () => setShow(true);
     const nameHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setName(event.target.value);
+    };
+    const mapHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setPreMap(event.target.value);
+    };
+    const confirmMap = () => {
+        setMap(preMap);
+        setPreMap("");
     };
     const sourceHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSource(event.target.value);
@@ -467,6 +483,7 @@ function App() {
         setBoxes({});
     }
     function startingOver() {
+        setMap("https://wallpapercave.com/wp/wp2753342.png");
         PopulateTrips = [];
         setDropContainer(1);
         setBoxes(ALLALL);
@@ -713,8 +730,8 @@ function App() {
                 <div
                     style={{
                         position: "absolute",
-                        right: "5.5%",
-                        top: "44%"
+                        right: "5%",
+                        top: "43.4%"
                     }}
                 >
                     <span>Value Scale: {slider}</span>
@@ -723,7 +740,7 @@ function App() {
                     style={{
                         position: "absolute",
                         right: "3%",
-                        top: "47%"
+                        top: "46%"
                     }}
                 >
                     <Button
@@ -767,12 +784,42 @@ function App() {
                         border: "1px solid black"
                     }}
                 >
-                    <img
-                        src={require("./worldmap2.png")}
-                        alt="oops mad no load teehee"
-                        height={750}
-                        width={1200}
-                    />
+                    <img src={MapLink} height={750} width={1200} />
+                </div>
+                <div
+                    style={{
+                        position: "absolute",
+                        top: "51.1%",
+                        right: "1%"
+                    }}
+                >
+                    <Button style={{ width: 255 }} onClick={handleShowMap}>
+                        Change Background
+                    </Button>
+                </div>
+                <div>
+                    <Modal show={showMap} onHide={handleCloseMap}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>
+                                Wish to change the background?
+                            </Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <Form.Label>Enter Background URL:</Form.Label>
+                            <Form.Control
+                                type="textarea"
+                                placeholder="Background Url..."
+                                value={preMap}
+                                onChange={mapHandler}
+                                autoFocus
+                            />
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button onClick={confirmMap}>
+                                Confirm Changes
+                            </Button>
+                        </Modal.Footer>
+                    </Modal>
                 </div>
                 <div
                     style={{
