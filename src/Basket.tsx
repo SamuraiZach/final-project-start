@@ -93,6 +93,7 @@ export const Dustbin: FC<DustbinProps> = ({
     const [amountOfChild, setChild] = useState(1);
     const [hasDropped, setHasDropped] = useState(false);
     const [hasDroppedOnChild, setHasDroppedOnChild] = useState(false);
+    const [plannerTotal, setPT] = useState(0);
     const [val, setVal] = useState(1);
     const [name, setName] = useState("");
     const [valueofDropContainers, setDropContainer] = useState(1);
@@ -146,7 +147,13 @@ export const Dustbin: FC<DustbinProps> = ({
         }),
         [greedy, setHasDropped, setHasDroppedOnChild, setName]
     );
-    const text = "Trip Planner " + (value + 1) + " ->";
+    const text =
+        "Trip Planner " +
+        (value + 1) +
+        " ->" +
+        "\n" +
+        "Saved POIs: " +
+        (valueofDropContainers - 1);
     const colors = color;
     const backgroundColor = colors;
     return (
