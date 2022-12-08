@@ -15,12 +15,20 @@ function App() {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let PopulateTrips: any[] = [];
     const [preMap, setPreMap] = useState("");
+    const [preMapName, setPMN] = useState("");
     const [initArrayMaps, setAMaps] = useState([
         "https://wallpapercave.com/wp/wp2753342.png",
         "https://www.50states.com/wp-content/uploads/2020/12/US-Blank-map.jpg",
         "https://www.frugallivingnw.com/wp-content/uploads/2014/05/disney-world-free-map.jpg",
         "https://www1.udel.edu/RH/Maps/UDmapwithhouses%20copy.jpg",
         "https://www.yosemite.com/wp-content/uploads/2022/02/MariposaCountyMAP_2021_cmyk-1-1024x854.jpg"
+    ]);
+    const [mapArryNames, setMapnames] = useState([
+        "World Map",
+        "USA",
+        "Disney World",
+        "UD Map",
+        "Yosemite Map"
     ]);
     const [MapLink, setMap] = useState(
         "https://wallpapercave.com/wp/wp2753342.png"
@@ -120,11 +128,17 @@ function App() {
     const mapHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setPreMap(event.target.value);
     };
+    const mapHandlerName = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setPMN(event.target.value);
+    };
     const confirmMap = () => {
         setMap(preMap);
+        mapArryNames.push(preMapName);
+        setMapnames(mapArryNames);
         initArrayMaps.push(preMap);
         setAMaps(initArrayMaps);
         setPreMap("");
+        setPMN("");
         handleCloseMap();
         console.log(initArrayMaps);
     };
@@ -445,7 +459,7 @@ function App() {
     for (let i = 0; i < initArrayMaps.length; i++) {
         pastMap.push(
             <option key={i} value={i}>
-                {i + 1}
+                {mapArryNames[i]}
             </option>
         );
     }
@@ -539,6 +553,14 @@ function App() {
                             </Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
+                            <Form.Label>Enter Background Name:</Form.Label>
+                            <Form.Control
+                                type="textarea"
+                                placeholder="Background Name..."
+                                value={preMapName}
+                                onChange={mapHandlerName}
+                                autoFocus
+                            />
                             <Form.Label>Enter Background URL:</Form.Label>
                             <Form.Control
                                 type="textarea"
