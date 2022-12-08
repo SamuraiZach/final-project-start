@@ -14,10 +14,18 @@ function App() {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let PopulateTrips: any[] = [];
     const [preMap, setPreMap] = useState("");
+    const [initArrayMaps, setAMaps] = useState([
+        "https://wallpapercave.com/wp/wp2753342.png",
+        "https://www.50states.com/wp-content/uploads/2020/12/US-Blank-map.jpg",
+        "https://www.frugallivingnw.com/wp-content/uploads/2014/05/disney-world-free-map.jpg",
+        "https://www1.udel.edu/RH/Maps/UDmapwithhouses%20copy.jpg",
+        "https://www.yosemite.com/wp-content/uploads/2022/02/MariposaCountyMAP_2021_cmyk-1-1024x854.jpg"
+    ]);
     const [MapLink, setMap] = useState(
         "https://wallpapercave.com/wp/wp2753342.png"
     );
     const [indexSelectDop, setISD] = useState(0);
+    const [indexMapDop, setIMD] = useState(0);
     const [valueofDropContainers, setDropContainer] = useState(1);
     const [resetChildTrips, setCTreset] = useState(false);
     const [show, setShow] = useState(false);
@@ -34,6 +42,9 @@ function App() {
     const [modalViewOpen, setmodalViewOpen] = React.useState(false);
     const ISDHandler = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setISD(parseInt(event.target.value));
+    };
+    const IMDHandler = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        setIMD(parseInt(event.target.value));
     };
     const [boxes, setBoxes] = useState<{
         [key: string]: {
@@ -110,7 +121,11 @@ function App() {
     };
     const confirmMap = () => {
         setMap(preMap);
+        initArrayMaps.push(preMap);
+        setAMaps(initArrayMaps);
         setPreMap("");
+        handleCloseMap();
+        console.log(initArrayMaps);
     };
     const sourceHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSource(event.target.value);
@@ -331,6 +346,8 @@ function App() {
     const [ModalName, setModalName] = useState<string>("None");
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const arraySelectDown: any[] = [];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const pastMap: any[] = [];
 
     const showModalEdit = (
         key: string,
@@ -423,10 +440,14 @@ function App() {
                 {i + 1}
             </option>
         );
-    } /*
-    const populateSwitch = () => {
-    
-    };*/
+    }
+    for (let i = 0; i < initArrayMaps.length; i++) {
+        pastMap.push(
+            <option key={i} value={i}>
+                {i + 1}
+            </option>
+        );
+    }
     const [slider, setSlider] = useState(0);
     return (
         <div className="App">
@@ -525,6 +546,22 @@ function App() {
                                 onChange={mapHandler}
                                 autoFocus
                             />
+                            <Form.Label>
+                                Sample Backgrounds/Additional Changes:
+                            </Form.Label>
+                            <Form.Group className="add">
+                                <Form.Select
+                                    value={indexMapDop}
+                                    onChange={IMDHandler}
+                                >
+                                    {pastMap}
+                                </Form.Select>
+                                <Form.Control
+                                    type="textarea"
+                                    placeholder="Map Urls..."
+                                    value={initArrayMaps[indexMapDop]}
+                                />
+                            </Form.Group>
                         </Modal.Body>
                         <Modal.Footer>
                             <Button onClick={confirmMap}>
@@ -844,15 +881,6 @@ function App() {
                         );
                     })}
                 </div>
-                {/* <div
-                    style={{
-                        position: "absolute",
-                        top: 900,
-                        left: 30
-                    }}
-                >
-                    <Button onClick={addatEnd}>addAtEnd button test</Button>
-                </div> */}
                 <div>
                     <Modal show={modalViewOpen} onHide={closeViewModal}>
                         <Modal.Header closeButton>
