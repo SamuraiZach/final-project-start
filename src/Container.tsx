@@ -1,20 +1,15 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { ReactNode } from "react";
 import update from "immutability-helper";
 import type { CSSProperties, FC } from "react";
-import { useCallback, useState } from "react";
 import { DndProvider, XYCoord } from "react-dnd";
 import { useDrop } from "react-dnd";
-import { Place } from "./Place";
 
 import { Dustbin } from "./Basket";
 import { Box } from "./Box";
 import type { DragItem } from "./interfaces";
 import { ItemTypes } from "./ItemTypes";
-import { Button } from "react-bootstrap";
-import { string } from "prop-types";
+
 import { DeleteBin } from "./DeleteBasket";
-import { ChildBin } from "./ChildBasket";
 import { NewPlannerBin } from "./BasketNewPlanner";
 import { HTML5Backend } from "react-dnd-html5-backend";
 

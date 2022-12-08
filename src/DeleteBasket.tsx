@@ -1,13 +1,10 @@
 /* eslint-disable no-extra-parens */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable no-prototype-builtins */
-import React, { useCallback } from "react";
+//need this for div return
+import React from "react";
 import type { CSSProperties, FC, ReactNode } from "react";
 import { useState } from "react";
 import { useDrop } from "react-dnd";
-import { ContainerState } from "./Container";
 import { ItemTypes } from "./ItemTypes";
-import update from "immutability-helper";
 function getStyle(backgroundColor: string): CSSProperties {
     return {
         border: "1px solid rgba(0,0,0,0.2)",
@@ -78,8 +75,6 @@ export interface DustbinState {
 export const DeleteBin: FC<DustbinProps> = ({
     greedy,
     children,
-    boxes,
-    setBoxes,
     color,
     deleteBox,
     basketMove
