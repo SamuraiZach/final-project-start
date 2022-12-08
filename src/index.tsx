@@ -109,8 +109,6 @@ function App() {
     console.log(Object.keys(boxes).length);
 
     const handleClose = () => {
-        setPreMap("");
-        setPMN("");
         setName("");
         setSource("");
         setContinent("");
@@ -120,6 +118,8 @@ function App() {
         setShow(false);
     };
     const handleCloseMap = () => {
+        setPreMap("");
+        setPMN("");
         setShowMap(false);
     };
     const handleShowMap = () => setShowMap(true);
