@@ -8,3 +8,5 @@ Watch this space for additional project requirements.
 
 If running on new console/build run "npm install" 
 
+implemented lodash and immutability-helper
+
