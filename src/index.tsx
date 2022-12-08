@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { ReactNode, useState } from "react";
+import React, { useState } from "react";
 import { render } from "react-dom";
 import { Interactables } from "./DraggingLayer";
 import update from "immutability-helper";
@@ -7,42 +6,9 @@ import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { Button, Form, Modal } from "react-bootstrap";
 import ALLALL from "./PlaceKeys/ALLALL.json";
-import ALLALPHAG2L from "./PlaceKeys/ALL-ALPHAG2L.json";
-import ALLALPHAL2G from "./PlaceKeys/ALL-ALPHAL2G.json";
-import ALLL2R from "./PlaceKeys/ALL-L2R.json";
-import ALLPOPG2L from "./PlaceKeys/ALL-POPG2L.json";
-import ALLPOPL2G from "./PlaceKeys/ALL-POPL2G.json";
-import ALLR2L from "./PlaceKeys/ALL-R2L.json";
-import EASTALPHAG2L from "./PlaceKeys/EAST-ALPHAG2L.json";
-import EASTALPHAL2G from "./PlaceKeys/EAST-ALPHAL2G.json";
-import EASTL2R from "./PlaceKeys/EAST-L2R.json";
-import EASTNONE from "./PlaceKeys/EAST-NONE.json";
-import EASTPOPL2G from "./PlaceKeys/EAST-POPL2G.json";
-import EASTPOPG2L from "./PlaceKeys/EAST-POPG2L.json";
-import EASTR2L from "./PlaceKeys/EAST-R2L.json";
-import NORTHALPHAG2L from "./PlaceKeys/NORTH-ALPHAG2L.json";
-import NORTHALPHAL2G from "./PlaceKeys/NORTH-ALPHAL2G.json";
-import NORTHL2R from "./PlaceKeys/NORTH-L2R.json";
-import NORTHNONE from "./PlaceKeys/NORTH-NONE.json";
-import NORTHPOPL2G from "./PlaceKeys/NORTH-POPL2G.json";
-import NORTHPOPG2L from "./PlaceKeys/NORTH-POPG2L.json";
-import NORTHR2L from "./PlaceKeys/NORTH-R2L.json";
-import SOUTHALPHAG2L from "./PlaceKeys/SOUTH-ALPHAG2L.json";
-import SOUTHALPHAL2G from "./PlaceKeys/SOUTH-ALPHAL2G.json";
-import SOUTHL2R from "./PlaceKeys/SOUTH-L2R.json";
-import SOUTHNONE from "./PlaceKeys/SOUTH-NONE.json";
-import SOUTHPOPL2G from "./PlaceKeys/SOUTH-POPL2G.json";
-import SOUTHPOPG2L from "./PlaceKeys/SOUTH-POPG2L.json";
-import SOUTHR2L from "./PlaceKeys/SOUTH-R2L.json";
-import WESTALPHAG2L from "./PlaceKeys/WEST-ALPHAG2L.json";
-import WESTALPHAL2G from "./PlaceKeys/WEST-ALPHAL2G.json";
-import WESTL2R from "./PlaceKeys/WEST-L2R.json";
-import WESTNONE from "./PlaceKeys/WEST-NONE.json";
-import WESTPOPL2G from "./PlaceKeys/WEST-POPL2G.json";
-import WESTPOPG2L from "./PlaceKeys/WEST-POPG2L.json";
-import WESTR2L from "./PlaceKeys/WEST-R2L.json";
+import { changeListSort } from "./sort";
+import { changeHemiFilter } from "./hemifilter";
 import { forOwn } from "lodash";
-import { ModalViewX } from "./Modal";
 import "./App.css";
 function App() {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -186,11 +152,13 @@ function App() {
     };
     function updateValue(event: React.ChangeEvent<HTMLSelectElement>) {
         setHemiSort(event.target.value);
-        changeHemiFilter(event.target.value);
+        changeHemiFilter(event.target.value, setBoxes, SortValueList);
+        addPostRender();
     }
     function updateValueSort(event: React.ChangeEvent<HTMLSelectElement>) {
         setSortValue(event.target.value);
-        changeListSort(event.target.value);
+        changeListSort(event.target.value, setBoxes, HemisphereSort);
+        addPostRender();
     }
     function addPostRender() {
         Object.keys(postRenderPlace).map((key) => {
@@ -236,249 +204,7 @@ function App() {
             });
         });
     }
-    //for the change filter and sort try an update function with ternary operator where if its less use the position or 0 it
-    function changeHemiFilter(v: string) {
-        console.log(v);
-        if (v === "All") {
-            if (SortValueList === "None") {
-                setBoxes(ALLALL);
-                addPostRender();
-            } else if (SortValueList === "Alpha G to L") {
-                setBoxes(ALLALPHAG2L);
-                addPostRender();
-            } else if (SortValueList === "Left to Right") {
-                setBoxes(ALLL2R);
-                addPostRender();
-            } else if (SortValueList === "Alpha L to G") {
-                setBoxes(ALLALPHAL2G);
-                addPostRender();
-            } else if (SortValueList === "Right to Left") {
-                setBoxes(ALLR2L);
-                addPostRender();
-            } else if (SortValueList === "Population G to L") {
-                setBoxes(ALLPOPG2L);
-                addPostRender();
-            } else if (SortValueList === "Population L to G") {
-                setBoxes(ALLPOPL2G);
-                addPostRender();
-            }
-        } else if (v === "West Side") {
-            if (SortValueList === "None") {
-                setBoxes(WESTNONE);
-                addPostRender();
-            } else if (SortValueList === "Alpha G to L") {
-                setBoxes(WESTALPHAG2L);
-                addPostRender();
-            } else if (SortValueList === "Left to Right") {
-                setBoxes(WESTL2R);
-                addPostRender();
-            } else if (SortValueList === "Alpha L to G") {
-                setBoxes(WESTALPHAL2G);
-                addPostRender();
-            } else if (SortValueList === "Right to Left") {
-                setBoxes(WESTR2L);
-                addPostRender();
-            } else if (SortValueList === "Population G to L") {
-                setBoxes(WESTPOPG2L);
-                addPostRender();
-            } else if (SortValueList === "Population L to G") {
-                setBoxes(WESTPOPL2G);
-                addPostRender();
-            }
-        } else if (v === "East Side") {
-            if (SortValueList === "None") {
-                setBoxes(EASTNONE);
-                addPostRender();
-            } else if (SortValueList === "Alpha G to L") {
-                setBoxes(EASTALPHAG2L);
-                addPostRender();
-            } else if (SortValueList === "Left to Right") {
-                setBoxes(EASTL2R);
-                addPostRender();
-            } else if (SortValueList === "Alpha L to G") {
-                setBoxes(EASTALPHAL2G);
-                addPostRender();
-            } else if (SortValueList === "Right to Left") {
-                setBoxes(EASTR2L);
-                addPostRender();
-            } else if (SortValueList === "Population G to L") {
-                setBoxes(EASTPOPG2L);
-                addPostRender();
-            } else if (SortValueList === "Population L to G") {
-                setBoxes(EASTPOPL2G);
-                addPostRender();
-            }
-        } else if (v === "North Side") {
-            if (SortValueList === "None") {
-                setBoxes(NORTHNONE);
-                addPostRender();
-            } else if (SortValueList === "Alpha G to L") {
-                setBoxes(NORTHALPHAG2L);
-                addPostRender();
-            } else if (SortValueList === "Left to Right") {
-                setBoxes(NORTHL2R);
-                addPostRender();
-            } else if (SortValueList === "Alpha L to G") {
-                setBoxes(NORTHALPHAL2G);
-                addPostRender();
-            } else if (SortValueList === "Right to Left") {
-                setBoxes(NORTHR2L);
-                addPostRender();
-            } else if (SortValueList === "Population G to L") {
-                setBoxes(NORTHPOPG2L);
-                addPostRender();
-            } else if (SortValueList === "Population L to G") {
-                setBoxes(NORTHPOPL2G);
-                addPostRender();
-            }
-        } else if (v === "South Side") {
-            if (SortValueList === "None") {
-                setBoxes(SOUTHNONE);
-                addPostRender();
-            } else if (SortValueList === "Alpha G to L") {
-                setBoxes(SOUTHALPHAG2L);
-                addPostRender();
-            } else if (SortValueList === "Left to Right") {
-                setBoxes(SOUTHL2R);
-                addPostRender();
-            } else if (SortValueList === "Alpha L to G") {
-                setBoxes(SOUTHALPHAL2G);
-                addPostRender();
-            } else if (SortValueList === "Right to Left") {
-                setBoxes(SOUTHR2L);
-                addPostRender();
-            } else if (SortValueList === "Population G to L") {
-                setBoxes(NORTHPOPG2L);
-                addPostRender();
-            } else if (SortValueList === "Population L to G") {
-                setBoxes(NORTHPOPL2G);
-                addPostRender();
-            }
-        }
-    }
-    function changeListSort(c: string) {
-        console.log(c);
-        if (c === "None") {
-            if (HemisphereSort === "All") {
-                setBoxes(ALLALL);
-                addPostRender();
-            } else if (HemisphereSort === "West Side") {
-                setBoxes(WESTNONE);
-                addPostRender();
-            } else if (HemisphereSort === "East Side") {
-                setBoxes(EASTNONE);
-                addPostRender();
-            } else if (HemisphereSort === "South Side") {
-                setBoxes(SOUTHNONE);
-                addPostRender();
-            } else if (HemisphereSort === "North Side") {
-                setBoxes(NORTHNONE);
-                addPostRender();
-            }
-        } else if (c === "Alpha G to L") {
-            if (HemisphereSort === "All") {
-                setBoxes(ALLALPHAG2L);
-                addPostRender();
-            } else if (HemisphereSort === "West Side") {
-                setBoxes(WESTALPHAG2L);
-                addPostRender();
-            } else if (HemisphereSort === "East Side") {
-                setBoxes(EASTALPHAG2L);
-                addPostRender();
-            } else if (HemisphereSort === "South Side") {
-                setBoxes(SOUTHALPHAG2L);
-                addPostRender();
-            } else if (HemisphereSort === "North Side") {
-                setBoxes(NORTHALPHAG2L);
-                addPostRender();
-            }
-        } else if (c === "Left to Right") {
-            if (HemisphereSort === "All") {
-                setBoxes(ALLL2R);
-                addPostRender();
-            } else if (HemisphereSort === "West Side") {
-                setBoxes(WESTL2R);
-                addPostRender();
-            } else if (HemisphereSort === "East Side") {
-                setBoxes(EASTL2R);
-                addPostRender();
-            } else if (HemisphereSort === "South Side") {
-                setBoxes(SOUTHL2R);
-                addPostRender();
-            } else if (HemisphereSort === "North Side") {
-                setBoxes(NORTHL2R);
-                addPostRender();
-            }
-        } else if (c === "Alpha L to G") {
-            if (HemisphereSort === "All") {
-                setBoxes(ALLALPHAL2G);
-                addPostRender();
-            } else if (HemisphereSort === "West Side") {
-                setBoxes(WESTALPHAL2G);
-                addPostRender();
-            } else if (HemisphereSort === "East Side") {
-                setBoxes(EASTALPHAL2G);
-                addPostRender();
-            } else if (HemisphereSort === "South Side") {
-                setBoxes(SOUTHALPHAL2G);
-                addPostRender();
-            } else if (HemisphereSort === "North Side") {
-                setBoxes(NORTHALPHAL2G);
-                addPostRender();
-            }
-        } else if (c === "Right to Left") {
-            if (HemisphereSort === "All") {
-                setBoxes(ALLR2L);
-                addPostRender();
-            } else if (HemisphereSort === "West Side") {
-                setBoxes(WESTR2L);
-                addPostRender();
-            } else if (HemisphereSort === "East Side") {
-                setBoxes(EASTR2L);
-                addPostRender();
-            } else if (HemisphereSort === "South Side") {
-                setBoxes(SOUTHR2L);
-                addPostRender();
-            } else if (HemisphereSort === "North Side") {
-                setBoxes(NORTHR2L);
-                addPostRender();
-            }
-        } else if (c === "Population G to L") {
-            if (HemisphereSort === "All") {
-                setBoxes(ALLPOPG2L);
-                addPostRender();
-            } else if (HemisphereSort === "West Side") {
-                setBoxes(WESTPOPG2L);
-                addPostRender();
-            } else if (HemisphereSort === "East Side") {
-                setBoxes(EASTPOPG2L);
-                addPostRender();
-            } else if (HemisphereSort === "South Side") {
-                setBoxes(SOUTHPOPG2L);
-                addPostRender();
-            } else if (HemisphereSort === "North Side") {
-                setBoxes(NORTHPOPG2L);
-                addPostRender();
-            }
-        } else if (c === "Population L to G") {
-            if (HemisphereSort === "All") {
-                setBoxes(ALLPOPL2G);
-                addPostRender();
-            } else if (HemisphereSort === "West Side") {
-                setBoxes(WESTPOPL2G);
-                addPostRender();
-            } else if (HemisphereSort === "East Side") {
-                setBoxes(EASTPOPL2G);
-                addPostRender();
-            } else if (HemisphereSort === "South Side") {
-                setBoxes(SOUTHPOPL2G);
-                addPostRender();
-            } else if (HemisphereSort === "North Side") {
-                setBoxes(NORTHPOPL2G);
-                addPostRender();
-            }
-        }
-    }
+
     function emptyHouse() {
         setBoxes({});
     }
@@ -599,23 +325,13 @@ function App() {
     const [ModalPopFood, setModalPopFood] = useState<string[]>([""]);
     const [ModalTop, setModalTop] = useState<number>(0);
     const [ModalLeft, setModalLeft] = useState<number>(0);
-    const [ModalDisplay, setModalDisplay] = useState<string>("None");
     const [wikiLink, setWikiLink] = useState<string>("");
     const [ModalCountry, setModalCountry] = useState<string>("None");
     const [ModalContinent, setModalContinent] = useState<string>("None");
     const [ModalName, setModalName] = useState<string>("None");
-    const [ModalImage, setModalImage] = useState<string>("None");
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const arraySelectDown: any[] = [];
-    const addFoodFavorite = () => {
-        ModalPopFood.push(" ");
-        arraySelectDown.push(
-            <option key={indexSelectDop + 1} value={indexSelectDop + 1}>
-                {indexSelectDop + 1}
-            </option>
-        );
-        setModalPopFood(ModalPopFood);
-    };
+
     const showModalEdit = (
         key: string,
         title: string,
@@ -635,11 +351,9 @@ function App() {
         setModalLeft(Left);
         setModalTop(Top);
         setModalPopCountry(PopCountry);
-        setModalDisplay(Display);
         setModalName(Name);
         setModalCountry(Country);
         setModalContinent(Continent);
-        setModalImage(Image);
         setModalPopFood(PopFood);
         setmodalEditOpen(true);
     };
@@ -668,11 +382,9 @@ function App() {
         setModalLeft(Left);
         setModalTop(Top);
         setModalPopCountry(PopCountry);
-        setModalDisplay(Display);
         setModalName(Name);
         setModalCountry(Country);
         setModalContinent(Continent);
-        setModalImage(Image);
         setModalPopFood(PopFood);
         setmodalViewOpen(true);
         setWikiLink("https://en.wikipedia.org/wiki/" + Name);

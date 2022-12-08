@@ -1,13 +1,8 @@
-/* eslint-disable no-extra-parens */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable no-prototype-builtins */
-import React, { useCallback } from "react";
+import React from "react";
 import type { CSSProperties, FC, ReactNode } from "react";
 import { useState } from "react";
 import { DndProvider, useDrop } from "react-dnd";
-import { ContainerState } from "./Container";
 import { ItemTypes } from "./ItemTypes";
-import update from "immutability-helper";
 import { ChildBin } from "./ChildBasket";
 import { HTML5Backend } from "react-dnd-html5-backend";
 function getStyle(backgroundColor: string): CSSProperties {
@@ -81,19 +76,13 @@ export interface DustbinState {
 
 export const Dustbin: FC<DustbinProps> = ({
     greedy,
-    children,
     color,
     basketMove,
     boxes,
     setBoxes,
     value,
-    resetChildTrips,
-    setCTreset
+    resetChildTrips
 }) => {
-    const [amountOfChild, setChild] = useState(1);
-    const [hasDropped, setHasDropped] = useState(false);
-    const [hasDroppedOnChild, setHasDroppedOnChild] = useState(false);
-    const [plannerTotal, setPT] = useState(0);
     const [val, setVal] = useState(1);
     const [name, setName] = useState("");
     const [valueofDropContainers, setDropContainer] = useState(1);
@@ -129,23 +118,20 @@ export const Dustbin: FC<DustbinProps> = ({
         PopulateChildren = [];
         setDropContainer(0);
     }
-    const [{ isOver, isOverCurrent }, drop] = useDrop(
+    const [, drop] = useDrop(
         () => ({
             accept: ItemTypes.BOX,
-            drop(item: object, monitor) {
-                const didDrop = monitor.didDrop();
+            drop(item: object) {
                 const x = Object(item).id;
                 setVal(val + 1);
                 setName(name + "\n" + val + ": " + x);
-                setHasDropped(true);
-                setHasDroppedOnChild(didDrop);
             },
             collect: (monitor) => ({
                 isOver: monitor.isOver(),
                 isOverCurrent: monitor.isOver({ shallow: true })
             })
         }),
-        [greedy, setHasDropped, setHasDroppedOnChild, setName]
+        [greedy, setName]
     );
     const text =
         "Trip Planner " +

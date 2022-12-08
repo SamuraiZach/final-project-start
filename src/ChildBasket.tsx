@@ -1,13 +1,8 @@
-/* eslint-disable no-extra-parens */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable no-prototype-builtins */
-import React, { useCallback } from "react";
+import React from "react";
 import type { CSSProperties, FC, ReactNode } from "react";
 import { useState } from "react";
 import { useDrop } from "react-dnd";
-import { ContainerState } from "./Container";
 import { ItemTypes } from "./ItemTypes";
-import update from "immutability-helper";
 function getStyle(backgroundColor: string): CSSProperties {
     return {
         border: "1px solid rgba(0,0,0,0.2)",
@@ -79,27 +74,22 @@ export interface DustbinState {
 
 export const ChildBin: FC<DustbinProps> = ({
     greedy,
-    children,
     color,
     basketMove,
     valueofDropContainers,
     setDropContainer,
     i
 }) => {
-    const [hasDropped, setHasDropped] = useState(false);
-    const [hasDroppedOnChild, setHasDroppedOnChild] = useState(false);
     const [val, setVal] = useState(1);
     const [name, setName] = useState("");
     const [{ isOver, isOverCurrent }, drop] = useDrop(
         () => ({
             accept: ItemTypes.BOX,
-            drop(item: object, monitor) {
-                const didDrop = monitor.didDrop();
+            drop(item: object) {
                 const x = Object(item).id;
                 setVal(val + 1);
                 setName(x);
-                setHasDropped(true);
-                setHasDroppedOnChild(didDrop);
+
                 basketMove(item);
                 setDropContainer(valueofDropContainers + 1);
             },
@@ -108,7 +98,7 @@ export const ChildBin: FC<DustbinProps> = ({
                 isOverCurrent: monitor.isOver({ shallow: true })
             })
         }),
-        [greedy, setHasDropped, setHasDroppedOnChild, setName, basketMove]
+        [greedy, setName, basketMove]
     );
     const text = "Place " + (i + 1);
     const colors = color;

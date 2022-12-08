@@ -1,7 +1,5 @@
 import type { FC } from "react";
 import React from "react";
-//import { useState } from "react";
-//import { Form, Button } from "react-bootstrap";
 import { Container } from "./Container";
 
 export interface InteractablesProp {
@@ -82,7 +80,3 @@ export const Interactables: FC<InteractablesProp> = ({
         </div>
     );
 };
-
-//<Button onClick={toggleAdd}>Add Place</Button>
-// {formAdd === false ? null : <Form.Check></Form.Check>}
-//toggleAdd which is for the forms or whatever
