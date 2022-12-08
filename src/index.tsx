@@ -109,6 +109,8 @@ function App() {
     console.log(Object.keys(boxes).length);
 
     const handleClose = () => {
+        setPreMap("");
+        setPMN("");
         setName("");
         setSource("");
         setContinent("");
