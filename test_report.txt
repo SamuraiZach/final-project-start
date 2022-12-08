@@ -33,45 +33,46 @@ FAIL src/index.test.tsx
 
     SyntaxError: Unexpected token 'export'
 
-      4 | import type { CSSProperties, FC } from "react";
-      5 | import { useCallback, useState } from "react";
-    > 6 | import { DndProvider, XYCoord } from "react-dnd";
+      2 | import update from "immutability-helper";
+      3 | import type { CSSProperties, FC } from "react";
+    > 4 | import { DndProvider, XYCoord } from "react-dnd";
         | ^
-      7 | import { useDrop } from "react-dnd";
-      8 | import { Place } from "./Place";
-      9 |
+      5 | import { useDrop } from "react-dnd";
+      6 |
+      7 | import { Dustbin } from "./Basket";
 
       at Runtime.createScriptFromCode (node_modules/jest-runtime/build/index.js:1728:14)
-      at Object.<anonymous> (src/Container.tsx:6:1)
-      at Object.<anonymous> (src/DraggingLayer.tsx:5:1)
-      at Object.<anonymous> (src/index.tsx:4:1)
+      at Object.<anonymous> (src/Container.tsx:4:1)
+      at Object.<anonymous> (src/DraggingLayer.tsx:3:1)
+      at Object.<anonymous> (src/index.tsx:3:1)
       at Object.<anonymous> (src/index.test.tsx:3:1)
 
 PASS src/App.test.tsx
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |    0.15 |        0 |    0.92 |    0.15 |                   
- src                   |    0.18 |        0 |    1.25 |    0.18 |                   
+All files              |    0.18 |        0 |    0.94 |    0.18 |                   
+ src                   |    0.22 |        0 |    1.28 |    0.22 |                   
   App.tsx              |     100 |      100 |     100 |     100 |                   
-  Basket.tsx           |       0 |        0 |       0 |       0 | 14-159            
-  BasketNewPlanner.tsx |       0 |        0 |       0 |       0 | 12-122            
+  Basket.tsx           |       0 |        0 |       0 |       0 | 9-145             
+  BasketNewPlanner.tsx |       0 |        0 |       0 |       0 | 9-116             
   Box.tsx              |       0 |        0 |       0 |       0 | 7-72              
-  ChildBasket.tsx      |       0 |        0 |       0 |       0 | 12-121            
-  Container.tsx        |       0 |        0 |       0 |       0 | 21-174            
-  DeleteBasket.tsx     |       0 |        0 |       0 |       0 | 12-128            
-  DraggingLayer.tsx    |       0 |      100 |       0 |       0 | 54-66             
+  ChildBasket.tsx      |       0 |        0 |       0 |       0 | 7-111             
+  Container.tsx        |       0 |        0 |       0 |       0 | 16-169            
+  DeleteBasket.tsx     |       0 |        0 |       0 |       0 | 9-123             
+  DraggingLayer.tsx    |       0 |      100 |       0 |       0 | 52-64             
   ItemTypes.ts         |       0 |      100 |     100 |       0 | 1                 
   MapBox.ts            |       0 |        0 |       0 |       0 |                   
-  Modal.tsx            |       0 |        0 |       0 |       0 | 31-68             
+  Modal.tsx            |       0 |        0 |       0 |       0 | 29-66             
   NumberBox.ts         |       0 |        0 |       0 |       0 |                   
   ObjectPlaces.tsx     |       0 |        0 |       0 |       0 |                   
   Place.ts             |       0 |        0 |       0 |       0 |                   
   PlaceKeyVersion.ts   |       0 |        0 |       0 |       0 |                   
-  index.tsx            |       0 |        0 |       0 |       0 | 49-1305           
+  hemifilter.tsx       |       0 |        0 |       0 |       0 | 58-137            
+  index.tsx            |       0 |        0 |       0 |       0 | 15-1017           
   interfaces.ts        |       0 |        0 |       0 |       0 |                   
   reportWebVitals.ts   |       0 |        0 |       0 |       0 | 3-11              
-  sortBox.tsx          |       0 |      100 |       0 |       0 | 5-20              
+  sort.tsx             |       0 |        0 |       0 |       0 | 58-141            
  src/ReferenceCode     |       0 |        0 |       0 |       0 |                   
   Board.tsx            |       0 |        0 |       0 |       0 | 8-38              
   BoardSquare.tsx      |       0 |        0 |       0 |       0 | 13-26             
@@ -88,5 +89,5 @@ All files              |    0.15 |        0 |    0.92 |    0.15 |
 Test Suites: 1 failed, 1 passed, 2 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        5.638 s
+Time:        4.067 s
 Ran all test suites.
